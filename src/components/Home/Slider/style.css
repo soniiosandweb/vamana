@@ -1,0 +1,14 @@
+.banner-slider {
+  min-height: 600px;
+}
+.slick-dots{
+    bottom: 25px;
+}
+.slick-dots li button::before{
+    color: #fff;
+    font-size: 18px;
+}
+.slick-dots .slick-active button::before{
+    opacity: 1;
+    color: #fff !important;
+}

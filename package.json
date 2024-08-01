@@ -1,9 +1,11 @@
 {
+  "homepage": "https://iosandweb.net/vamana/",
   "name": "vamana",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.6.0",
+    "@fortawesome/free-brands-svg-icons": "^6.6.0",
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@testing-library/jest-dom": "^5.17.0",
@@ -14,8 +16,10 @@
     "react-bootstrap": "^2.10.4",
     "react-dom": "^18.3.1",
     "react-helmet": "^6.1.0",
-    "react-owl-carousel": "^2.3.3",
+    "react-lazy-load-image-component": "^1.6.2",
     "react-scripts": "5.0.1",
+    "react-slick": "^0.30.2",
+    "slick-carousel": "^1.8.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -43,6 +47,7 @@
     ]
   },
   "devDependencies": {
-    "react-router-dom": "^6.25.1"
+    "react-router-dom": "^6.25.1",
+    "tailwindcss": "^3.4.7"
   }
 }
