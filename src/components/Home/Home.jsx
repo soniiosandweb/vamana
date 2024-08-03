@@ -1,4 +1,5 @@
 import MetaData from "../Layouts/MetaData"
+import AboutSection from "./AboutSection/AboutSection"
 import BannerSlider from "./Slider/BannerSlider"
 
 const Home = () => {
@@ -10,6 +11,7 @@ const Home = () => {
             />
 
             <BannerSlider />
+            <AboutSection />
         </>
     )
 }
