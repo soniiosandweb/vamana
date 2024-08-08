@@ -1,6 +1,9 @@
 import MetaData from "../Layouts/MetaData"
 import AboutSection from "./AboutSection/AboutSection"
-import BannerSlider from "./Slider/BannerSlider"
+import Amenities from "./Amenities/Amenities"
+import BannerSlider from "./BannerSlider/BannerSlider"
+import Clubhouse from "./Clubhouse/Clubhouse"
+import Location from "./Location/Location"
 
 const Home = () => {
     return (
@@ -12,6 +15,9 @@ const Home = () => {
 
             <BannerSlider />
             <AboutSection />
+            <Amenities />
+            <Location />
+            <Clubhouse />
         </>
     )
 }

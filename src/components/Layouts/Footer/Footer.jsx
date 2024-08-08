@@ -1,19 +1,18 @@
 import { faInstagram, faLinkedin, faSquareFacebook } from "@fortawesome/free-brands-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { Col, Container, Row } from "react-bootstrap"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Footer = () => {
     return(
         <section className="bg-primary-green text-white py-4 text-sm">
-            <Container>
-                <Row>
-                    <Col md={4} className="pb-3 md:pb-0">
+            <div className='max-w-6xl m-auto px-2.5'>
+                <div className="flex flex-col md:flex-row pb-4">
+                    <div className="w-full md:w-1/3 p-2.5 flex flex-col pb-3 md:pb-0">
                         <p>Site Location: Green Lotus Saksham, Zirakpur Patiala Highway</p>
-                    </Col>
-                    <Col md={4} className="pb-3 md:pb-0">
+                    </div>
+                    <div className="w-full md:w-1/3 p-2.5 flex flex-col pb-3 md:pb-0">
                         <p>Contact: <a href="tel:+91- 70589-70589">+91- 70589-70589</a></p>
-                    </Col>
-                    <Col md={4}>
+                    </div>
+                    <div className="w-full md:w-1/3 p-2.5 flex flex-col">
                         <ul className="text-3xl flex gap-3 justify-center">
                             <li>
                                 <a href="/"><FontAwesomeIcon icon={faSquareFacebook} /></a>
@@ -25,17 +24,17 @@ const Footer = () => {
                                 <a href="/"><FontAwesomeIcon icon={faLinkedin} /></a>
                             </li>
                         </ul>
-                    </Col>
-                </Row>
-                <Row className="mt-4 pt-4 border-t">
-                    <Col md={6} className="pb-3 md:pb-0">
+                    </div>
+                </div>
+                <div className="flex flex-col md:flex-row items-center mt-4 pt-4 border-t">
+                    <div className="w-full md:w-1/2 p-2.5 flex flex-col pb-3 md:pb-0">
                         <p>Copyright © 2023 Green Lotus Group</p>
-                    </Col>
-                    <Col md={6}>
+                    </div>
+                    <div className="w-full md:w-1/2 p-2.5 flex flex-col">
                         <p>Powered by Green Lotus Group</p>
-                    </Col>
-                </Row>
-            </Container>
+                    </div>
+                </div>
+            </div>
         </section>
     )
 }
