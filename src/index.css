@@ -9,7 +9,7 @@
 
 body {
   margin: 0;
-  background-color: #f9f9f9;
+  background-color: #fff;
   font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -17,4 +17,15 @@ body {
 
 code {
   font-family: 'Poppins', sans-serif;
+}
+:focus-visible{
+  outline: unset;
+}
+/* Lightbox */
+.yarl__container {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.single-lightbox .yarl__button.yarl__navigation_prev,
+.single-lightbox .yarl__button.yarl__navigation_next {
+  display: none;
 }

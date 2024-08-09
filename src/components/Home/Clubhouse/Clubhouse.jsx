@@ -46,18 +46,18 @@ const Clubhouse = () => {
     ]
 
     return(
-        <section className="home-clubhouse-section bg-primary-green text-white py-8 md:py-16 px-2.5 relative" id="clubhouse">
+        <section className="home-clubhouse-section bg-black text-white py-8 md:py-16 px-2.5 relative" id="clubhouse">
             <div className='max-w-6xl m-auto z-10 relative'>
-                <div className="flex flex-col-reverse md:flex-row">
+                <div className="flex flex-col-reverse md:flex-row gap-7 lg:gap-14">
 
-                    <div className="w-full md:w-2/5 pt-12 md:pt-0">
+                    <div className="w-full md:1/2 lg:w-2/5 pt-12 md:pt-0">
                         <LazyLoadImage
                             src={clubhouseImg}
                             alt='Location'
                             className='h-full object-cover object-center w-full'
                         />
                     </div>
-                    <div className="w-full md:w-3/5 flex flex-col gap-5 px-7 md:px-12 lg:px-14">
+                    <div className="w-full md:1/2 lg:w-3/5 flex flex-col gap-5">
                         <h2 className="text-2xl sm:text-4xl font-semibold text-left">State of the art clubhouse facilities</h2>
                         <div className='flex flex-row flex-wrap mt-10 gap-y-10'>
                            {clubhouse.map((index, i) => (

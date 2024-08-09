@@ -31,12 +31,11 @@ module.exports = {
         blue: '#2874f0',
         lightGreen: '#14be47',
         green: '#01361f',
-        yellow: '#ff9f00',
+        yellow: '#C27C00',
         orange: '#fb641b',
         darkBlue: '#172337',
         grey: '#878787',
         bg: '#f9f9f9',
-        btnGreen: '#0b8a52',
       },
     },
     spacing: {

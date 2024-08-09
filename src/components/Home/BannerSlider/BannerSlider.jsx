@@ -1,7 +1,7 @@
 import './BannerSlider.css';
-import banner1 from '../../../assests/images/banner/banner1.jpeg';
-import banner2 from '../../../assests/images/banner/banner2.jpeg';
-import banner3 from '../../../assests/images/banner/banner3.jpeg';
+import banner1 from '../../../assests/images/banner/banner-1.webp';
+import banner2 from '../../../assests/images/banner/banner-2.webp';
+import banner3 from '../../../assests/images/banner/banner-3.webp';
 import Slider from 'react-slick';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -49,7 +49,7 @@ const BannerSlider = () => {
                                     <div className='flex items-center justify-center h-full flex-col gap-4 text-center'>
                                         <h1 className='text-3xl sm:text-4xl lg:text-5xl font-semibold'>{el.title}</h1>
                                         <p className='text-md sm:text-xl'>{el.subtitle}</p>
-                                        <div className='w-72 h-px bg-white mt-3'></div>
+                                        <div className='w-72 h-px bg-white mt-16'></div>
                                         <ul className='flex flex-col md:flex-row gap-4'>
                                             <li className='flex gap-2 items-center text-sm'><FontAwesomeIcon icon={faHome} /> 3 BHK Apartments</li>
                                             <li className='flex gap-2 items-center text-sm'><FontAwesomeIcon icon={faHome} /> 3+1 BHK Apartments</li>

@@ -2,8 +2,12 @@ import MetaData from "../Layouts/MetaData"
 import AboutSection from "./AboutSection/AboutSection"
 import Amenities from "./Amenities/Amenities"
 import BannerSlider from "./BannerSlider/BannerSlider"
-import Clubhouse from "./Clubhouse/Clubhouse"
+// import Clubhouse from "./Clubhouse/Clubhouse"
+import FloorPlan from "./FloorPlan/FloorPlan"
+import Gallery from "./Gallery/Gallery"
 import Location from "./Location/Location"
+import MasterPlan from "./MasterPlan/MasterPlan"
+import PriceList from "./PriceList/PriceList"
 
 const Home = () => {
     return (
@@ -16,8 +20,12 @@ const Home = () => {
             <BannerSlider />
             <AboutSection />
             <Amenities />
+            <FloorPlan />
+            <MasterPlan />
             <Location />
-            <Clubhouse />
+            {/* <Clubhouse /> */}
+            <Gallery />
+            <PriceList />
         </>
     )
 }

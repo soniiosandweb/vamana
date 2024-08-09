@@ -1,0 +1,103 @@
+import floorPlan1 from '../../../assests/images/floorplan/3bhk.png';
+import floorPlan2 from '../../../assests/images/floorplan/3bhk-s.png';
+import floorPlan3 from '../../../assests/images/floorplan/4bhk-s.png';
+import { useState } from "react";
+import Lightbox from "yet-another-react-lightbox";
+import { Fullscreen, Zoom } from "yet-another-react-lightbox/plugins";
+
+const FloorPlan = () => {
+
+    const [openPlan1, setOpenPlan1] = useState(false);
+    const [openPlan2, setOpenPlan2] = useState(false);
+    const [openPlan3, setOpenPlan3] = useState(false);
+
+    return(
+        <section className="home-floorplan-section py-16 px-2.5" id="floorplan">
+            <div className='max-w-6xl m-auto'>
+                <div className="flex flex-col text-left gap-5">
+                    <h2 className="text-2xl sm:text-4xl font-semibold text-center mb-3">Floor Plan</h2>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-flow-row gap-5 p-2.5">
+                        {/* Plan 1 */}
+                        <div className="border-primary-yellow border-2 flex flex-col gap-5 items-center justify-between">
+                            <img
+                                src={floorPlan1}
+                                alt="3 BHK (2325 sq. feet)"
+                                className="p-2.5 cursor-pointer"
+                                onClick={() => setOpenPlan1(true)}
+                            />
+                            <Lightbox
+                                open={openPlan1}
+                                close={() => setOpenPlan1(false)}
+                                slides={[
+                                    { src: floorPlan1 }
+                                ]}
+                                plugins={[Fullscreen, Zoom]}
+                                carousel={{ finite: 1 }}
+                                render={{
+                                    buttonPrev: undefined,
+                                    buttonNext: undefined,
+                                }}
+                                className="single-lightbox"
+                            />
+                            <button className="w-full bg-primary-yellow text-white font-bold uppercase text-xs tracking-widest py-3.5 px-8" onClick={() => setOpenPlan1(true)}>3 BHK (2325 sq. feet)</button>
+                        </div>
+
+                        {/* Plan 2 */}
+                        <div className="border-primary-yellow border-2 flex flex-col gap-5 items-center justify-between">
+                            <img
+                                src={floorPlan2}
+                                alt="3+1 BHK (2690 sq. feet)"
+                                className="p-2.5 cursor-pointer"
+                                onClick={() => setOpenPlan2(true)}
+                            />
+                            <Lightbox
+                                open={openPlan2}
+                                close={() => setOpenPlan2(false)}
+                                slides={[
+                                    { src: floorPlan2 }
+                                ]}
+                                plugins={[Fullscreen, Zoom]}
+                                carousel={{ finite: 1 }}
+                                render={{
+                                    buttonPrev: undefined,
+                                    buttonNext: undefined,
+                                }}
+                                className="single-lightbox"
+                            />
+                            <button className="w-full bg-primary-yellow text-white font-bold uppercase text-xs tracking-widest py-3.5 px-8" onClick={() => setOpenPlan2(true)}>3+1 BHK (2690 sq. feet)</button>
+                        </div>
+
+                        {/* Plan 3 */}
+                        <div className="border-primary-yellow border-2 flex flex-col gap-5 items-center justify-between">
+                            <img
+                                src={floorPlan3}
+                                alt="4+1 BHK (3685 sq. feet)"
+                                className="p-2.5 cursor-pointer"
+                                onClick={() => setOpenPlan3(true)}
+                            />
+                            <Lightbox
+                                open={openPlan3}
+                                close={() => setOpenPlan3(false)}
+                                slides={[
+                                    { src: floorPlan3 }
+                                ]}
+                                plugins={[Fullscreen, Zoom]}
+                                carousel={{ finite: 1 }}
+                                render={{
+                                    buttonPrev: undefined,
+                                    buttonNext: undefined,
+                                }}
+                                className="single-lightbox"
+                            />
+                            <button className="w-full bg-primary-yellow text-white font-bold uppercase text-xs tracking-widest py-3.5 px-8" onClick={() => setOpenPlan3(true)}>4+1 BHK (3685 sq. feet)</button>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+    )
+}
+
+export default FloorPlan

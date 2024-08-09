@@ -1,67 +1,68 @@
-import { faBaseball, faBicycle, faBox, faCakeCandles, faCampground, faChargingStation, faChildReaching, faDumbbell, faLightbulb, faSquareParking, faUserCheck, faWaterLadder } from "@fortawesome/free-solid-svg-icons"
+import { faBox, faBuilding, faBus, faCamera, faChildReaching, faDumbbell, faDungeon, faLightbulb, faRoad, faStreetView, faTreeCity, faUsers } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const Amenities = () => {
 
     const amenities = [
         {
-            title: "Swimming Pool",
-            icon: faWaterLadder,
+            title: "Gated & Walled Community",
+            icon: faUsers,
         },
         {
-            title: "Smart Visitor Monitoring System",
-            icon: faUserCheck,
+            title: "Project is on Wide Road",
+            icon: faRoad,
         },
         {
-            title: "Smart Public area Lighting",
+            title: "Power Backup",
             icon: faLightbulb,
         },
         {
-            title: "Hassle Free Parking",
-            icon: faSquareParking,
+            title: "Commercial Complex In Vicinity",
+            icon: faBuilding,
         },
         {
-            title: "Open Spaces",
-            icon: faBicycle,
+            title: "Bus Shelter",
+            icon: faBus,
         },
         {
-            title: "Multi-purpose Hall",
-            icon: faCakeCandles,
+            title: "Lush Green Park",
+            icon: faTreeCity,
         },
         {
-            title: "Kids space",
-            icon: faChildReaching,
-        },
-        {
-            title: "Gymnasium",
-            icon: faDumbbell,
-        },
-        {
-            title: "Gazebo Seating",
-            icon: faCampground,
-        },
-        {
-            title: "Electric Vehicle Charging Station",
-            icon: faChargingStation,
-        },
-        {
-            title: "Rooftop tennis Court",
+            title: "Grand Frontage 315 Ft.",
             icon: faBox,
         },
         {
-            title: "Sports & Community Facilities",
-            icon: faBaseball,
+            title: "Open Indoor Gym",
+            icon: faDumbbell,
+        },
+        {
+            title: "Designer Street Lights",
+            icon: faStreetView,
+        },
+        {
+            title: "Badminton Court",
+            icon: faChildReaching,
+        },
+        {
+            title: "Two Side Grand Entrance",
+            icon: faDungeon,
+        },
+        {
+            title: "24x7 CCTV Surveillance",
+            icon: faCamera,
         },
     ]
 
     return(
         <section className="home-amenities-section py-5 md:py-16 px-2.5" id="amenities">
             <div className='max-w-6xl m-auto'>
+                <h2 className="text-2xl sm:text-4xl font-semibold text-center mb-3">Amenities</h2>
                 <div className="flex flex-row flex-wrap gap-0 md:gap-y-12">
                     {amenities.map((item, i) => (
                         <div className="w-full md:w-3/12 p-6 flex flex-col gap-4 justify-center items-center" key={i}>
-                            <FontAwesomeIcon icon={item.icon} className="text-5xl text-primary-btnGreen"/>
-                            <h3 className="text-xl lg:text-25 font-semibold text-center">{item.title}</h3>
+                            <FontAwesomeIcon icon={item.icon} className="text-5xl text-primary-yellow"/>
+                            <h3 className="text-xl lg:text-25 font-semibold text-center capitalize">{item.title}</h3>
                         </div>
                     ))}
                 </div>

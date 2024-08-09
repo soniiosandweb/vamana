@@ -1,38 +1,21 @@
-import { faInstagram, faLinkedin, faSquareFacebook } from "@fortawesome/free-brands-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import { NavLink } from "react-router-dom";
 
 const Footer = () => {
     return(
-        <section className="bg-primary-green text-white py-4 text-sm">
+        <section className="bg-primary-bg py-4 text-sm">
             <div className='max-w-6xl m-auto px-2.5'>
-                <div className="flex flex-col md:flex-row pb-4">
-                    <div className="w-full md:w-1/3 p-2.5 flex flex-col pb-3 md:pb-0">
-                        <p>Site Location: Green Lotus Saksham, Zirakpur Patiala Highway</p>
-                    </div>
-                    <div className="w-full md:w-1/3 p-2.5 flex flex-col pb-3 md:pb-0">
-                        <p>Contact: <a href="tel:+91- 70589-70589">+91- 70589-70589</a></p>
-                    </div>
-                    <div className="w-full md:w-1/3 p-2.5 flex flex-col">
-                        <ul className="text-3xl flex gap-3 justify-center">
-                            <li>
-                                <a href="/"><FontAwesomeIcon icon={faSquareFacebook} /></a>
-                            </li>
-                            <li>
-                                <a href="/"><FontAwesomeIcon icon={faInstagram} /></a>
-                            </li>
-                            <li>
-                                <a href="/"><FontAwesomeIcon icon={faLinkedin} /></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div className="flex flex-col md:flex-row items-center mt-4 pt-4 border-t">
-                    <div className="w-full md:w-1/2 p-2.5 flex flex-col pb-3 md:pb-0">
-                        <p>Copyright © 2023 Green Lotus Group</p>
-                    </div>
-                    <div className="w-full md:w-1/2 p-2.5 flex flex-col">
-                        <p>Powered by Green Lotus Group</p>
-                    </div>
+                
+                <div className="flex flex-col items-center text-center gap-1.5 px-2.5 py-2.5">
+                    {/* <div className='h-px w-full bg-gray-300'></div> */}
+                    <p className='text-md'>Channel Partner RERA Number : Coming Soon</p>
+                    <p className='text-md'>Project RERA Number : PBRERA-SAS79-PR0777</p>
+                    <p className='text-lg font-semibold mt-5'>Disclaimer:</p>
+                    <p><b>1.</b> The images shown are for illustration purposes only and may not be an exact representation of the product</p>
+                    <p className='mt-1.5'><b>2.</b> Please be advised that this website is not an official site and serves solely as an informational portal managed by a RERA authorized real estate agent. It does not constitute an offer or guarantee of any services. The prices displayed on this website are subject to change without prior notice, and the availability of properties cannot be guaranteed. The images showcased on this website are for representational purposes only and may not accurately reflect the actual properties. We may share your data with Real Estate Regulatory Authority (RERA) registered Developers for further processing as necessary. Additionally, we may send updates and information to the mobile number or email address registered with us.</p>
+                    <p>All rights reserved. The content, design, and information on this website are protected by copyright and other intellectual property rights. Any unauthorized use or reproduction of the content may violate applicable laws.</p>
+                    <p>For accurate and up-to-date information regarding services, pricing, availability, and any other details, it is recommended to contact us directly through the provided contact information on this website. Thank you for visiting our website.</p>
+                    <p className='mt-1.5'><NavLink to='/terms-conditions' target='_blank' className='text-primary-yellow font-semibold'>Terms & Conditions</NavLink> and <NavLink to='/privacy-policy' target='_blank' className='text-primary-yellow font-semibold'>Privacy Policy</NavLink></p>
                 </div>
             </div>
         </section>
