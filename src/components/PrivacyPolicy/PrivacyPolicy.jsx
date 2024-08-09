@@ -1,7 +1,7 @@
 const PrivacyPolicy = () => {
     return(
         <section className=" py-5 md:py-16 px-2.5">
-            <div className='max-w-6xl m-auto flex flex-col gap-5'>
+            <div className='max-w-6xl m-auto flex flex-col gap-5 text-sm'>
             <h2 className="text-2xl sm:text-4xl font-semibold text-left mb-3">Privacy Policy</h2>
             <p>This website is not the official one; it is only meant to be used for informative purposes. In our commitment to safeguarding your personal information, we have formulated this comprehensive privacy policy to protect your interests and data on our website.</p>
             

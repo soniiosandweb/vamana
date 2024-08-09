@@ -1,7 +1,7 @@
 const TermsConsitions = () => {
     return(
         <section className=" py-5 md:py-16 px-2.5">
-            <div className='max-w-6xl m-auto flex flex-col gap-5'>
+            <div className='max-w-6xl m-auto flex flex-col gap-5 text-sm'>
             <h2 className="text-2xl sm:text-4xl font-semibold text-left mb-3">Terms & Conditions</h2>
 
             <p>Please be advised that accessing or utilizing the landing page implies the user's consent to abide by the following terms and conditions:</p>
