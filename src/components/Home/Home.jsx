@@ -13,8 +13,8 @@ const Home = () => {
     return (
         <>
             <MetaData 
-                title={"Luxurious Ready to Move Homes Zirakpur | Green Lotus Saksham"} 
-                description={"Green Lotus Saksham: A green residential project that blends luxury and eco-sustainability in Zirakpur. Live in harmony with nature. Reserve your space today!"} 
+                title={"Vamana Arvindam Zirakpur. 3BHK Luxury Apartments in Zirakpur"} 
+                description={"Vamana Arvindam Zirakpur. 3, 3+1 & 4+1 BHK Luxury Apartments on Patiala Highway in Zirakpur"} 
             />
 
             <BannerSlider />

@@ -114,7 +114,7 @@ const EnquireForm = ({title, setOpen}) => {
                         <p className="text-red-400 text-sm">{phoneError}</p>
                     )}
                 </div>
-                <div className="mt-2.5 text-left flex items-center gap-5 justify-start">
+                <div className="mt-2.5 flex items-center gap-5 justify-center">
                     <input type="submit" value="Get New Price List" className={`w-max text-white font-bold uppercase text-xs tracking-widest py-3.5 px-8 ${loading ? 'bg-gray-400 cursor-not-allowed' : 'bg-primary-yellow cursor-pointer'}`} disabled={loading} />
                     {loading && (
                         <CircularProgress
