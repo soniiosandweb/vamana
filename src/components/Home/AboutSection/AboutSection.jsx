@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-// import pdf from '../../../assests/pdf/SMC-Saksham.pdf';
 
 const AboutSection = () => {
     return(
