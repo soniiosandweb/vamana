@@ -66,7 +66,7 @@ const Header = () => {
       const element = document.getElementById(location.hash.slice(1));
       console.log(location.hash.slice(1))
       if (element) {
-        // element.style.scrollMarginTop = '50px';
+        element.style.scrollMarginTop = '50px';
         element.scrollIntoView({ behavior: 'smooth'});
         // window.scrollTo({ top: element.offsetTop, behavior: 'smooth'});
       }

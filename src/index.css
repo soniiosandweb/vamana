@@ -6,7 +6,9 @@
   font-family: "Poppins";
   src: url('./assests/fonts/Poppins-Regular.woff2');
 }
-
+html {
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
   background-color: #fff;
