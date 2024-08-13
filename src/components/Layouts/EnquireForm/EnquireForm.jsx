@@ -8,6 +8,9 @@ import { CircularProgress } from '@mui/material';
 const EnquireForm = ({title, setOpen}) => {
 
     const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [termsValue, setTermsValue] = useState(false);
+    const [termsCheck, setTermsCheck] = useState(false);
     const [mobileNumber, setMobileNumber] = useState();
     const [phoneError, setPhoneError] = useState("");
     const [formSuccess, setFormSuccess] = useState("");
@@ -17,14 +20,16 @@ const EnquireForm = ({title, setOpen}) => {
     const handleSubmit = (event) => {
         if (event) event.preventDefault();
 
-        if (isValidPhoneNumber(mobileNumber) === false || isPossiblePhoneNumber(mobileNumber) === false) {
-            setPhoneError("Please Enter Valid Mobile Number.");
+        if(mobileNumber){
+            if (isValidPhoneNumber(mobileNumber) === false || isPossiblePhoneNumber(mobileNumber) === false) {
+                setPhoneError("Please Enter Valid Mobile Number.");
 
-            setTimeout(() => {
-                setPhoneError('');
-            }, 5000);
+                setTimeout(() => {
+                    setPhoneError('');
+                }, 5000);
 
-            return false;
+                return false;
+            }
         }
 
         setLoading(true);
@@ -35,6 +40,7 @@ const EnquireForm = ({title, setOpen}) => {
             data: JSON.stringify({
                     name: name,
                     mobileNumber: mobileNumber,
+                    email: email,
                 }),
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
         })
@@ -49,7 +55,7 @@ const EnquireForm = ({title, setOpen}) => {
                     if(setOpen){
                         setOpen(false);
                     }
-                }, 5000);
+                }, 10000);
                 
             } else {
                 setLoading(false);
@@ -57,7 +63,7 @@ const EnquireForm = ({title, setOpen}) => {
                 resetForm();
                 setTimeout(() => {
                     setFormError('');
-                }, 5000);
+                }, 10000);
             }
         })
         .catch(function (response) {
@@ -73,14 +79,32 @@ const EnquireForm = ({title, setOpen}) => {
 
     }
 
+    const CheckboxChange = (e) => {
+       
+        setTermsValue(!termsValue); 
+        setTermsCheck(!termsValue);
+        
+    }
+
     const resetForm = () =>{
         setName("")
         setMobileNumber('');
+        setEmail('');
+        setTermsValue(false); 
+        setTermsCheck(false);
     }
 
     return(
         <form className="enquire-form py-6"  onSubmit={handleSubmit}>
             <div className="form-section text-left">
+                {formError && (
+                    <p className="text-red-400 py-2.5 text-md">{formError}</p>
+                )}
+
+                {formSuccess && (
+                    <p className="text-green-700 py-2.5 text-md">{formSuccess}</p>
+                )}
+
                 <p className="text-2xl font-extrabold capitalize mb-2.5">{title}</p>
                 <div className="py-2">
                     <input
@@ -95,13 +119,24 @@ const EnquireForm = ({title, setOpen}) => {
                     />
                 </div>
                 <div className="py-2">
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Email"
+                        className="text-md form-input border border-gray-300 w-full px-3.5 py-2 bg-white"
+                        required
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
+                </div>
+                <div className="py-2">
                     <PhoneInput
                         type="tel" 
                         id="mobile-number"
                         name="mobile-number"
-                        placeholder="Mobile Number"
+                        placeholder="Contact Detail (Optional)"
                         className="text-md form-input border border-gray-300 w-full px-3.5 py-2 bg-white"
-                        required
                         country="IN"
                         defaultCountry="IN"
                         value={mobileNumber}
@@ -128,13 +163,7 @@ const EnquireForm = ({title, setOpen}) => {
                         />
                     )}
                 </div>
-                {formError && (
-                    <p className="text-red-400 py-2.5 text-md">{formError}</p>
-                )}
-
-                {formSuccess && (
-                    <p className="text-green-700 py-2.5 text-md">{formSuccess}</p>
-                )}
+                <p className='mt-5'><input type='checkbox' required className='align-middle size-4' name="termsCheck" checked={termsCheck} value={termsValue} onChange={(e) => CheckboxChange(e)}/> *I give my consent for the privacy policy to apply to the processing of the provided data. I give authority to the website owner and its representatives permission to contact me via phone, text, email, or whatsapp with its offers and products. This agreement takes precedence over any DNC/NDNC registration.</p>
             </div>
         </form>
     )
