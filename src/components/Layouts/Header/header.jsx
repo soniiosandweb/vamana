@@ -102,7 +102,7 @@ const Header = () => {
         </div>
       </header>
 
-      <NavLink to='https://api.whatsapp.com/send/?phone=9877976021&text=I+would+like+to+know+more+about+Vamana+Arvindam&type=phone_number&app_absent=0' target="_blank" className="hidden fixed z-20 bg-primary-lightGreen text-white text-md font-medium px-5 py-2 flex gap-2.5 rounded-full items-center overflow-hidden" style={{left: "20px", bottom: "24px"}}>
+      <NavLink to='https://api.whatsapp.com/send/?phone=9877976021&text=I+would+like+to+know+more+about+Vamana+Arvindam&type=phone_number&app_absent=0' target="_blank" className=" fixed z-20 bg-primary-lightGreen text-white text-md font-medium px-5 py-2 flex gap-2.5 rounded-full items-center overflow-hidden" style={{left: "20px", bottom: "24px"}}>
           <FontAwesomeIcon icon={faWhatsapp} className="text-2xl pulso-animation" />
           How can I help you? 
       </NavLink>
