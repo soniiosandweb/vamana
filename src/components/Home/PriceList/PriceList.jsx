@@ -8,7 +8,7 @@ const PriceList = () => {
                     <h2 className="text-2xl sm:text-4xl font-semibold text-center mb-3">Latest Price List</h2>
 
                     <div className="w-full max-w-3xl mx-auto">
-                        <EnquireForm title="Vamana Group Zirakpur Price List" />
+                        <EnquireForm title="Vamana Residences Price List" />
                     </div>
                 </div>
             </div>

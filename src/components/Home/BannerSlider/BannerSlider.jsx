@@ -23,17 +23,17 @@ const BannerSlider = () => {
     const slides = [
         {
           title: "Get Ready for Luxurious Living!",
-          subtitle : "Vamana Zirakpur is upcoming project of Zirakpur and one of the most luxury Project that outclasses other projects of its kind by offering best-in-class amenities. Vamana Zirakpur will be high rise 3 & 3+1 BHK.",
+          subtitle : "Vamana Residences is upcoming project of Zirakpur and one of the most luxury Project that outclasses other projects of its kind by offering best-in-class amenities. Vamana Residences will be high rise 3 & 3+1 BHK.",
           image : banner1,
         },
         {
             title: "Get Ready for Luxurious Living!",
-          subtitle : "Vamana Zirakpur is upcoming project of Zirakpur and one of the most luxury Project that outclasses other projects of its kind by offering best-in-class amenities. Vamana Zirakpur will be high rise 3 & 3+1 BHK.",
+          subtitle : "Vamana Residences is upcoming project of Zirakpur and one of the most luxury Project that outclasses other projects of its kind by offering best-in-class amenities. Vamana Residences will be high rise 3 & 3+1 BHK.",
           image : banner2,
         },
         {
             title: "Get Ready for Luxurious Living!",
-          subtitle : "Vamana Zirakpur is upcoming project of Zirakpur and one of the most luxury Project that outclasses other projects of its kind by offering best-in-class amenities. Vamana Zirakpur will be high rise 3 & 3+1 BHK.",
+          subtitle : "Vamana Residences is upcoming project of Zirakpur and one of the most luxury Project that outclasses other projects of its kind by offering best-in-class amenities. Vamana Residences will be high rise 3 & 3+1 BHK.",
           image : banner3,
         }
     ];

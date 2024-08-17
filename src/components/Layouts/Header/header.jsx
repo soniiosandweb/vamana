@@ -82,7 +82,7 @@ const Header = () => {
             <NavLink to="/" className="block w-auto sm:w-max" reloadDocument={true}>
               <LazyLoadImage
                 src={logo}
-                alt="Vamana Group"
+                alt="Vamana Residences"
                 className='header-logo w-40'
               />
             </NavLink>
