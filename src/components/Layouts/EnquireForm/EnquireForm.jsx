@@ -16,6 +16,7 @@ const EnquireForm = ({title, setOpen}) => {
     const [formSuccess, setFormSuccess] = useState("");
     const [formError, setFormError] = useState("");
     const [loading, setLoading] = useState(false);
+    const [disableSubmit, setDisableSubmit] = useState(true);
 
     const handleSubmit = (event) => {
         if (event) event.preventDefault();
@@ -31,12 +32,12 @@ const EnquireForm = ({title, setOpen}) => {
                 return false;
             }
         }
-
+        setDisableSubmit(true);
         setLoading(true);
 
         axios({
             method: "post",
-            url: "https://iosandweb.net/vamana/api/enquire-us-api.php",
+            url: "https://vamanaresidences.com/api/enquire-us-api.php",
             data: JSON.stringify({
                     name: name,
                     mobileNumber: mobileNumber,
@@ -79,11 +80,37 @@ const EnquireForm = ({title, setOpen}) => {
 
     }
 
+    const EmailChange = (e) => {
+       
+        setEmail(e.target.value);
+
+        if(name.length >= 1 && e.target.value.length >= 1 && termsValue === true){
+            setDisableSubmit(false);
+        } else {
+            setDisableSubmit(true);
+        }
+    }
+
+    const NameChange = (e) => {
+       
+        setName(e.target.value);
+
+        if(e.target.value.length >= 1 && email.length >= 1 && termsValue === true){
+            setDisableSubmit(false);
+        } else {
+            setDisableSubmit(true);
+        }
+    }
+
     const CheckboxChange = (e) => {
        
         setTermsValue(!termsValue); 
         setTermsCheck(!termsValue);
-        
+        if(name.length >= 1 && email.length >= 1 && !termsValue === true){
+            setDisableSubmit(false);
+        } else {
+            setDisableSubmit(true);
+        }
     }
 
     const resetForm = () =>{
@@ -115,7 +142,7 @@ const EnquireForm = ({title, setOpen}) => {
                         className="text-md form-input border border-gray-300 w-full px-3.5 py-2 bg-white"
                         required
                         value={name}
-                        onChange={(e) => setName(e.target.value)}
+                        onChange={(e) => NameChange(e)}
                     />
                 </div>
                 <div className="py-2">
@@ -127,7 +154,7 @@ const EnquireForm = ({title, setOpen}) => {
                         className="text-md form-input border border-gray-300 w-full px-3.5 py-2 bg-white"
                         required
                         value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        onChange={(e) => EmailChange(e)}
                     />
                 </div>
                 <div className="py-2">
@@ -149,8 +176,11 @@ const EnquireForm = ({title, setOpen}) => {
                         <p className="text-red-400 text-sm">{phoneError}</p>
                     )}
                 </div>
+
+                <p className={`text-md mt-5 ${termsCheck ? 'font-semibold' : 'font-extralight  text-gray-400'}`}><input type='checkbox' required className='align-middle size-4' name="termsCheck" checked={termsCheck} value={termsValue} onChange={(e) => CheckboxChange(e)}/> I agree to be contacted by Housing and agents via WhatsApp, SMS, phone, email etc.</p>
+
                 <div className="mt-2.5 flex items-center gap-5 justify-center">
-                    <input type="submit" value="Get New Price List" className={`w-max text-white font-bold uppercase text-xs tracking-widest py-3.5 px-8 ${loading ? 'bg-gray-400 cursor-not-allowed' : 'bg-primary-yellow cursor-pointer'}`} disabled={loading} />
+                    <input type="submit" value="Get New Price List" className={`w-max text-white font-bold uppercase text-xs tracking-widest py-3.5 px-8 ${disableSubmit ? 'bg-gray-400 cursor-not-allowed' : 'bg-primary-yellow cursor-pointer'}`} disabled={disableSubmit} />
                     {loading && (
                         <CircularProgress
                             sx={{
@@ -163,7 +193,7 @@ const EnquireForm = ({title, setOpen}) => {
                         />
                     )}
                 </div>
-                <p className='mt-5'><input type='checkbox' required className='align-middle size-4' name="termsCheck" checked={termsCheck} value={termsValue} onChange={(e) => CheckboxChange(e)}/> *I authorize to contact me via any method and consent to data use, ignoring DNC/NDNC.</p>
+                
             </div>
         </form>
     )

@@ -1,5 +1,5 @@
 import './Header.css';
-import logo from '../../../assests/images/logo-new.png';
+import logo from '../../../assests/images/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClose, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { Link, NavLink, useLocation } from 'react-router-dom';
@@ -95,7 +95,7 @@ const Header = () => {
             </nav>
           </div>
           <div className="w-3/4 lg:w-2/6 xl:w-1/4 flex justify-end items-center gap-2 sm:gap-5 px-2.5 flex-wrap">
-            <NavLink to='tel:+919888877182' className="text-sm sm:text-md font-medium header-nav-link"><FontAwesomeIcon icon={faPhone} className="text-primary-yellow pr-1" /> +91 9888877182</NavLink>
+            <NavLink to='tel:+918787030723' className="text-sm sm:text-md font-medium header-nav-link"><FontAwesomeIcon icon={faPhone} className="text-primary-yellow pr-1" /> +91 8787030723</NavLink>
 
             <button tabIndex='-1' className="text-xs font-semibold capitalize cursor-pointer bg-primary-yellow p-2 sm:p-2.5 text-white" onClick={handleOpen}>Enquire Now</button>
           </div>
@@ -130,7 +130,7 @@ const Header = () => {
           <div className="flex justify-end">
             <FontAwesomeIcon icon={faClose} className="text-2xl cursor-pointer" onClick={handleClose} />
           </div>
-          <EnquireForm title="Please Fill In Your Details" setOpen={setOpen} />
+          <EnquireForm title="Get In Touch" setOpen={setOpen} />
         </div>
       </Dialog>
     </>
