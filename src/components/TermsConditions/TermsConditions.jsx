@@ -3,7 +3,7 @@ import MetaData from "../Layouts/MetaData"
 const TermsConsitions = () => {
     return(
         <>
-            <MetaData title={"Terms & Conditions - Vamana Arvindam Zirakpur"} />
+            <MetaData title={"Terms & Conditions - Vamana Residences"} />
 
             <section className=" py-5 md:py-16 px-2.5">
                 <div className='max-w-6xl m-auto flex flex-col gap-5 text-sm'>

@@ -13,8 +13,8 @@ const Home = () => {
     return (
         <>
             <MetaData 
-                title={"Vamana Arvindam Zirakpur. 3BHK Luxury Apartments in Zirakpur"} 
-                description={"Vamana Arvindam Zirakpur. 3, 3+1 & 4+1 BHK Luxury Apartments on Patiala Highway in Zirakpur"} 
+                title={"Vamana Residences. 3BHK Luxury Apartments in Zirakpur"} 
+                description={"Vamana Residences. 3, 3+1 & 4+1 BHK Luxury Apartments on Patiala Highway in Zirakpur"} 
             />
 
             <BannerSlider />
