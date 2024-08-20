@@ -177,7 +177,7 @@ const EnquireForm = ({title, setOpen}) => {
                     )}
                 </div>
 
-                <p className={`text-md mt-5 ${termsCheck ? 'font-semibold' : 'font-extralight  text-gray-400'}`}><input type='checkbox' required className='align-middle size-4' name="termsCheck" checked={termsCheck} value={termsValue} onChange={(e) => CheckboxChange(e)}/> I agree to be contacted by Housing and agents via WhatsApp, SMS, phone, email etc.</p>
+                <p className={`text-md mt-5 ${termsCheck ? 'font-semibold' : 'font-extralight  text-gray-400'}`}><input type='checkbox' required className='align-middle size-4' name="termsCheck" checked={termsCheck} value={termsValue} onChange={(e) => CheckboxChange(e)}/> I agree to be contacted by 'Vamana Residences' and its agents via WhatsApp, SMS, phone, email etc.</p>
 
                 <div className="mt-2.5 flex items-center gap-5 justify-center">
                     <input type="submit" value="Get New Price List" className={`w-max text-white font-bold uppercase text-xs tracking-widest py-3.5 px-8 ${disableSubmit ? 'bg-gray-400 cursor-not-allowed' : 'bg-primary-yellow cursor-pointer'}`} disabled={disableSubmit} />
