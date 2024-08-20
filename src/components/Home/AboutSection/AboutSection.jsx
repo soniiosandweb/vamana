@@ -14,8 +14,8 @@ const AboutSection = () => {
                 <div className='max-w-6xl m-auto'>
                     <div className="flex flex-col text-left gap-5">
                         <h2 className="text-2xl sm:text-4xl font-semibold text-left">About Us</h2>
-                        <p className="text-sm">'Vamana Residences' is planning to develop a residential apartment complex at patiala road, Zirakpur. Proposed name of this project is 'Vamana Residences'. It will be located in Zirakpur and as we know Zirakpur is located on the outer periphery of Mohali mainland & Chandigarh.</p>
-                        <p className="text-sm">'Vamana Residences' is planning to build one of the most luxurious projects that outclasses other projects of its kind by offering best-in-class amenities. It is under approval stage and under planning to build high rise 3 & 3+1 BHK Luxury Apartments. 'Vamana Residences' owned 2.5 land parcels on patiala road, Zirakpur.</p>
+                        <p className="text-sm">Experience a lifestyle of unparalleled luxury and tranquility at Vamana, a gated oasis nestled amidst lush greenery. Our thoughtfully designed apartments offer a perfect blend of modern comfort and serene living. Imagine waking up to breathtaking views and enjoying world-class amenities right at your doorstep.</p>
+                        <p className="text-sm">At Vamana, we believe that home is more than just a place to live; it's a sanctuary where you can truly unwind and flourish. Our spacious 3 and 4 BHK flats are meticulously crafted to provide you with the ultimate living experience.</p>
                         <button tabIndex='-1' className="w-max bg-primary-yellow text-white font-bold uppercase text-xs tracking-widest py-3.5 px-8" onClick={handleOpen}>Compliance Report</button>
                     </div>
                 </div>

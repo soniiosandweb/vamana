@@ -22,18 +22,18 @@ const BannerSlider = () => {
 
     const slides = [
         {
-          title: "Get Ready for Luxurious Living!",
-          subtitle : "'Vamana Residences' is upcoming project of Zirakpur and one of the most luxury Project that outclasses other projects of its kind by offering best-in-class amenities. 'Vamana Residences' will be high rise 3 & 3+1 BHK.",
+          title: "Live Grand, Live Vamana Unwind in a Gated Oasis",
+          subtitle : "Vamana isn't just an address; it's a serene sanctuary away from the bustle of city life. Imagine stepping into a secure, gated community where lush greenery and thoughtfully designed walkways create a tranquil atmosphere. Vamana promises a lifestyle where peace and comfort seamlessly blend with modern luxury with our 3 and 4 BHK apartments.",
           image : banner1,
         },
         {
-            title: "Get Ready for Luxurious Living!",
-          subtitle : "'Vamana Residences' is upcoming project of Zirakpur and one of the most luxury Project that outclasses other projects of its kind by offering best-in-class amenities. 'Vamana Residences' will be high rise 3 & 3+1 BHK.",
+            title: "Elevate Your Lifestyle: Discover Vamana’s Exclusive Refuge",
+          subtitle : "Discover Vamana, where your home is a serene escape from urban life. Imagine a gated, green enclave with pathways crafted for peace and relaxation. Our 3 and 4 BHK residences offer a distinctive synthesis of quietude and modern luxury.",
           image : banner2,
         },
         {
-            title: "Get Ready for Luxurious Living!",
-          subtitle : "'Vamana Residences' is upcoming project of Zirakpur and one of the most luxury Project that outclasses other projects of its kind by offering best-in-class amenities. 'Vamana Residences' will be high rise 3 & 3+1 BHK.",
+            title: "Luxurious Hideaway: Unwind in Vamana’s Secured Haven",
+          subtitle : "Vamana offers an exceptional lifestyle, transforming your residence into a peaceful retreat from city noise. Picture a secure, green community with artfully designed walkways enhancing your relaxation. Our 3 and 4 BHK apartments uniquely combine tranquility with upscale living.",
           image : banner3,
         }
     ];

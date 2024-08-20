@@ -33,7 +33,9 @@ const MasterPlan = () => {
                         </div>
 
                         <div className="w-full md:w-1/2 flex flex-col gap-5">
-                            <p className="text-sm">'Vamana Residences', sprawling across 7.77 acres, offers a carefully curated living experience with 350 units, strategically positioned on NH-7, Patiala Highway. The site plan unfolds an inviting landscape, featuring well-defined residential clusters surrounded by lush greenery. This creates an immersive environment that seamlessly blends modern living with nature's tranquility. The development's commitment to accessibility is underscored by its "Bang on Patiala Highway" approach, providing not just a home but a lifestyle marked by connectivity. The thoughtful integration of amenities zones, from fitness centers to recreational spaces, enhances community living, while dedicated parking areas and robust security measures ensure convenience and safety.</p>
+                            <p className="text-sm">Nestled amidst 7.77 acres of lush greenery on the vibrant NH-7, Patiala Highway, Vamana Residences offers a unique blend of modern living and natural serenity. With 350 thoughtfully designed units, this meticulously planned community provides an idyllic escape from the city's hustle and bustle.</p>
+                            <p className="text-sm">Experience the perfect harmony of nature and luxury as you step into a world of well-defined residential clusters. Enjoy a plethora of world-class amenities, from state-of-the-art fitness centers to tranquil recreational spaces. Vamana's prime location, coupled with dedicated parking and top-tier security, ensures a convenient and secure lifestyle for its residents.</p>
+                            <p className="text-sm">Indulge in the epitome of comfortable living at Vamana Residences.</p>
                         </div>
                     </div>
                 </div>
