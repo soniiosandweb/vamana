@@ -88,13 +88,14 @@ const Location = () => {
                         </div>
                         
                     </div>
-                    <div className="w-full md:1/2 lg:w-2/5 pt-12 md:pt-0">
+                    <div className="w-full md:1/2 lg:w-2/5 pt-12 md:pt-0 relative overflow-hidden">
                         <img
                             src={locationimg}
                             alt='Location'
                             className='h-full object-cover object-center w-full cursor-pointer'
                             onClick={() => setOpenMaster(true)}
                         />
+                        <p className='text-xs font-semibold p-1 absolute bottom-2.5 right-2.5 left-auto text-white w-auto'>*Image shown is for illustration purposes only</p>
                         <Lightbox
                                 open={openMaster}
                                 close={() => setOpenMaster(false)}

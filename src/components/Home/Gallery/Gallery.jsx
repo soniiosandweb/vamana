@@ -19,39 +19,39 @@ const Gallery = () => {
     const images = [
         {
             src: image1,
-            title: "Gallery Image 1",
+            title: "Kids playing in the garden infront of the Vamana apartments",
         },
         {
             src: image2,
-            title: "Gallery Image 2",
+            title: "Vamana apartments exterior",
         },
         {
             src: image3,
-            title: "Gallery Image 3",
+            title: "Bird's eye view of Vamana residences exterior",
         },
         {
             src: image4,
-            title: "Gallery Image 4",
+            title: "An overview of Vamana Residences",
         },
         {
             src: image5,
-            title: "Gallery Image 5",
+            title: "Entry gate to Vamana Residences",
         },
         {
             src: image6,
-            title: "Gallery Image 6",
+            title: "Vamana apartments bottom to top view",
         },
         {
             src: image7,
-            title: "Gallery Image 7",
+            title: "Garden and swimming pool amenities close to the Vamana Apartments",
         },
         {
             src: image8,
-            title: "Gallery Image 8",
+            title: "Overview of the Vamana Residences",
         },
         {
             src: image9,
-            title: "Gallery Image 9",
+            title: "Car entering into the lavish Vamana Residency",
         },
     ]
 

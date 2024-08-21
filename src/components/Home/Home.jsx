@@ -13,8 +13,9 @@ const Home = () => {
     return (
         <>
             <MetaData 
-                title={"Vamana Residences. 3BHK Luxury Apartments in Zirakpur"} 
-                description={"Vamana Residences. 3, 3+1 & 4+1 BHK Luxury Apartments on Patiala Highway in Zirakpur"} 
+                title={"Vamana Residences: Luxurious 3, 3+1 & 4+1 BHK Flats in Zirakpur"} 
+                description={"Upgrade your lifestyle at Vamana Residences. Explore spacious 3 BHK, 3+1 BHK & 4+1 BHK flats near Patiala Road, Zirakpur. Modern amenities, prime location & luxurious living await."} 
+                keywords={"Vamana Residences, 3 BHK flats Zirakpur, 3+1 BHK flats Zirakpur, 4+1 BHK flats Zirakpur, Flats near Patiala Road Zirakpur, Luxury apartments Zirakpur, Flats in Zirakpur, Property in Zirakpur, Real Estate Zirakpur, Spacious apartments Zirakpur"}
             />
 
             <BannerSlider />

@@ -3,7 +3,11 @@ import MetaData from "../Layouts/MetaData"
 const TermsConsitions = () => {
     return(
         <>
-            <MetaData title={"Terms & Conditions - Vamana Residences"} />
+            <MetaData 
+                title={"Vamana Residences | Terms & Conditions"} 
+                description={"Review our Terms & Conditions before engaging with Vamana Residences. This page outlines the legal framework for using our website and services."}
+                keywords={"Vamana Residences, terms and conditions, user agreement, website usage, legal disclaimers, Zirakpur"}
+            />
 
             <section className=" py-5 md:py-16 px-2.5">
                 <div className='max-w-6xl m-auto flex flex-col gap-5 text-sm'>

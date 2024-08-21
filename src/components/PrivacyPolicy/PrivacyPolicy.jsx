@@ -3,7 +3,11 @@ import MetaData from "../Layouts/MetaData"
 const PrivacyPolicy = () => {
     return(
         <>
-            <MetaData title={"Privacy Policy - Vamana Residences"} />
+            <MetaData 
+                title={"Vamana Residences | Privacy Policy"} 
+                description={"This page outlines the privacy practices of Vamana Residences. Learn how we collect, use, and protect your personal information."}
+                keywords={"Vamana Residences, privacy policy, data protection, personal information, data privacy, data security, Zirakpur"}
+            />
 
             <section className=" py-5 md:py-16 px-2.5">
                 <div className='max-w-6xl m-auto flex flex-col gap-5 text-sm'>

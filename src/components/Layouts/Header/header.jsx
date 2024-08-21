@@ -82,7 +82,7 @@ const Header = () => {
             <NavLink to="/" className="block w-auto sm:w-max" reloadDocument={true}>
               <LazyLoadImage
                 src={logo}
-                alt="Vamana Residences"
+                alt="Vamana Residences Logo"
                 className='header-logo w-40'
               />
             </NavLink>
@@ -130,7 +130,7 @@ const Header = () => {
           <div className="flex justify-end">
             <FontAwesomeIcon icon={faClose} className="text-2xl cursor-pointer" onClick={handleClose} />
           </div>
-          <EnquireForm title="Get In Touch" setOpen={setOpen} />
+          <EnquireForm title="Request For Brochure" setOpen={setOpen} />
         </div>
       </Dialog>
     </>

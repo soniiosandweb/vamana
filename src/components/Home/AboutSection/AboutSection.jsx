@@ -16,7 +16,7 @@ const AboutSection = () => {
                         <h2 className="text-2xl sm:text-4xl font-semibold text-left">About Us</h2>
                         <p className="text-sm">Experience a lifestyle of unparalleled luxury and tranquility at Vamana, a gated oasis nestled amidst lush greenery. Our thoughtfully designed apartments offer a perfect blend of modern comfort and serene living. Imagine waking up to breathtaking views and enjoying world-class amenities right at your doorstep.</p>
                         <p className="text-sm">At Vamana, we believe that home is more than just a place to live; it's a sanctuary where you can truly unwind and flourish. Our spacious 3 and 4 BHK flats are meticulously crafted to provide you with the ultimate living experience.</p>
-                        <button tabIndex='-1' className="w-max bg-primary-yellow text-white font-bold uppercase text-xs tracking-widest py-3.5 px-8" onClick={handleOpen}>Compliance Report</button>
+                        <button tabIndex='-1' className="w-max bg-primary-yellow text-white font-bold uppercase text-xs tracking-widest py-3.5 px-8" onClick={handleOpen}>Request For Brochure</button>
                     </div>
                 </div>
             </section>
@@ -44,7 +44,7 @@ const AboutSection = () => {
                 <div className="flex justify-end">
                     <FontAwesomeIcon icon={faClose} className="text-2xl cursor-pointer" onClick={handleClose} />
                 </div>
-                <EnquireForm title="Get In Touch" setOpen={setOpen} />
+                <EnquireForm title="Request For Brochure" setOpen={setOpen} />
                 </div>
             </Dialog>
         </>

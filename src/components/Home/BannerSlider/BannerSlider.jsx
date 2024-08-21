@@ -24,17 +24,20 @@ const BannerSlider = () => {
         {
           title: "Live Grand, Live Vamana Unwind in a Gated Oasis",
           subtitle : "Vamana isn't just an address; it's a serene sanctuary away from the bustle of city life. Imagine stepping into a secure, gated community where lush greenery and thoughtfully designed walkways create a tranquil atmosphere. Vamana promises a lifestyle where peace and comfort seamlessly blend with modern luxury with our 3 and 4 BHK apartments.",
-          image : banner1,
+          image : banner3,
+          alt: "Vamana Residences - Modern apartment buildings in Zirakpur",
         },
         {
             title: "Elevate Your Lifestyle: Discover Vamana’s Exclusive Refuge",
           subtitle : "Discover Vamana, where your home is a serene escape from urban life. Imagine a gated, green enclave with pathways crafted for peace and relaxation. Our 3 and 4 BHK residences offer a distinctive synthesis of quietude and modern luxury.",
           image : banner2,
+          alt: "Vamana Residence Apartment Exterior",
         },
         {
             title: "Luxurious Hideaway: Unwind in Vamana’s Secured Haven",
           subtitle : "Vamana offers an exceptional lifestyle, transforming your residence into a peaceful retreat from city noise. Picture a secure, green community with artfully designed walkways enhancing your relaxation. Our 3 and 4 BHK apartments uniquely combine tranquility with upscale living.",
-          image : banner3,
+          image : banner1,
+          alt: "Vamana Residences - Luxurious 3 BHK Apartment Interior",
         }
     ];
 
@@ -61,7 +64,7 @@ const BannerSlider = () => {
                         </div>
                         <LazyLoadImage 
                             src={el.image}
-                            alt={el.title}
+                            alt={el.alt}
                             className="w-full object-cover object-center absolute top-0 h-full banner-slider-bg"
                             style={{zIndex: "-1"}}
                         />

@@ -58,11 +58,11 @@ const Amenities = () => {
         <section className="home-amenities-section py-5 md:py-16 px-2.5" id="amenities">
             <div className='max-w-6xl m-auto'>
                 <h2 className="text-2xl sm:text-4xl font-semibold text-center mb-3">Amenities</h2>
-                <div className="flex flex-row flex-wrap gap-0 md:gap-y-12">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-10 pt-5">
                     {amenities.map((item, i) => (
-                        <div className="w-full md:w-3/12 p-6 flex flex-col gap-4 justify-center items-center" key={i}>
+                        <div className="w-full p-6 flex flex-col gap-4 justify-start items-center rounded-md border-primary-yellow border-2" key={i}>
                             <FontAwesomeIcon icon={item.icon} className="text-5xl text-primary-yellow"/>
-                            <h3 className="text-xl lg:text-25 font-semibold text-center capitalize">{item.title}</h3>
+                            <h3 className="text-sm font-semibold text-center capitalize">{item.title}</h3>
                         </div>
                     ))}
                 </div>
