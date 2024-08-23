@@ -17,7 +17,18 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 .cookie-banner{
-  top: 150px !important;
+  top: 0 !important;
+  bottom: 0;
+  left: 0 !important;
+  right: 0 !important;
+  max-width: 50%;
+  height: fit-content;
+  margin: auto;
+}
+@media(max-width: 767px){
+  .cookie-banner{
+    max-width: 95%;
+  }
 }
 code {
   font-family: 'Poppins', sans-serif;
