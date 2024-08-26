@@ -1,55 +1,103 @@
-import { faBox, faBuilding, faBus, faCamera, faChildReaching, faDumbbell, faDungeon, faLightbulb, faRoad, faStreetView, faTreeCity, faUsers } from "@fortawesome/free-solid-svg-icons"
+import { faBaseball, faBasketball, faBicycle, faBox, faBuilding, faBus, faCamera, faChair, faChampagneGlasses, faChild, faChildReaching, faDumbbell, faDungeon, faKaaba, faLightbulb, faPerson, faPersonPraying, faPersonRunning, faRoad, faShield, faSquare, faStreetView, faSwimmingPool, faTableTennis, faToriiGate, faTree, faTreeCity, faUsers, faWalking, faWeightHanging } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const Amenities = () => {
 
     const amenities = [
         {
-            title: "Gated & Walled Community",
-            icon: faUsers,
+            title: "Entrance Plaza With Trellis",
+            icon: faDungeon,
         },
         {
-            title: "Project is on Wide Road",
+            title: "Pathway (1.2 M Wide)",
             icon: faRoad,
-        },
-        {
-            title: "Power Backup",
-            icon: faLightbulb,
-        },
-        {
-            title: "Commercial Complex In Vicinity",
-            icon: faBuilding,
-        },
-        {
-            title: "Bus Shelter",
-            icon: faBus,
-        },
-        {
-            title: "Lush Green Park",
-            icon: faTreeCity,
-        },
-        {
-            title: "Grand Frontage 315 Ft.",
-            icon: faBox,
-        },
-        {
-            title: "Open Indoor Gym",
-            icon: faDumbbell,
         },
         {
             title: "Designer Street Lights",
             icon: faStreetView,
         },
         {
-            title: "Badminton Court",
+            title: "Gate Complex & Security Cabin",
+            icon: faToriiGate,
+        },
+        {
+            title: "Terrace Garden",
+            icon: faTree,
+        },
+        {
+            title: "Zen Garden",
+            icon: faTreeCity,
+        },
+        {
+            title: "Healing Garden (Herbs & Aromatic Plants)",
+            icon: faBox,
+        },
+        {
+            title: "Yoga & Meditation Lawn",
+            icon: faDumbbell,
+        },
+        {
+            title: "Club",
+            icon: faKaaba,
+        },
+        {
+            title: "Swimming Pool",
+            icon: faSwimmingPool,
+        },
+        {
+            title: "Kids Play Zone",
             icon: faChildReaching,
         },
         {
-            title: "Two Side Grand Entrance",
-            icon: faDungeon,
+            title: "Party/events Lawn",
+            icon: faChampagneGlasses,
         },
         {
-            title: "24x7 CCTV Surveillance",
+            title: "Outdoor Fitness Center",
+            icon: faPersonRunning,
+        },
+        {
+            title: "Outdoor Meditation Forest",
+            icon: faPersonPraying,
+        },
+        {
+            title: "Tree Court With Seatings",
+            icon: faChair,
+        },
+        {
+            title: "Commercial Complex In Vicinity",
+            icon: faBuilding,
+        },
+        {
+            title: "Cycling Track",
+            icon: faBicycle,
+        },
+        {
+            title: "Basketball Court",
+            icon: faBasketball,
+        },
+        {
+            title: "Badminton Court",
+            icon: faChild,
+        },
+        {
+            title: "Tennis Court",
+            icon: faTableTennis,
+        },
+        {
+            title: "Cricket Practice Area",
+            icon: faBaseball,
+        },
+        {
+            title: " Jogging Track",
+            icon: faWalking,
+        },
+        {
+            title: "3 Tier Security",
+            icon: faShield,
+        },
+        {
+            title: "CCTV surveillance",
             icon: faCamera,
         },
     ]
