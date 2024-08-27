@@ -21,6 +21,20 @@ const Header = () => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  const handleEnquireClick = () => {
+    if (window.gtag) {
+      window.gtag('event', 'conversion', {
+        'send_to': 'AW-16677697257/DBiSCPzj9MsZEOntxZA-',
+        'value': 1.0,
+        'currency': 'INR'
+      });
+    } else {
+      console.error('gtag is not defined');
+    }
+    handleOpen()
+  };
+
+
   const menuLinks = [
     {
       name: "About",
@@ -97,7 +111,7 @@ const Header = () => {
           <div className="w-3/4 lg:w-2/6 xl:w-1/4 flex justify-end items-center gap-2 sm:gap-5 px-2.5 flex-wrap">
             <NavLink to='tel:+918609000900' className="text-sm sm:text-md font-medium header-nav-link"><FontAwesomeIcon icon={faPhone} className="text-primary-yellow pr-1" /> +91 8609000900</NavLink>
 
-            <button tabIndex='-1' className="text-xs font-semibold capitalize cursor-pointer bg-primary-yellow p-2 sm:p-2.5 text-white" onClick={handleOpen}>Enquire Now</button>
+            <button tabIndex='-1' className="text-xs font-semibold capitalize cursor-pointer bg-primary-yellow p-2 sm:p-2.5 text-white" onClick={handleEnquireClick} id="enquire_now">Enquire Now</button>
           </div>
         </div>
       </header>
