@@ -63,7 +63,7 @@ const Amenities = () => {
             icon: meditation,
         },
         {
-            title: "Club",
+            title: "Luxury Amenities Club House",
             icon: club,
         },
         {
