@@ -1,104 +1,146 @@
-import { faBaseball, faBasketball, faBicycle, faBox, faBuilding, faBus, faCamera, faChair, faChampagneGlasses, faChild, faChildReaching, faDumbbell, faDungeon, faKaaba, faLightbulb, faPerson, faPersonPraying, faPersonRunning, faRoad, faShield, faSquare, faStreetView, faSwimmingPool, faTableTennis, faToriiGate, faTree, faTreeCity, faUsers, faWalking, faWeightHanging } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import gate from '../../../assests/images/amnities/gate.png';
+import road from '../../../assests/images/amnities/road.png';
+import carriageway from '../../../assests/images/amnities/carriageway.png';
+import gateSecurity from '../../../assests/images/amnities/security-gate.png';
+import security from '../../../assests/images/amnities/security.png';
+import garden from '../../../assests/images/amnities/garden.png';
+import genGarden from '../../../assests/images/amnities/gen-garden.png';
+import herbs from '../../../assests/images/amnities/herbs.png';
+import meditation from '../../../assests/images/amnities/meditation.png';
+import club from '../../../assests/images/amnities/club.png';
+import swimmingPool from '../../../assests/images/amnities/swimming-pool.png';
+import playground from '../../../assests/images/amnities/playground.png';
+import party from '../../../assests/images/amnities/party.png';
+import fitness from '../../../assests/images/amnities/fitness.png';
+import meditationForest from '../../../assests/images/amnities/meditation-forest.png';
+import treeSeating from '../../../assests/images/amnities/tree-seating.png';
+import greenWall from '../../../assests/images/amnities/green-wall.png';
+import cycle from '../../../assests/images/amnities/cycle.png';
+import basketball from '../../../assests/images/amnities/basketball.png';
+import badminton from '../../../assests/images/amnities/badminton.png';
+import tennisCourt from '../../../assests/images/amnities/tennis-court.png';
+import cricket from '../../../assests/images/amnities/cricket.png';
+import theater from '../../../assests/images/amnities/theater.png';
+import cinemaAuditorium from '../../../assests/images/amnities/cinema-auditorium.png';
+import jogging from '../../../assests/images/amnities/jogging.png';
+import basement from '../../../assests/images/amnities/basement.png';
+import camera from '../../../assests/images/amnities/security-camera.png';
+import carParking from '../../../assests/images/amnities/car-parking.png';
 
 const Amenities = () => {
 
     const amenities = [
         {
             title: "Entrance Plaza With Trellis",
-            icon: faDungeon,
+            icon: gate,
         },
         {
             title: "Pathway (1.2 M Wide)",
-            icon: faRoad,
+            icon: road,
         },
         {
-            title: "Designer Street Lights",
-            icon: faStreetView,
+            title: "Carriageway (5.7 M Wide)",
+            icon: carriageway,
         },
         {
             title: "Gate Complex & Security Cabin",
-            icon: faToriiGate,
+            icon: gateSecurity,
         },
         {
             title: "Terrace Garden",
-            icon: faTree,
+            icon: garden,
         },
         {
             title: "Zen Garden",
-            icon: faTreeCity,
+            icon: genGarden,
         },
         {
             title: "Healing Garden (Herbs & Aromatic Plants)",
-            icon: faBox,
+            icon: herbs,
         },
         {
             title: "Yoga & Meditation Lawn",
-            icon: faDumbbell,
+            icon: meditation,
         },
         {
             title: "Club",
-            icon: faKaaba,
+            icon: club,
         },
         {
             title: "Swimming Pool",
-            icon: faSwimmingPool,
+            icon: swimmingPool,
         },
         {
             title: "Kids Play Zone",
-            icon: faChildReaching,
+            icon: playground,
         },
         {
             title: "Party/events Lawn",
-            icon: faChampagneGlasses,
+            icon: party,
         },
         {
             title: "Outdoor Fitness Center",
-            icon: faPersonRunning,
+            icon: fitness,
         },
         {
             title: "Outdoor Meditation Forest",
-            icon: faPersonPraying,
+            icon: meditationForest,
         },
         {
             title: "Tree Court With Seatings",
-            icon: faChair,
+            icon: treeSeating,
         },
         {
-            title: "Commercial Complex In Vicinity",
-            icon: faBuilding,
+            title: "Vertical Green Wall",
+            icon: greenWall,
         },
         {
             title: "Cycling Track",
-            icon: faBicycle,
+            icon: cycle,
         },
         {
             title: "Basketball Court",
-            icon: faBasketball,
+            icon: basketball,
         },
         {
             title: "Badminton Court",
-            icon: faChild,
+            icon: badminton,
         },
         {
             title: "Tennis Court",
-            icon: faTableTennis,
+            icon: tennisCourt,
         },
         {
             title: "Cricket Practice Area",
-            icon: faBaseball,
+            icon: cricket,
         },
         {
-            title: " Jogging Track",
-            icon: faWalking,
+            title: "Amphitheater",
+            icon: theater,
+        },
+        {
+            title: "Mutipurpose Lawn",
+            icon: cinemaAuditorium,
+        },
+        {
+            title: "Jogging Track",
+            icon: jogging,
+        },
+        {
+            title: "Basement Entry/exit",
+            icon: basement,
         },
         {
             title: "3 Tier Security",
-            icon: faShield,
+            icon: security,
         },
         {
-            title: "CCTV surveillance",
-            icon: faCamera,
+            title: "CCTV Surveillance",
+            icon: camera,
+        },
+        {
+            title: "Abundant Car Parking",
+            icon: carParking,
         },
     ]
 
@@ -108,8 +150,8 @@ const Amenities = () => {
                 <h2 className="text-2xl sm:text-4xl font-semibold text-center mb-3">Amenities</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-10 pt-5">
                     {amenities.map((item, i) => (
-                        <div className="w-full p-6 flex flex-col gap-4 justify-start items-center rounded-md border-primary-yellow border-2" key={i}>
-                            <FontAwesomeIcon icon={item.icon} className="text-5xl text-primary-yellow"/>
+                        <div className="w-full p-6 flex flex-col gap-4 justify-start items-center rounded-md border-primary-yellow border-2 aminities-group cursor-pointer" key={i}>
+                            <img src={item.icon} alt={item.title} className="w-16 animate-wobble" />
                             <h3 className="text-sm font-semibold text-center capitalize">{item.title}</h3>
                         </div>
                     ))}
