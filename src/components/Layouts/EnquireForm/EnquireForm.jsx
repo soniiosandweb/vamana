@@ -84,7 +84,7 @@ const EnquireForm = ({title, setOpen}) => {
        
         setEmail(e.target.value);
 
-        if(name.length >= 1 && e.target.value.length >= 1 && termsValue === true){
+        if(name.length >= 1 && e.target.value.length >= 1 && mobileNumber !== undefined && termsValue === true){
             setDisableSubmit(false);
         } else {
             setDisableSubmit(true);
@@ -95,18 +95,28 @@ const EnquireForm = ({title, setOpen}) => {
        
         setName(e.target.value);
 
-        if(e.target.value.length >= 1 && email.length >= 1 && termsValue === true){
+        if(e.target.value.length >= 1 && email.length >= 1 && mobileNumber !== undefined && termsValue === true){
             setDisableSubmit(false);
         } else {
             setDisableSubmit(true);
         }
     }
 
+    const handleUpdate = number => {
+        setMobileNumber(number);
+
+        if(name.length >= 1 && email.length >= 1 && number !== undefined && termsValue === true){
+            setDisableSubmit(false);
+        } else {
+            setDisableSubmit(true);
+        }
+      };
+
     const CheckboxChange = (e) => {
        
         setTermsValue(!termsValue); 
         setTermsCheck(!termsValue);
-        if(name.length >= 1 && email.length >= 1 && !termsValue === true){
+        if(name.length >= 1 && email.length >= 1 && mobileNumber !== undefined &&  !termsValue === true){
             setDisableSubmit(false);
         } else {
             setDisableSubmit(true);
@@ -162,15 +172,16 @@ const EnquireForm = ({title, setOpen}) => {
                         type="tel" 
                         id="mobile-number"
                         name="mobile-number"
-                        placeholder="Contact Detail (Optional)"
+                        placeholder="Contact Detail"
                         className="text-md form-input border border-gray-300 w-full px-3.5 py-2 bg-white"
                         country="IN"
                         defaultCountry="IN"
                         value={mobileNumber}
-                        onChange={setMobileNumber}
+                        onChange={handleUpdate}
                         limitMaxLength={true}
                         national="true"
                         international={false}
+                        required
                     />
                     {phoneError && (
                         <p className="text-red-400 text-sm">{phoneError}</p>
