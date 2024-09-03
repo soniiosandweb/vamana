@@ -84,7 +84,7 @@ const EnquireForm = ({title, setOpen}) => {
        
         setEmail(e.target.value);
 
-        if(name.length >= 1 && e.target.value.length >= 1 && mobileNumber !== undefined && termsValue === true){
+        if(name.length >= 1 && mobileNumber !== undefined && termsValue === true){
             setDisableSubmit(false);
         } else {
             setDisableSubmit(true);
@@ -95,7 +95,7 @@ const EnquireForm = ({title, setOpen}) => {
        
         setName(e.target.value);
 
-        if(e.target.value.length >= 1 && email.length >= 1 && mobileNumber !== undefined && termsValue === true){
+        if(e.target.value.length >= 1 && mobileNumber !== undefined && termsValue === true){
             setDisableSubmit(false);
         } else {
             setDisableSubmit(true);
@@ -105,7 +105,7 @@ const EnquireForm = ({title, setOpen}) => {
     const handleUpdate = number => {
         setMobileNumber(number);
 
-        if(name.length >= 1 && email.length >= 1 && number !== undefined && termsValue === true){
+        if(name.length >= 1 && number !== undefined && termsValue === true){
             setDisableSubmit(false);
         } else {
             setDisableSubmit(true);
@@ -116,7 +116,7 @@ const EnquireForm = ({title, setOpen}) => {
        
         setTermsValue(!termsValue); 
         setTermsCheck(!termsValue);
-        if(name.length >= 1 && email.length >= 1 && mobileNumber !== undefined &&  !termsValue === true){
+        if(name.length >= 1 && mobileNumber !== undefined &&  !termsValue === true){
             setDisableSubmit(false);
         } else {
             setDisableSubmit(true);
@@ -160,9 +160,8 @@ const EnquireForm = ({title, setOpen}) => {
                         type="email"
                         id="email"
                         name="email"
-                        placeholder="Email"
+                        placeholder="Email (Optional)"
                         className="text-md form-input border border-gray-300 w-full px-3.5 py-2 bg-white"
-                        required
                         value={email}
                         onChange={(e) => EmailChange(e)}
                     />
