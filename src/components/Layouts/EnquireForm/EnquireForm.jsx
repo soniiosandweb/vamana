@@ -1,12 +1,12 @@
 import './EnquireForm.css';
 import 'react-phone-number-input/style.css';
-import PhoneInput, {isPossiblePhoneNumber, isValidPhoneNumber} from "react-phone-number-input";
+import PhoneInput, { isPossiblePhoneNumber, isValidPhoneNumber } from "react-phone-number-input";
 import { useState } from 'react';
 import axios from 'axios';
 import { CircularProgress } from '@mui/material';
 
-const EnquireForm = ({title, setOpen}) => {
-
+const EnquireForm = ({ title, setOpen}) => {
+    const [formVisible, setFormVisible] = useState(true);
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [termsValue, setTermsValue] = useState(false);
@@ -17,11 +17,23 @@ const EnquireForm = ({title, setOpen}) => {
     const [formError, setFormError] = useState("");
     const [loading, setLoading] = useState(false);
     const [disableSubmit, setDisableSubmit] = useState(true);
+    const [number, setNumber] = useState();
 
+
+
+    const checkInput = (e) =>{
+        if(!(e.keyCode >= 48 && e.keyCode <= 57 || e.keyCode === 8)){
+            e.preventDefault()
+        }
+        else{
+            setNumber(e.target.value)
+        }
+       
+    }
     const handleSubmit = (event) => {
         if (event) event.preventDefault();
 
-        if(mobileNumber){
+        if (mobileNumber) {
             if (isValidPhoneNumber(mobileNumber) === false || isPossiblePhoneNumber(mobileNumber) === false) {
                 setPhoneError("Please Enter Valid Mobile Number.");
 
@@ -39,52 +51,59 @@ const EnquireForm = ({title, setOpen}) => {
             method: "post",
             url: "https://vamanaresidences.com/api/enquire-us-api.php",
             data: JSON.stringify({
-                    name: name,
-                    mobileNumber: mobileNumber,
-                    email: email,
-                }),
+                name: name,
+                mobileNumber: mobileNumber,
+                email: email,
+            }),
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
         })
-        .then(function (response) {
-            //handle success
-            if (response.data.status === 0) {
+            .then(function (response) {
+                //handle success
+            
+                if (response.data.status === 0) {
+                    setLoading(false);
+                    setFormSuccess("THANK YOU !! Our Team Will Contact You Shortly!");
+                   
+                  if( setOpen){
+                   
+                    setFormVisible(false);
+                  }
+                    resetForm();
+                    setTimeout(() => {
+                        setFormSuccess('');
+                        if (setOpen) {
+                            setOpen(false);
+                            setFormVisible(true);
+                        }
+                    }, 10000);
+
+                } else {
+                    setLoading(false);
+                    setFormError("Some error occured");
+                    resetForm();
+                    setTimeout(() => {
+                        setFormError('');
+                    }, 10000);
+                }
+            })
+            .catch(function (response) {
+                //handle error
                 setLoading(false);
-                setFormSuccess("THANK YOU! Our Team Will Contact You Shortly!");
-                resetForm();
-                setTimeout(() => {
-                    setFormSuccess('');
-                    if(setOpen){
-                        setOpen(false);
-                    }
-                }, 10000);
-                
-            } else {
-                setLoading(false);
+                console.log(response);
                 setFormError("Some error occured");
                 resetForm();
                 setTimeout(() => {
                     setFormError('');
-                }, 10000);
-            }
-        })
-        .catch(function (response) {
-            //handle error
-            setLoading(false);
-            console.log(response);
-            setFormError("Some error occured");
-            resetForm();
-            setTimeout(() => {
-                setFormError('');
-            }, 5000);
-        });
+                }, 5000);
+            });
 
     }
 
     const EmailChange = (e) => {
-       
+
         setEmail(e.target.value);
 
-        if(name.length >= 1 && mobileNumber !== undefined && termsValue === true){
+        if (name.length >= 1 && mobileNumber !== undefined && termsValue === true) {
             setDisableSubmit(false);
         } else {
             setDisableSubmit(true);
@@ -92,10 +111,10 @@ const EnquireForm = ({title, setOpen}) => {
     }
 
     const NameChange = (e) => {
-       
+
         setName(e.target.value);
 
-        if(e.target.value.length >= 1 && mobileNumber !== undefined && termsValue === true){
+        if (e.target.value.length >= 1 && mobileNumber !== undefined && termsValue === true) {
             setDisableSubmit(false);
         } else {
             setDisableSubmit(true);
@@ -105,34 +124,34 @@ const EnquireForm = ({title, setOpen}) => {
     const handleUpdate = number => {
         setMobileNumber(number);
 
-        if(name.length >= 1 && number !== undefined && termsValue === true){
+        if (name.length >= 1 && number !== undefined && termsValue === true) {
             setDisableSubmit(false);
         } else {
             setDisableSubmit(true);
         }
-      };
+    };
 
     const CheckboxChange = (e) => {
-       
-        setTermsValue(!termsValue); 
+
+        setTermsValue(!termsValue);
         setTermsCheck(!termsValue);
-        if(name.length >= 1 && mobileNumber !== undefined &&  !termsValue === true){
+        if (name.length >= 1 && mobileNumber !== undefined && !termsValue === true) {
             setDisableSubmit(false);
         } else {
             setDisableSubmit(true);
         }
     }
 
-    const resetForm = () =>{
+    const resetForm = () => {
         setName("")
         setMobileNumber('');
         setEmail('');
-        setTermsValue(false); 
+        setTermsValue(false);
         setTermsCheck(false);
     }
 
-    return(
-        <form className="enquire-form py-6"  onSubmit={handleSubmit}>
+    return (
+        <form className="enquire-form py-6" onSubmit={handleSubmit}>
             <div className="form-section text-left">
                 {formError && (
                     <p className="text-red-400 py-2.5 text-md text-center">{formError}</p>
@@ -141,69 +160,70 @@ const EnquireForm = ({title, setOpen}) => {
                 {formSuccess && (
                     <p className="text-green-700 py-2.5 text-md text-center">{formSuccess}</p>
                 )}
-
-                <p className="text-2xl font-extrabold capitalize mb-2.5">{title}</p>
-                <div className="py-2">
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        placeholder="Name"
-                        className="text-md form-input border border-gray-300 w-full px-3.5 py-2 bg-white"
-                        required
-                        value={name}
-                        onChange={(e) => NameChange(e)}
-                    />
-                </div>
-                <div className="py-2">
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        placeholder="Email (Optional)"
-                        className="text-md form-input border border-gray-300 w-full px-3.5 py-2 bg-white"
-                        value={email}
-                        onChange={(e) => EmailChange(e)}
-                    />
-                </div>
-                <div className="py-2">
-                    <PhoneInput
-                        type="tel" 
-                        id="mobile-number"
-                        name="mobile-number"
-                        placeholder="Contact Detail"
-                        className="text-md form-input border border-gray-300 w-full px-3.5 py-2 bg-white"
-                        country="IN"
-                        defaultCountry="IN"
-                        value={mobileNumber}
-                        onChange={handleUpdate}
-                        limitMaxLength={true}
-                        national="true"
-                        international={false}
-                        required
-                    />
-                    {phoneError && (
-                        <p className="text-red-400 text-sm">{phoneError}</p>
-                    )}
-                </div>
-
-                <p className={`text-md mt-5 ${termsCheck ? 'font-semibold' : 'font-extralight  text-gray-400'}`}><input type='checkbox' required className='align-middle size-4' name="termsCheck" checked={termsCheck} value={termsValue} onChange={(e) => CheckboxChange(e)}/> I agree to be contacted by 'Vamana Residences' and its agents via WhatsApp, SMS, phone, email etc.</p>
-
-                <div className="mt-2.5 flex items-center gap-5 justify-center">
-                    <input type="submit" value="Submit" className={`w-max text-white font-bold uppercase text-xs tracking-widest py-3.5 px-8 ${disableSubmit ? 'bg-gray-400 cursor-not-allowed' : 'bg-primary-yellow cursor-pointer'}`} disabled={disableSubmit} />
-                    {loading && (
-                        <CircularProgress
-                            sx={{
-                            color: (theme) =>
-                                theme.palette.grey[theme.palette.mode === 'dark' ? 400 : 800],
-                            }}
-                            size={35}
-                            thickness={4}
-                            value={100}
+                {formVisible && (<div id='enquiry-form'>
+                    <p className="text-2xl font-extrabold capitalize mb-2.5">{title}</p>
+                    <div className="py-2">
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Name"
+                            className="text-md form-input border border-gray-300 w-full px-3.5 py-2 bg-white"
+                            required
+                            value={name}
+                            onChange={(e) => NameChange(e)}
                         />
-                    )}
-                </div>
-                
+                    </div>
+                    <div className="py-2">
+                        <input
+                            type="text"
+                            id="email"
+                            name="email"
+                            placeholder="Email (Optional)"
+                            className="text-md form-input border border-gray-300 w-full px-3.5 py-2 bg-white"
+                            value={email}
+                            onChange={(e) => EmailChange(e)}
+                        />
+                    </div>
+                    <div className="py-2">
+                        <PhoneInput
+                            type="tel"
+                            id="mobile-number"
+                            name="mobile-number"
+                            placeholder="Contact Detail"
+                            className="text-md form-input border border-gray-300 w-full px-3.5 py-2 bg-white"
+                            country="IN"
+                            defaultCountry="IN"
+                            value={mobileNumber}
+                            onChange={handleUpdate}
+                            limitMaxLength={true}
+                            national="true"
+                            onKeyDown={(e)=> checkInput(e)}
+                            international={false}
+                            required
+                        />
+                        {phoneError && (
+                            <p className="text-red-400 text-sm" >{phoneError}</p>
+                        )}
+                    </div>
+
+                    <p className={`flex text-md mt-5 ${termsCheck ? 'font-semibold' : 'font-extralight  text-gray-400'}`}><input type='checkbox' required className='align-middle size-4' name="termsCheck" checked={termsCheck} value={termsValue} onChange={(e) => CheckboxChange(e)} /> I agree to be contacted by 'Vamana Residences' and its agents via WhatsApp, SMS, phone, email etc.</p>
+
+                    <div className="mt-2.5 flex items-center gap-5 justify-center">
+                        <input type="submit" value="Submit" className={`w-max text-white font-bold uppercase text-xs tracking-widest py-3.5 px-8 ${disableSubmit ? 'bg-gray-400 cursor-not-allowed' : 'bg-primary-yellow cursor-pointer'}`} disabled={disableSubmit} />
+                        {loading && (
+                            <CircularProgress
+                                sx={{
+                                    color: (theme) =>
+                                        theme.palette.grey[theme.palette.mode === 'dark' ? 400 : 800],
+                                }}
+                                size={35}
+                                thickness={4}
+                                value={100}
+                            />
+                        )}
+                    </div>
+                </div>)}
             </div>
         </form>
     )

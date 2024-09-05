@@ -24,7 +24,7 @@ const BannerSlider = () => {
         {
           title: "Live Grand, Live Vamana Unwind in a Gated Oasis",
           subtitle : "Vamana isn't just an address; it's a serene sanctuary away from the bustle of city life. Imagine stepping into a secure, gated community where lush greenery and thoughtfully designed walkways create a tranquil atmosphere. Vamana promises a lifestyle where peace and comfort seamlessly blend with modern luxury with our 3 and 4 BHK apartments.",
-          image : banner3,
+          image : banner1,
           alt: "Vamana Residences - Modern apartment buildings in Zirakpur",
         },
         {
@@ -36,7 +36,7 @@ const BannerSlider = () => {
         {
             title: "Luxurious Hideaway: Unwind in Vamana’s Secured Haven",
           subtitle : "Vamana offers an exceptional lifestyle, transforming your residence into a peaceful retreat from city noise. Picture a secure, green community with artfully designed walkways enhancing your relaxation. Our 3 and 4 BHK apartments uniquely combine tranquility with upscale living.",
-          image : banner1,
+          image : banner3,
           alt: "Vamana Residences - Luxurious 3 BHK Apartment Interior",
         }
     ];
