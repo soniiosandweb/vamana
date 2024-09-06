@@ -112,8 +112,10 @@ const EnquireForm = ({ title, setOpen}) => {
 
     const NameChange = (e) => {
 
-        setName(e.target.value);
-
+        const value = e.target.value;
+       
+        const filteredValue = value.replace(/[^a-zA-Z\s]/g, '');
+        setName(filteredValue);
         if (e.target.value.length >= 1 && mobileNumber !== undefined && termsValue === true) {
             setDisableSubmit(false);
         } else {
@@ -167,7 +169,7 @@ const EnquireForm = ({ title, setOpen}) => {
                             type="text"
                             id="name"
                             name="name"
-                            placeholder="Name"
+                            placeholder="Name*"
                             className="text-md form-input border border-gray-300 w-full px-3.5 py-2 bg-white"
                             required
                             value={name}
@@ -193,6 +195,7 @@ const EnquireForm = ({ title, setOpen}) => {
                             placeholder="Contact Detail"
                             className="text-md form-input border border-gray-300 w-full px-3.5 py-2 bg-white"
                             country="IN"
+                           // maxlength="10"
                             defaultCountry="IN"
                             value={mobileNumber}
                             onChange={handleUpdate}
@@ -207,7 +210,7 @@ const EnquireForm = ({ title, setOpen}) => {
                         )}
                     </div>
 
-                    <p className={`flex text-md mt-5 ${termsCheck ? 'font-semibold' : 'font-extralight  text-gray-400'}`}><input type='checkbox' required className='align-middle size-4' name="termsCheck" checked={termsCheck} value={termsValue} onChange={(e) => CheckboxChange(e)} /> I agree to be contacted by 'Vamana Residences' and its agents via WhatsApp, SMS, phone, email etc.</p>
+                    <p className={`flex items-center text-md mt-5 ${termsCheck ? 'font-semibold' : 'font-extralight  text-gray-400'}`}><input type='checkbox' required className='align-middle size-4' name="termsCheck" checked={termsCheck} value={termsValue} onChange={(e) => CheckboxChange(e)} /> I agree to be contacted by 'Vamana Residences' and its agents via WhatsApp, SMS, phone, email etc.</p>
 
                     <div className="mt-2.5 flex items-center gap-5 justify-center">
                         <input type="submit" value="Submit" className={`w-max text-white font-bold uppercase text-xs tracking-widest py-3.5 px-8 ${disableSubmit ? 'bg-gray-400 cursor-not-allowed' : 'bg-primary-yellow cursor-pointer'}`} disabled={disableSubmit} />

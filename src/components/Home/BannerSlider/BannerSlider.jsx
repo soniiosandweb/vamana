@@ -22,16 +22,18 @@ const BannerSlider = () => {
 
     const slides = [
         {
-          title: "Live Grand, Live Vamana Unwind in a Gated Oasis",
-          subtitle : "Vamana isn't just an address; it's a serene sanctuary away from the bustle of city life. Imagine stepping into a secure, gated community where lush greenery and thoughtfully designed walkways create a tranquil atmosphere. Vamana promises a lifestyle where peace and comfort seamlessly blend with modern luxury with our 3 and 4 BHK apartments.",
+            title: "Elevate Your Lifestyle: Discover Vamana’s Exclusive Refuge",
+            subtitle : "Discover Vamana, where your home is a serene escape from urban life. Imagine a gated, green enclave with pathways crafted for peace and relaxation. Our 3 and 4 BHK residences offer a distinctive synthesis of quietude and modern luxury.",
+         
           image : banner1,
-          alt: "Vamana Residences - Modern apartment buildings in Zirakpur",
+          alt: "Vamana Residence Apartment Exterior",
+         
         },
         {
-            title: "Elevate Your Lifestyle: Discover Vamana’s Exclusive Refuge",
-          subtitle : "Discover Vamana, where your home is a serene escape from urban life. Imagine a gated, green enclave with pathways crafted for peace and relaxation. Our 3 and 4 BHK residences offer a distinctive synthesis of quietude and modern luxury.",
+            title: "Live Grand, Live Vamana Unwind in a Gated Oasis",
+            subtitle : "Vamana isn't just an address; it's a serene sanctuary away from the bustle of city life. Imagine stepping into a secure, gated community where lush greenery and thoughtfully designed walkways create a tranquil atmosphere. Vamana promises a lifestyle where peace and comfort seamlessly blend with modern luxury with our 3 and 4 BHK apartments.",
           image : banner2,
-          alt: "Vamana Residence Apartment Exterior",
+          alt: "Vamana Residences - Modern apartment buildings in Zirakpur",
         },
         {
             title: "Luxurious Hideaway: Unwind in Vamana’s Secured Haven",
