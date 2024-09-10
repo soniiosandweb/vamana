@@ -14,8 +14,8 @@ const AboutSection = () => {
                 <div className='max-w-6xl m-auto'>
                     <div className="flex flex-col text-left gap-5">
                         <h2 className="text-2xl sm:text-4xl font-semibold text-left">About Us</h2>
-                        <p className="text-sm">Experience a lifestyle of unparalleled luxury and tranquility at Vamana, a gated oasis nestled amidst lush greenery. Our thoughtfully designed apartments offer a perfect blend of modern comfort and serene living. Imagine waking up to breathtaking views and enjoying world-class amenities right at your doorstep.</p>
-                        <p className="text-sm">At Vamana, we believe that home is more than just a place to live; it's a sanctuary where you can truly unwind and flourish. Our spacious 3 and 4 BHK flats are meticulously crafted to provide you with the ultimate living experience.</p>
+                        <p className="text-sm">Experience a lifestyle of unparalleled luxury and tranquility at <b>Vamana Residences flats in Zirakpur</b>, a gated oasis nestled amidst lush greenery. Vamana Residences and Vamana Arvindam, prestigious residential projects by Vamana Group, are set to redefine luxury living in Zirakpur. Our thoughtfully designed apartments offer a perfect blend of modern comfort and serene living. Imagine waking up to breathtaking views and enjoying world-class amenities right at your doorstep.</p>
+                        <p className="text-sm">At Vamana, we believe that home is more than just a place to live; it's a sanctuary where you can truly unwind and flourish. Our spacious <b>3 BHK flats in Zirakpur and 4 BHK flats in Zirakpur</b> are meticulously crafted to provide you with the ultimate living experience.</p>
                         <button tabIndex='-1' className="w-max bg-primary-yellow text-white font-bold uppercase text-xs tracking-widest py-3.5 px-8" onClick={handleOpen}>Request For Brochure</button>
                     </div>
                 </div>

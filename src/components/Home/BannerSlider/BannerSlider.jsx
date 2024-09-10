@@ -23,27 +23,39 @@ const BannerSlider = () => {
     const slides = [
         {
             title: "Elevate Your Lifestyle: Discover Vamana’s Exclusive Refuge",
-            subtitle : "Discover Vamana, where your home is a serene escape from urban life. Imagine a gated, green enclave with pathways crafted for peace and relaxation. Our 3 and 4 BHK residences offer a distinctive synthesis of quietude and modern luxury.",
-         
-          image : banner1,
-          alt: "Vamana Residence Apartment Exterior",
-         
+            subtitle: (
+                <>
+                    Discover Vamana, where your home is a serene escape from urban life. Imagine a gated, green enclave with pathways crafted for peace and relaxation. Our <strong>luxurious 3BHK flats in Zirakpur and 4BHK apartments in Zirakpur</strong> offer a distinctive synthesis of quietude and modern luxury.
+                </>
+            ),
+
+            image: banner1,
+            alt: "Vamana Residence Apartment Exterior",
+
         },
         {
             title: "Live Grand, Live Vamana Unwind in a Gated Oasis",
-            subtitle : "Vamana isn't just an address; it's a serene sanctuary away from the bustle of city life. Imagine stepping into a secure, gated community where lush greenery and thoughtfully designed walkways create a tranquil atmosphere. Vamana promises a lifestyle where peace and comfort seamlessly blend with modern luxury with our 3 and 4 BHK apartments.",
-          image : banner2,
-          alt: "Vamana Residences - Modern apartment buildings in Zirakpur",
+            subtitle: (
+                <>
+                    Vamana isn't just an address; it's a serene sanctuary away from the bustle of city life. Imagine stepping into a secure, gated community where lush greenery and thoughtfully designed walkways create a tranquil atmosphere. Vamana promises a lifestyle where peace and comfort seamlessly blend with modern luxury with our <strong>3 BHK flats in Zirakpur and 4 BHK flats in Zirakpur</strong>.
+                </>
+            ),
+            image: banner2,
+            alt: "Vamana Residences - Modern apartment buildings in Zirakpur",
         },
         {
             title: "Luxurious Hideaway: Unwind in Vamana’s Secured Haven",
-          subtitle : "Vamana offers an exceptional lifestyle, transforming your residence into a peaceful retreat from city noise. Picture a secure, green community with artfully designed walkways enhancing your relaxation. Our 3 and 4 BHK apartments uniquely combine tranquility with upscale living.",
-          image : banner3,
-          alt: "Vamana Residences - Luxurious 3 BHK Apartment Interior",
+            subtitle: (
+                <>
+                    Vamana offers an exceptional lifestyle, transforming your residence into a peaceful retreat from city noise. Picture a secure, green community with artfully designed walkways enhancing your relaxation. Our <strong>luxury flats Zirakpur</strong> uniquely combine tranquility with upscale living
+                </>
+            ),
+            image: banner3,
+            alt: "Vamana Residences - Luxurious 3 BHK Apartment Interior",
         }
     ];
 
-    return(
+    return (
         <section className="overflow-hidden">
             <Slider {...settings}>
                 {slides.map((el, i) => (
@@ -64,13 +76,13 @@ const BannerSlider = () => {
                                 </div>
                             </div>
                         </div>
-                        <LazyLoadImage 
+                        <LazyLoadImage
                             src={el.image}
                             alt={el.alt}
                             className="w-full object-cover object-center absolute top-0 h-full banner-slider-bg"
-                            style={{zIndex: "-1"}}
+                            style={{ zIndex: "-1" }}
                         />
-                        <div className='w-full absolute top-0 h-full' style={{backgroundColor: "#00000080"}}></div>
+                        <div className='w-full absolute top-0 h-full' style={{ backgroundColor: "#00000080" }}></div>
                         <p className='text-xs font-semibold p-1 absolute mx-auto bottom-4 right-3 text-white w-max'>*Image shown is for illustration purposes only</p>
                     </div>
                 ))}
