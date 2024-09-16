@@ -49,7 +49,7 @@ const EnquireForm = ({ title, setOpen}) => {
 
         axios({
             method: "post",
-            url: "https://vamanaresidences.com/api/enquire-us-api.php",
+            url: "https://vamanaresidences.com/vamana/api/enquire-us-api.php",
             data: JSON.stringify({
                 name: name,
                 mobileNumber: mobileNumber,
