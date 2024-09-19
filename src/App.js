@@ -5,6 +5,7 @@ import PrivacyPolicy from './components/PrivacyPolicy/PrivacyPolicy';
 import TermsConditions from './components/TermsConditions/TermsConditions';
 import PageNotFound from './components/Layouts/PageNotFound';
 import CookieConsent from "react-cookie-consent";
+import Thankyou from './components/Thankyou';
 
 function App() {
   return (
@@ -25,14 +26,16 @@ function App() {
         <p className='font-semibold text-xl mb-2'>Important</p> 'Vamana Residences' serves solely as a platform for online advertising services and does not facilitate sales between developers and website users. The information displayed does not guarantee that a developer or project is registered or compliant with the Real Estate (Regulation and Development) Act, 2016. Please exercise caution and independently verify all project information before making any purchase or decision.
       </CookieConsent>
 
-      <BrowserRouter basename='/vamana'>
+      <BrowserRouter>
         <Routes>
           <Route path='/' element={<Layout />}>
             <Route index element={<Home />} />
             <Route path='/privacy-policy' element={<PrivacyPolicy />} />
             <Route path='/terms-conditions' element={<TermsConditions />} />
             <Route path='*' element={<PageNotFound />} />
+            <Route path='/thankyou' element={<Thankyou />} />
           </Route>
+          
         </Routes>
       </BrowserRouter>
     </>

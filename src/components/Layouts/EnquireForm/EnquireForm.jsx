@@ -4,7 +4,7 @@ import PhoneInput, { isPossiblePhoneNumber, isValidPhoneNumber } from "react-pho
 import { useState } from 'react';
 import axios from 'axios';
 import { CircularProgress } from '@mui/material';
-
+import { useNavigate } from "react-router-dom";
 const EnquireForm = ({ title, setOpen}) => {
     const [formVisible, setFormVisible] = useState(true);
     const [name, setName] = useState("");
@@ -21,6 +21,7 @@ const EnquireForm = ({ title, setOpen}) => {
 
 
 
+
     const checkInput = (e) =>{
         if(!(e.keyCode >= 48 && e.keyCode <= 57 || e.keyCode === 8)){
             e.preventDefault()
@@ -30,6 +31,8 @@ const EnquireForm = ({ title, setOpen}) => {
         }
        
     }
+    
+    const navigate=useNavigate();
     const handleSubmit = (event) => {
         if (event) event.preventDefault();
 
@@ -49,7 +52,7 @@ const EnquireForm = ({ title, setOpen}) => {
 
         axios({
             method: "post",
-            url: "https://vamanaresidences.com/vamana/api/enquire-us-api.php",
+            url: "https://vamanaresidences.com/api/enquire-us-api.php",
             data: JSON.stringify({
                 name: name,
                 mobileNumber: mobileNumber,
@@ -62,20 +65,22 @@ const EnquireForm = ({ title, setOpen}) => {
             
                 if (response.data.status === 0) {
                     setLoading(false);
-                    setFormSuccess("THANK YOU !! Our Team Will Contact You Shortly!");
+                    navigate('/thankyou');
+                    console.log("dtdtdtd");
+                    // setFormSuccess("THANK YOU !! Our Team Will Contact You Shortly!");
+                    
+                //   if( setOpen){
                    
-                  if( setOpen){
-                   
-                    setFormVisible(false);
-                  }
-                    resetForm();
-                    setTimeout(() => {
-                        setFormSuccess('');
-                        if (setOpen) {
-                            setOpen(false);
-                            setFormVisible(true);
-                        }
-                    }, 10000);
+                //     setFormVisible(false);
+                //   }
+                //     resetForm();
+                //     setTimeout(() => {
+                //         setFormSuccess('');
+                //         if (setOpen) {
+                //             setOpen(false);
+                //             setFormVisible(true);
+                //         }
+                //     }, 10000);
 
                 } else {
                     setLoading(false);

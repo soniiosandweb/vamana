@@ -1,7 +1,7 @@
 import './Header.css';
 import logo from '../../../assests/images/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClose, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faClose, faPhone, faBars } from '@fortawesome/free-solid-svg-icons';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { useEffect, useState } from 'react';
@@ -20,19 +20,20 @@ const Header = () => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-
-  const handleEnquireClick = () => {
-    if (window.gtag) {
-      window.gtag('event', 'conversion', {
-        'send_to': 'AW-16677697257/DBiSCPzj9MsZEOntxZA-',
-        'value': 1.0,
-        'currency': 'INR'
-      });
-    } else {
-      console.error('gtag is not defined');
-    }
-    handleOpen()
-  };
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen);
+  // const handleEnquireClick = () => {
+    // if (window.gtag) {
+    //   window.gtag('event', 'conversion', {
+    //     'send_to': 'AW-16677697257/DBiSCPzj9MsZEOntxZA-',
+    //     'value': 1.0,
+    //     'currency': 'INR'
+    //   });
+    // } else {
+    //   console.error('gtag is not defined');
+    // }
+    // handleOpen()
+  // };
 
 
   const menuLinks = [
@@ -79,6 +80,7 @@ const Header = () => {
     if (location.hash) {
       const element = document.getElementById(location.hash.slice(1));
       console.log(location.hash.slice(1))
+      console.log(element);
       if (element) {
         element.style.scrollMarginTop = '50px';
         element.scrollIntoView({ behavior: 'smooth'});
@@ -108,11 +110,28 @@ const Header = () => {
               ))}
             </nav>
           </div>
-          <div className="w-3/4 lg:w-2/6 xl:w-1/4 flex justify-end items-center gap-2 sm:gap-5 px-2.5 flex-wrap">
-            <NavLink to='tel:+918609000900' className="text-sm sm:text-md font-semibold header-nav-link blink"><FontAwesomeIcon icon={faPhone} className="text-primary-yellow pr-1" /> +91 8609000900</NavLink>
+          <div className="w-4/5 lg:w-2/6 xl:w-1/4 flex justify-end items-center gap-1.5 sm:gap-5 px-2.5 flex-wrap">
+            <NavLink to='tel:+918609000900' className="text-xxs sm:text-md font-medium header-nav-link font-semibold blink"><FontAwesomeIcon icon={faPhone} className="text-primary-yellow pr-1" /> +91 8609000900</NavLink>
 
-            <button tabIndex='-1' className="text-xs font-semibold capitalize cursor-pointer bg-primary-yellow p-2 sm:p-2.5 text-white" onClick={handleEnquireClick} id="enquire_now">Enquire Now</button>
+            <button tabIndex='-1' className="text-xxs sm:text-sm font-semibold capitalize cursor-pointer bg-primary-yellow p-2 sm:p-2.5 text-white"  id="enquire_now">Enquire Now</button>
           </div>
+          <button className="lg:hidden p-2 text-primary-yellow" onClick={toggleMobileMenu}>
+            <FontAwesomeIcon icon={faBars} />
+          </button>
+          {mobileMenuOpen && (
+            <div className="lg:hidden fixed top-0 left-0 w-full h-full bg-white shadow-md z-30">
+              <div className="flex justify-end p-4">
+                <FontAwesomeIcon icon={faClose} className="text-2xl cursor-pointer" onClick={toggleMobileMenu} />
+              </div>
+              <nav className="flex flex-col items-center mt-4">
+                {menuLinks.map((item, i) => (
+                  <Link key={i} to={item.redirect} className="text-lg font-medium py-2 px-4 hover:text-primary-yellow" onClick={toggleMobileMenu}>
+                    {item.name}
+                  </Link>
+                ))}
+              </nav>
+            </div>
+          )}
         </div>
       </header>
 
