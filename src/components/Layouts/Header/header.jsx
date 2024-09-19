@@ -22,7 +22,7 @@ const Header = () => {
   const handleClose = () => setOpen(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen);
-  // const handleEnquireClick = () => {
+  const handleEnquireClick = () => {
     // if (window.gtag) {
     //   window.gtag('event', 'conversion', {
     //     'send_to': 'AW-16677697257/DBiSCPzj9MsZEOntxZA-',
@@ -32,8 +32,8 @@ const Header = () => {
     // } else {
     //   console.error('gtag is not defined');
     // }
-    // handleOpen()
-  // };
+    handleOpen()
+  };
 
 
   const menuLinks = [
@@ -113,7 +113,7 @@ const Header = () => {
           <div className="w-4/5 lg:w-2/6 xl:w-1/4 flex justify-end items-center gap-1.5 sm:gap-5 px-2.5 flex-wrap">
             <NavLink to='tel:+918609000900' className="text-xxs sm:text-md font-medium header-nav-link font-semibold blink"><FontAwesomeIcon icon={faPhone} className="text-primary-yellow pr-1" /> +91 8609000900</NavLink>
 
-            <button tabIndex='-1' className="text-xxs sm:text-sm font-semibold capitalize cursor-pointer bg-primary-yellow p-2 sm:p-2.5 text-white"  id="enquire_now">Enquire Now</button>
+            <button tabIndex='-1' className="text-xxs sm:text-sm font-semibold capitalize cursor-pointer bg-primary-yellow p-2 sm:p-2.5 text-white" onClick={handleEnquireClick} id="enquire_now">Enquire Now</button>
           </div>
           <button className="lg:hidden p-2 text-primary-yellow" onClick={toggleMobileMenu}>
             <FontAwesomeIcon icon={faBars} />

@@ -197,7 +197,7 @@ const EnquireForm = ({ title, setOpen}) => {
                             type="tel"
                             id="mobile-number"
                             name="mobile-number"
-                            placeholder="Contact Detail"
+                            placeholder="Mobile Number"
                             className="text-md form-input border border-gray-300 w-full px-3.5 py-2 bg-white"
                             country="IN"
                            // maxlength="10"
@@ -218,7 +218,7 @@ const EnquireForm = ({ title, setOpen}) => {
                     <p className={`flex items-center text-md mt-5 ${termsCheck ? 'font-semibold' : 'font-extralight  text-gray-400'}`}><input type='checkbox' required className='align-middle size-4' name="termsCheck" checked={termsCheck} value={termsValue} onChange={(e) => CheckboxChange(e)} /> I agree to be contacted by 'Vamana Residences' and its agents via WhatsApp, SMS, phone, email etc.</p>
 
                     <div className="mt-2.5 flex items-center gap-5 justify-center">
-                        <input type="submit" value="Submit" className={`w-max text-white font-bold uppercase text-xs tracking-widest py-3.5 px-8 ${disableSubmit ? 'bg-gray-400 cursor-not-allowed' : 'bg-primary-yellow cursor-pointer'}`} disabled={disableSubmit} />
+                        <input type="submit" value="Download Now" className={`w-max text-white font-bold uppercase text-sm tracking-widest py-3.5 px-8 ${disableSubmit ? 'bg-gray-400 cursor-not-allowed' : 'bg-primary-yellow cursor-pointer'}`} disabled={disableSubmit} />
                         {loading && (
                             <CircularProgress
                                 sx={{
