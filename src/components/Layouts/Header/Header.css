@@ -46,3 +46,41 @@
 .scroll.home-header .header-nav-link{
     color: #fff;
 }
+.popup-modal-dialog {
+    position: fixed;
+    right: 30px;
+    top: 100px;
+    z-index: 11;
+    max-width: 25%;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 5px 2px #00000029;
+}
+.popup-modal-dialog .btn-icon {
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    box-shadow: 0 0 5px 2px #00000029;
+    background: #fff;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@media( max-width: 1200px){
+    .popup-modal-dialog{
+        max-width: 35%;
+    }
+}
+@media( max-width: 767px){
+    .popup-modal-dialog{
+        max-width: 40%;
+    }
+}
+@media( max-width: 767px){
+    .popup-modal-dialog{
+        max-width: 60%;
+    }
+}

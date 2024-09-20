@@ -9,6 +9,8 @@ import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { Dialog } from '@mui/material';
 import EnquireForm from '../EnquireForm/EnquireForm';
 import logowhite from '../../../assests/images/logo-white.png';
+import popupImg from '../../../assests/images/popup-img.jpg';
+
 const Header = () => {
 
   const location = useLocation();
@@ -23,6 +25,7 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen);
   const [navbarLogo, setNavbarLogo] = useState(logowhite);
+  const [showPopupNew, setShowPopupNew] = useState(false);
   const handleEnquireClick = () => {
     // if (window.gtag) {
     //   window.gtag('event', 'conversion', {
@@ -36,6 +39,9 @@ const Header = () => {
     handleOpen()
   };
 
+  const handleNewClose = () => {
+    setShowPopupNew(false);
+  }
 
   const menuLinks = [
     {
@@ -75,6 +81,10 @@ const Header = () => {
     },
   ];
 
+  useEffect(()=>{ 
+    setTimeout(()=> setShowPopupNew(true),5000);
+  },[])
+
   useEffect(() => {
     const listenScrollEvent = () => {
       if (locationValue[1] === "") {
@@ -86,6 +96,8 @@ const Header = () => {
         setScrollClass('scroll');
       }
     };
+
+    
 
     window.addEventListener("scroll", listenScrollEvent);
     return () => window.removeEventListener("scroll", listenScrollEvent);
@@ -137,9 +149,19 @@ const Header = () => {
         </div>
       </header>
 
-      <NavLink to='https://api.whatsapp.com/send/?phone=918609000900&text=I+would+like+to+know+more+about+Vamana+Residences&type=phone_number&app_absent=0' target="_blank" className=" fixed z-20 bg-white text-primary-lightGreen text-md font-medium px-5 py-2 flex gap-2.5 rounded-full border-2 border-primary-lightGreen items-center font-medium font-semibold overflow-hidden" style={{ right: "20px", bottom: "24px" }}>
+      <div className={`popup-modal-dialog ${showPopupNew ? 'block' : 'hidden'}`}>
+          <button className='btn-icon' onClick={handleNewClose}>
+            <FontAwesomeIcon icon={faClose} className="text-2xl cursor-pointer"  />
+          </button>
+          
+          <div className='img-popup'>
+            <img src={popupImg} alt='PoupImg' className='w-full' />
+          </div>
+      </div>
+
+      <NavLink to='https://api.whatsapp.com/send/?phone=918609000900&text=I+would+like+to+know+more+about+Vamana+Residences&type=phone_number&app_absent=0' target="_blank" className=" fixed z-20 bg-white text-primary-lightGreen text-md font-medium px-5 py-2 flex gap-2.5 rounded-full border-2 border-primary-lightGreen items-center font-medium font-semibold overflow-hidden" style={{ left: "20px", bottom: "24px" }}>
         <FontAwesomeIcon icon={faWhatsapp} className="text-2xl pulso-animation " />
-        Get Price List
+        How can I help you?
       </NavLink>
 
       {/* Popup */}

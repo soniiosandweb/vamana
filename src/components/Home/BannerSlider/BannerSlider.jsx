@@ -13,7 +13,7 @@ const BannerSlider = () => {
 
     const settings = {
         autoplay: true,
-        autoplaySpeed: 3000,
+        autoplaySpeed: 4000,
         dots: true,
         infinite: true,
         arrows: false,
@@ -68,7 +68,7 @@ const BannerSlider = () => {
 
         },
         {
-            title: "Elevate Your Lifestyle: Discover Vamana’s Exclusive Refuge",
+            title: "Vamana - Where Every Detail Exudes Excellence, Luxurious 3/3+1/4 BHK Apartments",
             subtitle: (
                 <>
                     Discover Vamana, where your home is a serene escape from urban life. Imagine a gated, green enclave with pathways crafted for peace and relaxation. Our <strong>luxurious 3BHK flats in Zirakpur and 4BHK apartments in Zirakpur</strong> offer a distinctive synthesis of quietude and modern luxury.

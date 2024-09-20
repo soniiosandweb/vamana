@@ -102,6 +102,8 @@ const Location = () => {
                                 slides={[
                                     { src: locationimg }
                                 ]}
+                                styles={{slide: { marginTop: "20px" },  toolbar: {background: '#00000054', width: '100%'}, icon:{color: '#fff'} }}
+                                controller={{ closeOnBackdropClick: true }}
                                 plugins={[Fullscreen, Zoom]}
                                 carousel={{ finite: 1 }}
                                 render={{

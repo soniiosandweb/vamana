@@ -76,6 +76,8 @@ const Gallery = () => {
                             index={index}
                             slides={images}
                             open={index >= 0}
+                            styles={{slide: { marginTop: "20px" },  toolbar: {background: '#00000054', width: '100%'}, icon:{color: '#fff'} }}
+                            controller={{ closeOnBackdropClick: true }}
                             close={() => setIndex(-1)}
                             plugins={[Fullscreen, Zoom, Counter]}
                             counter={{ container: { style: { top: 0, bottom: "unset" } } }}

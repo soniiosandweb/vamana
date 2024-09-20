@@ -40,12 +40,14 @@ const FloorPlan = () => {
                                 slides={[
                                     { src: floorPlan1 }
                                 ]}
+                                controller={{ closeOnBackdropClick: true }}
                                 plugins={[Fullscreen, Zoom]}
                                 carousel={{ finite: 1 }}
                                 render={{
                                     buttonPrev: undefined,
                                     buttonNext: undefined,
                                 }}
+                                styles={{slide: { marginTop: "20px" },  toolbar: {background: '#00000054', width: '100%'}, icon:{color: '#fff'} }}
                                 zoom={{
                                     maxZoomPixelRatio: 3,
                              }}
@@ -54,7 +56,7 @@ const FloorPlan = () => {
                             <button className="w-full bg-primary-yellow text-white font-bold uppercase text-xs tracking-widest py-3.5 px-8" onClick={() => setOpenPlan1(true)}>3 BHK (2325 sq. feet)</button>
 
                             </div>
-                            <button tabIndex='-1' className="w-max mt-3 m-auto flex text-primary-yellow border-3 border-primary-yellow  hover:bg-primary-yellow   hover:text-white self-center  font-bold uppercase text-xs tracking-widest py-3.5 px-8" onClick={handleOpen}>Download Price List</button> </div>
+                            <button tabIndex='-1' className="w-max mt-3 m-auto flex text-primary-yellow border-2 border-primary-yellow  hover:bg-primary-yellow   hover:text-white self-center  font-bold uppercase text-xs tracking-widest py-3.5 px-8" onClick={handleOpen}>Download Price List</button> </div>
                        
 
                         {/* Plan 2 */}
@@ -71,19 +73,21 @@ const FloorPlan = () => {
                                 slides={[
                                     { src: floorPlan2 }
                                 ]}
+                                controller={{ closeOnBackdropClick: true }}
                                 plugins={[Fullscreen, Zoom]}
                                 carousel={{ finite: 1 }}
                                 render={{
                                     buttonPrev: undefined,
                                     buttonNext: undefined,
                                 }}
+                                styles={{slide: { marginTop: "20px" },  toolbar: {background: '#00000054', width: '100%'}, icon:{color: '#fff'} }}
                                 zoom={{
                                     maxZoomPixelRatio: 3,
                              }}
                                 className="single-lightbox"
                             />
                             <button className="w-full bg-primary-yellow text-white font-bold uppercase text-xs tracking-widest py-3.5 px-8" onClick={() => setOpenPlan2(true)}>3+1 BHK (2690 sq. feet)</button></div> 
-                            <button tabIndex='-1' className="w-max mt-3 m-auto flex text-primary-yellow border-3 border-primary-yellow  hover:bg-primary-yellow   hover:text-white self-center  font-bold uppercase text-xs tracking-widest py-3.5 px-8" onClick={handleOpen}>Download Price List</button>
+                            <button tabIndex='-1' className="w-max mt-3 m-auto flex text-primary-yellow border-2 border-primary-yellow  hover:bg-primary-yellow   hover:text-white self-center  font-bold uppercase text-xs tracking-widest py-3.5 px-8" onClick={handleOpen}>Download Price List</button>
                         </div>
 
                         {/* Plan 3 */}
@@ -96,6 +100,7 @@ const FloorPlan = () => {
                             />
                             <Lightbox
                                 open={openPlan3}
+                                controller={{ closeOnBackdropClick: true }}
                                 close={() => setOpenPlan3(false)}
                                 slides={[
                                     { src: floorPlan3 }
@@ -106,13 +111,14 @@ const FloorPlan = () => {
                                     buttonPrev: undefined,
                                     buttonNext: undefined,
                                 }}
+                                styles={{slide: { marginTop: "20px" },  toolbar: {background: '#00000054', width: '100%'}, icon:{color: '#fff'} }}
                                 zoom={{
                                     maxZoomPixelRatio: 3,
                              }}
                                 className="single-lightbox"
                             />
                             <button className="w-full bg-primary-yellow text-white font-bold uppercase text-xs tracking-widest py-3.5 px-8" onClick={() => setOpenPlan3(true)}>4+1 BHK (3685 sq. feet)</button></div> 
-                            <button tabIndex='-1' className="w-max mt-3 m-auto  flex self-center text-primary-yellow border-3 border-primary-yellow  hover:bg-primary-yellow   hover:text-white font-bold uppercase text-xs tracking-widest py-3.5 px-8" onClick={handleOpen}>Download Price List</button>
+                            <button tabIndex='-1' className="w-max mt-3 m-auto  flex self-center text-primary-yellow border-2 border-primary-yellow  hover:bg-primary-yellow   hover:text-white font-bold uppercase text-xs tracking-widest py-3.5 px-8" onClick={handleOpen}>Download Price List</button>
                         </div>
                         
                     </div>
@@ -142,7 +148,7 @@ const FloorPlan = () => {
                 <div className="flex justify-end">
                     <FontAwesomeIcon icon={faClose} className="text-2xl cursor-pointer" onClick={handleClose} />
                 </div>
-                <EnquireForm title="Request For Brochure" setOpen={setOpen} />
+                <EnquireForm title="Request For Price List" setOpen={setOpen} />
                 </div>
             </Dialog>
        </>
