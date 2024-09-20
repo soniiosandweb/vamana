@@ -100,8 +100,20 @@ const Header = () => {
     
 
     window.addEventListener("scroll", listenScrollEvent);
-    return () => window.removeEventListener("scroll", listenScrollEvent);
-  }, [locationValue]);
+    //return () => window.removeEventListener("scroll", listenScrollEvent);
+
+    if (location.hash) {
+      const element = document.getElementById(location.hash.slice(1));
+      console.log(location.hash.slice(1))
+      console.log(element);
+      if (element) {
+        element.style.scrollMarginTop = '50px';
+        element.scrollIntoView({ behavior: 'smooth'});
+        // window.scrollTo({ top: element.offsetTop, behavior: 'smooth'});
+      }
+    }
+
+  }, [locationValue, location]);
 
   return (
     <>
