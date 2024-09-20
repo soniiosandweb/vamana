@@ -7,8 +7,8 @@
 }
 @keyframes pulso{
     0% {
-        -moz-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.8);
-        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.8);
+        -moz-box-shadow: 0 0 0 0 #14be47;
+        box-shadow: 0 0 0 0 #14be47;
     }
     70% {
         -moz-box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
@@ -34,3 +34,15 @@
     75% { transform: translateY(5px) }
     100% { transform: translateY(0) }
   }   
+
+
+  /* .scroll.home-header .header-logo{
+    filter: brightness(0) invert(1);
+} */
+  .scroll.home-header{
+    background-color: transparent;
+    height: 0;
+}
+.scroll.home-header .header-nav-link{
+    color: #fff;
+}

@@ -12,11 +12,11 @@ const AboutSection = () => {
         <>  
             <section className="home-about-section py-16 px-2.5" id="about">
                 <div className='max-w-6xl m-auto'>
-                    <div className="flex flex-col text-left gap-5">
-                        <h2 className="text-2xl sm:text-4xl font-semibold text-left">About Us</h2>
+                    <div className="flex flex-col text-centre gap-5">
+                        <h2 className="text-2xl sm:text-4xl font-semibold text-center">About Us</h2>
                         <p className="text-sm">Experience a lifestyle of unparalleled luxury and tranquility at <b>Vamana Residences flats in Zirakpur</b>, a gated oasis nestled amidst lush greenery. Our thoughtfully designed apartments offer a perfect blend of modern comfort and serene living. Imagine waking up to breathtaking views and enjoying world-class amenities right at your doorstep.</p>
                         <p className="text-sm">At Vamana, we believe that home is more than just a place to live; it's a sanctuary where you can truly unwind and flourish. Our spacious <b>3 BHK flats in Zirakpur and 4 BHK flats in Zirakpur</b> are meticulously crafted to provide you with the ultimate living experience.</p>
-                        <button tabIndex='-1' className="w-max bg-primary-yellow text-white font-bold uppercase text-xs tracking-widest py-3.5 px-8" onClick={handleOpen}>Request For Brochure</button>
+                        <button tabIndex='-1' className="w-max  self-center text-primary-yellow border-3 border-primary-yellow  hover:bg-primary-yellow  mt-5 hover:text-white font-bold uppercase text-xs tracking-widest py-3.5 px-8" onClick={handleOpen}>Request For Brochure</button>
                     </div>
                 </div>
             </section>

@@ -1,5 +1,5 @@
 import './Header.css';
-import logo from '../../../assests/images/logo.png';
+import logoblack from '../../../assests/images/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClose, faPhone, faBars } from '@fortawesome/free-solid-svg-icons';
 import { Link, NavLink, useLocation } from 'react-router-dom';
@@ -8,20 +8,21 @@ import { useEffect, useState } from 'react';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { Dialog } from '@mui/material';
 import EnquireForm from '../EnquireForm/EnquireForm';
-
+import logowhite from '../../../assests/images/logo-white.png';
 const Header = () => {
 
   const location = useLocation();
-
-
+  const pathname = location.pathname;
+  const locationValue = pathname.split("/");
   // const pathname = location.pathname;
   // const locationValue = pathname.split("/");
-
+  const [scrollClass, setScrollClass] = useState('scroll');
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen);
+  const [navbarLogo, setNavbarLogo] = useState(logowhite);
   const handleEnquireClick = () => {
     // if (window.gtag) {
     //   window.gtag('event', 'conversion', {
@@ -74,30 +75,31 @@ const Header = () => {
     },
   ];
 
-
   useEffect(() => {
-
-    if (location.hash) {
-      const element = document.getElementById(location.hash.slice(1));
-      console.log(location.hash.slice(1))
-      console.log(element);
-      if (element) {
-        element.style.scrollMarginTop = '50px';
-        element.scrollIntoView({ behavior: 'smooth'});
-        // window.scrollTo({ top: element.offsetTop, behavior: 'smooth'});
+    const listenScrollEvent = () => {
+      if (locationValue[1] === "") {
+        const newScrollClass = window.scrollY > 50 ? '' : 'scroll';
+        setScrollClass(newScrollClass);
+        setNavbarLogo(window.scrollY >= 50 ? logoblack : logowhite);
+      } else {
+        setNavbarLogo(logowhite);
+        setScrollClass('scroll');
       }
-    }
-  }, [location]);
+    };
+
+    window.addEventListener("scroll", listenScrollEvent);
+    return () => window.removeEventListener("scroll", listenScrollEvent);
+  }, [locationValue]);
 
   return (
     <>
-        {/* Header */}
-        <header className={`bg-primary-bg top-0 z-20 w-full sticky`}>
-        <div className="px-0 sm:px-5 py-2.5 flex items-center">
+      {/* Header */}
+      <header className={`bg-primary-bg top-0 z-20 w-full ${scrollClass} ${locationValue[1] === "" ? 'sticky home-header' : 'sticky'}`}>
+        <div className="px-0 sm:px-5 py-2.5 flex items-center ">
           <div className="w-1/4 lg:w-1/6 xl:w-1/4 px-2.5">
             <NavLink to="/" className="block w-auto sm:w-max" reloadDocument={true}>
               <LazyLoadImage
-                src={logo}
+                src={navbarLogo}
                 alt="Vamana Residences Logo"
                 className='header-logo w-40'
               />
@@ -105,7 +107,7 @@ const Header = () => {
           </div>
           <div className="hidden lg:block w-3/6 xl:w-2/4 px-2.5">
             <nav className="flex gap-5 items-center justify-center flex-wrap">
-              {menuLinks.map((item,i) => (
+              {menuLinks.map((item, i) => (
                 <Link smooth="true" to={item.redirect} key={i} className="text-sm font-medium hover:text-primary-yellow header-nav-link" >{item.name}</Link>
               ))}
             </nav>
@@ -135,9 +137,9 @@ const Header = () => {
         </div>
       </header>
 
-      <NavLink to='https://api.whatsapp.com/send/?phone=918609000900&text=I+would+like+to+know+more+about+Vamana+Residences&type=phone_number&app_absent=0' target="_blank" className=" fixed z-20 bg-primary-lightGreen text-white text-md font-medium px-5 py-2 flex gap-2.5 rounded-full  items-center overflow-hidden" style={{right: "20px", bottom: "24px"}}>
-          <FontAwesomeIcon icon={faWhatsapp} className="text-2xl pulso-animation" />
-          How can I help you? 
+      <NavLink to='https://api.whatsapp.com/send/?phone=918609000900&text=I+would+like+to+know+more+about+Vamana+Residences&type=phone_number&app_absent=0' target="_blank" className=" fixed z-20 bg-white text-primary-lightGreen text-md font-medium px-5 py-2 flex gap-2.5 rounded-full border-2 border-primary-lightGreen items-center font-medium font-semibold overflow-hidden" style={{ right: "20px", bottom: "24px" }}>
+        <FontAwesomeIcon icon={faWhatsapp} className="text-2xl pulso-animation " />
+        Get Price List
       </NavLink>
 
       {/* Popup */}
@@ -145,7 +147,7 @@ const Header = () => {
         open={open}
         onClose={handleClose}
         className="form_popup"
-        aria-hidden="false" 
+        aria-hidden="false"
         sx={{
           "& .MuiDialog-container": {
             "& .MuiPaper-root": {
