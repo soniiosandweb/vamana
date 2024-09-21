@@ -280,6 +280,7 @@ module.exports = {
       ],
     },
     fontSize: {
+      xxxs: ['8px', { lineHeight: '1rem' }],
       xxs: ['11px', { lineHeight: '1rem' }],
       xs: ['12px', { lineHeight: '1.2' }],
       sm: ['15px', { lineHeight: '1.7' }],

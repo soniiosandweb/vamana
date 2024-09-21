@@ -1,5 +1,5 @@
 import './Header.css';
-import logoblack from '../../../assests/images/logo.png';
+import logo from '../../../assests/images/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClose, faPhone, faBars } from '@fortawesome/free-solid-svg-icons';
 import { Link, NavLink, useLocation } from 'react-router-dom';
@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { Dialog } from '@mui/material';
 import EnquireForm from '../EnquireForm/EnquireForm';
-import logowhite from '../../../assests/images/logo-white.png';
+// import logowhite from '../../../assests/images/logo-white.png';
 import popupImg from '../../../assests/images/popup-img.jpg';
 
 const Header = () => {
@@ -24,7 +24,7 @@ const Header = () => {
   const handleClose = () => setOpen(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen);
-  const [navbarLogo, setNavbarLogo] = useState(logowhite);
+  // const [navbarLogo, setNavbarLogo] = useState(logowhite);
   const [showPopupNew, setShowPopupNew] = useState(false);
   const handleEnquireClick = () => {
     // if (window.gtag) {
@@ -90,9 +90,9 @@ const Header = () => {
       if (locationValue[1] === "") {
         const newScrollClass = window.scrollY > 50 ? '' : 'scroll';
         setScrollClass(newScrollClass);
-        setNavbarLogo(window.scrollY >= 50 ? logoblack : logowhite);
+        // setNavbarLogo(window.scrollY >= 50 ? logoblack : logowhite);
       } else {
-        setNavbarLogo(logowhite);
+        // setNavbarLogo(logowhite);
         setScrollClass('scroll');
       }
     };
@@ -123,7 +123,7 @@ const Header = () => {
           <div className="w-1/4 lg:w-1/6 xl:w-1/4 px-2.5">
             <NavLink to="/" className="block w-auto sm:w-max" reloadDocument={true}>
               <LazyLoadImage
-                src={navbarLogo}
+                src={logo}
                 alt="Vamana Residences Logo"
                 className='header-logo w-40'
               />
@@ -137,8 +137,10 @@ const Header = () => {
             </nav>
           </div>
           <div className="w-4/5 lg:w-2/6 xl:w-1/4 flex justify-end items-center gap-1.5 sm:gap-5 px-2.5 flex-wrap">
-            <NavLink to='tel:+918609000900' className="text-xxs sm:text-md font-medium header-nav-link font-semibold blink"><FontAwesomeIcon icon={faPhone} className="text-primary-yellow pr-1" /> +91 8609000900</NavLink>
-
+          <div className="rera-contact-wrapper flex flex-col">
+            <NavLink to='tel:+918609000900' className="text-xxs sm:text-md flex  items-center font-medium header-nav-link font-semibold blink "><FontAwesomeIcon icon={faPhone} className="text-primary-yellow pr-1" /> +91 8609000900</NavLink>
+            <NavLink className="text-xxxs sm:text-md m-auto w-full text-right font-medium header-nav-link font-semibold">PBRERA-SAS79-PR1018</NavLink>
+            </div>
             <button tabIndex='-1' className="text-xxs sm:text-sm font-semibold capitalize cursor-pointer bg-primary-yellow p-2 sm:p-2.5 text-white" onClick={handleEnquireClick} id="enquire_now">Enquire Now</button>
           </div>
           <button className="lg:hidden p-2 text-primary-yellow" onClick={toggleMobileMenu}>

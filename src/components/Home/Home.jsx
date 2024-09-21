@@ -8,6 +8,7 @@ import Gallery from "./Gallery/Gallery"
 import Location from "./Location/Location"
 import MasterPlan from "./MasterPlan/MasterPlan"
 import PriceList from "./PriceList/PriceList"
+import ClubZaira from "./ClubZaira/ClubZaira"
 
 const Home = () => {
     return (
@@ -23,6 +24,7 @@ const Home = () => {
             <Amenities />
             <FloorPlan />
             <MasterPlan />
+            <ClubZaira/>
             <Location />
             {/* <Clubhouse /> */}
             <Gallery />

@@ -1,26 +1,35 @@
 import Lightbox from 'yet-another-react-lightbox';
 import { Dialog } from '@mui/material';
 import EnquireForm from '../../Layouts/EnquireForm/EnquireForm';
-import siteplan from '../../../assests/images/siteplan2.webp';
+import siteplan from '../../../assests/images/Club-zaira.jpg';
 import { Fullscreen, Zoom } from 'yet-another-react-lightbox/plugins';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClose } from '@fortawesome/free-solid-svg-icons';
 
-const MasterPlan = () => {
+const ClubZaira = () => {
     const [openMaster, setOpenMaster] = useState(false);
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
     return(
         <>
-        <section className="home-masterplan-section py-16 px-2.5" id="masterplan">
+        <section className="home-ClubZaira-section py-16 px-2.5" id="ClubZaira">
             <div className='max-w-6xl m-auto'>
                 <div className="flex flex-col text-left gap-5">
-                    <h2 className="text-2xl sm:text-4xl font-semibold text-center mb-3">Master Plan</h2>
+                    <h2 className="text-2xl sm:text-4xl font-semibold text-center mb-3">Club Zaira - Live the Moment</h2>
 
                     <div className="flex flex-col md:flex-row items-center gap-8 ">
 
+                        
+
+                        <div className="w-full md:w-1/2 flex flex-col gap-5">
+                            <p className="text-sm">Vamana proudly introduces Club Zaira, the premier clubhouse in the area, boasting an impressive 30,000 square feet of space designed for relaxation and recreation.</p>
+                            <p className="text-sm">Club Zaira is equipped with an array of modern amenities that cater to a luxurious lifestyle. The state-of-the-art gym features the latest fitness equipment, ensuring you can maintain your workout routine with ease. For those looking to unwind, the grand rooftop swimming pool offers stunning views and a serene atmosphere, perfect for relaxation and leisure.</p>
+                            <p className="text-sm">In addition to these facilities, Club Zaira includes a variety of other luxurious features, such as a spa, a multipurpose lounge, and dedicated spaces for social gatherings and events. Residents can also enjoy activities like yoga classes, indoor games, and more, providing a well-rounded experience that promotes both fitness and social interaction.</p>
+                            <p className="text-sm">With its thoughtful design and comprehensive amenities, including the magnificent swimming pool, Club Zaira truly brings comfort and luxury to its users, creating an unparalleled environment for leisure and community engagement.</p>
+                            <button tabIndex='-1' className="w-max text-primary-yellow border-2 border-primary-yellow  hover:bg-primary-yellow mx-auto mt-5 hover:text-white font-bold uppercase text-xs tracking-widest py-3.5 px-8" onClick={handleOpen}>Enquire for Free Site Visit</button>
+                        </div>
                         <div className="w-full md:w-1/2 flex flex-col gap-5">
                             <img src={siteplan} alt='Vamana Residences - Master Plan' className='w-full h-full object-cover border-4 border-primary-yellow rounded-3xl cursor-pointer' onClick={() => setOpenMaster(true)}/>
                             <Lightbox
@@ -45,14 +54,6 @@ const MasterPlan = () => {
                                 className="single-lightbox"
                             />
                         </div>
-
-                        <div className="w-full md:w-1/2 flex flex-col gap-5">
-                            <p className="text-sm">Nestled amidst 7.77 acres of lush greenery on the vibrant NH-7, Patiala Highway, Vamana Residences offers a unique blend of modern living and natural serenity with its <b>luxurious 3bhk flats in zirakpur and 4bhk flats in zirakpur</b>. With 350 thoughtfully designed units, this meticulously planned community provides an idyllic escape from the city's hustle and bustle.</p>
-                            <p className="text-sm">Experience the perfect harmony of nature and luxury as you step into a world of well-defined residential clusters. Enjoy a plethora of world-class amenities, from state-of-the-art fitness centers to tranquil recreational spaces. Vamana's prime location, coupled with dedicated parking and top-tier security, ensures a convenient and secure lifestyle for its residents.</p>
-                            <p className="text-sm">Indulge in the epitome of comfortable living at <b>Vamana Residences</b>.</p>
-                            <button tabIndex='-1' className="w-max text-primary-yellow border-2 border-primary-yellow  hover:bg-primary-yellow mx-auto mt-5 hover:text-white font-bold uppercase text-xs tracking-widest py-3.5 px-8" onClick={handleOpen}>Download Price List</button>
-                        </div>
-                        
                     </div>
                    
                 </div>
@@ -80,11 +81,11 @@ const MasterPlan = () => {
         <div className="flex justify-end">
             <FontAwesomeIcon icon={faClose} className="text-2xl cursor-pointer" onClick={handleClose} />
         </div>
-        <EnquireForm title="Request For Price List" setOpen={setOpen} />
+        <EnquireForm title="Request for Free Site Visit" setOpen={setOpen} />
         </div>
     </Dialog>
     </>
     )
 }
 
-export default MasterPlan
+export default ClubZaira
