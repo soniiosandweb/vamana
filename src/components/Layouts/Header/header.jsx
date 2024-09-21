@@ -139,7 +139,7 @@ const Header = () => {
           <div className="w-4/5 lg:w-2/6 xl:w-1/4 flex justify-end items-center gap-1.5 sm:gap-5 px-2.5 flex-wrap">
           <div className="rera-contact-wrapper flex flex-col">
             <NavLink to='tel:+918609000900' className="text-xxs sm:text-md flex  items-center font-medium header-nav-link font-semibold blink "><FontAwesomeIcon icon={faPhone} className="text-primary-yellow pr-1" /> +91 8609000900</NavLink>
-            <NavLink className="text-xxxs sm:text-md m-auto w-full text-right font-medium header-nav-link font-semibold">PBRERA-SAS79-PR1018</NavLink>
+            <NavLink className="text-xxxs sm:text-xs m-auto w-full text-right font-medium header-nav-link font-semibold text-primary-yellow">PBRERA-SAS79-PR1018</NavLink>
             </div>
             <button tabIndex='-1' className="text-xxs sm:text-sm font-semibold capitalize cursor-pointer bg-primary-yellow p-2 sm:p-2.5 text-white" onClick={handleEnquireClick} id="enquire_now">Enquire Now</button>
           </div>
