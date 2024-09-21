@@ -22,7 +22,7 @@ const MasterPlan = () => {
                     <div className="flex flex-col md:flex-row items-center gap-8 ">
 
                         <div className="w-full md:w-1/2 flex flex-col gap-5">
-                            <img src={siteplan} alt='Vamana Residences - Master Plan' className='w-full h-full object-cover border-4 border-primary-yellow rounded-3xl cursor-pointer' onClick={() => setOpenMaster(true)}/>
+                            <img src={siteplan} alt='Vamana Arvindam - Master Plan' className='w-full h-full object-cover border-4 border-primary-yellow rounded-3xl cursor-pointer' onClick={() => setOpenMaster(true)}/>
                             <Lightbox
                                 open={openMaster}
                                 close={() => setOpenMaster(false)}

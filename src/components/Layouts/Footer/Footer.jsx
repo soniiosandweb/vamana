@@ -17,6 +17,7 @@ const Footer = () => {
                     <p>All rights reserved. The content, design, and information on this website are protected by copyright and other intellectual property rights. Any unauthorized use or reproduction of the content may violate applicable laws.</p>
                     <p>For accurate and up-to-date information regarding services, pricing, availability, and any other details, it is recommended to contact us directly through the provided contact information on this website. Thank you for visiting our website.</p>
                     <p className='mt-1.5'><NavLink to='/terms-conditions' target='_blank' className='text-primary-yellow font-semibold'>Terms & Conditions</NavLink> and <NavLink to='/privacy-policy' target='_blank' className='text-primary-yellow font-semibold'>Privacy Policy</NavLink></p>
+                    <p className='mt-1.5 text-xs'>Crafted By: <NavLink to='https://iosandweb.net/' target='_blank' className='hover:text-primary-yellow'>IosAndWeb Technologies</NavLink></p>
                 </div>
             </div>
         </section>
