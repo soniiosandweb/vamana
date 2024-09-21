@@ -65,6 +65,11 @@ const Header = () => {
       id: "masterplan",
     },
     {
+      name: "Club Zaira",
+      redirect: "/#clubzaira",
+      id: "clubzaira",
+    },
+    {
       name: "Location",
       redirect: "/#location",
       id: "location",
@@ -104,8 +109,8 @@ const Header = () => {
 
     if (location.hash) {
       const element = document.getElementById(location.hash.slice(1));
-      console.log(location.hash.slice(1))
-      console.log(element);
+      // console.log(location.hash.slice(1))
+      // console.log(element);
       if (element) {
         element.style.scrollMarginTop = '50px';
         element.scrollIntoView({ behavior: 'smooth'});
@@ -124,15 +129,15 @@ const Header = () => {
             <NavLink to="/" className="block w-auto sm:w-max" reloadDocument={true}>
               <LazyLoadImage
                 src={logo}
-                alt="Vamana Residences Logo"
+                alt="Vamana Arvindam"
                 className='header-logo w-40'
               />
             </NavLink>
           </div>
           <div className="hidden lg:block w-3/6 xl:w-2/4 px-2.5">
-            <nav className="flex gap-5 items-center justify-center flex-wrap">
+            <nav className="flex gap-1.5 xl:gap-5 items-center justify-center flex-wrap">
               {menuLinks.map((item, i) => (
-                <Link smooth="true" to={item.redirect} key={i} className="text-sm font-medium hover:text-primary-yellow header-nav-link" >{item.name}</Link>
+                <Link smooth="true" to={item.redirect} key={i} className="text-xs 1xl:text-sm font-medium hover:text-primary-yellow header-nav-link" >{item.name}</Link>
               ))}
             </nav>
           </div>

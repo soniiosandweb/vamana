@@ -5,8 +5,8 @@ const PrivacyPolicy = () => {
         <>
             <MetaData 
                 title={"Vamana Residences | Privacy Policy"} 
-                description={"This page outlines the privacy practices of Vamana Residences. Learn how we collect, use, and protect your personal information."}
-                keywords={"Vamana Residences, privacy policy, data protection, personal information, data privacy, data security, Zirakpur"}
+                description={"This page outlines the privacy practices of Vamana Group Flats. Learn how we collect, use, and protect your personal information."}
+                keywords={"Vamana Group, privacy policy, data protection, personal information, data privacy, data security, Zirakpur"}
             />
 
             <section className=" py-5 md:py-16 px-2.5">

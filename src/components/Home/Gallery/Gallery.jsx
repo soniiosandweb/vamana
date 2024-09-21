@@ -23,19 +23,19 @@ const Gallery = () => {
         },
         {
             src: image2,
-            title: "Vamana apartments exterior",
+            title: "Vamana Arvindam exterior",
         },
         {
             src: image3,
-            title: "Bird's eye view of Vamana residences exterior",
+            title: "Bird's eye view of Vamana Arvindam exterior",
         },
         {
             src: image4,
-            title: "An overview of Vamana Residences",
+            title: "An overview of Vamana Group",
         },
         {
             src: image5,
-            title: "Entry gate to Vamana Residences",
+            title: " Entry gate to Vamana Flats",
         },
         {
             src: image6,
@@ -43,15 +43,15 @@ const Gallery = () => {
         },
         {
             src: image7,
-            title: "Garden and swimming pool amenities close to the Vamana Apartments",
+            title: "Garden and swimming pool amenities close to the Vamana Flats",
         },
         {
             src: image8,
-            title: "Overview of the Vamana Residences",
+            title: "Overview of the Vamana Group",
         },
         {
             src: image9,
-            title: "Car entering into the lavish Vamana Residency",
+            title: "Car entering into the lavish Vamana Arvindam",
         },
     ]
 

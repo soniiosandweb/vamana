@@ -32,7 +32,7 @@ const BannerSlider = () => {
             ),
 
             image: banner1,
-            alt: "Vamana Residence Apartment Exterior",
+            alt: "Vamana Group - Modern 3BHK & 4BHK Flats in Zirakpur",
 
         },
         {

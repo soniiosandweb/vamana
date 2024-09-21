@@ -14,7 +14,7 @@ const ClubZaira = () => {
     const handleClose = () => setOpen(false);
     return(
         <>
-        <section className="home-ClubZaira-section py-16 px-2.5" id="ClubZaira">
+        <section className="home-ClubZaira-section py-16 px-2.5" id="clubzaira">
             <div className='max-w-6xl m-auto'>
                 <div className="flex flex-col text-left gap-5">
                     <h2 className="text-2xl sm:text-4xl font-semibold text-center mb-3">Club Zaira - Live the Moment</h2>
@@ -31,7 +31,7 @@ const ClubZaira = () => {
                             <button tabIndex='-1' className="w-max text-primary-yellow border-2 border-primary-yellow  hover:bg-primary-yellow mx-auto mt-5 hover:text-white font-bold uppercase text-xs tracking-widest py-3.5 px-8" onClick={handleOpen}>Enquire for Free Site Visit</button>
                         </div>
                         <div className="w-full md:w-1/2 flex flex-col gap-5">
-                            <img src={siteplan} alt='Vamana Residences - Master Plan' className='w-full h-full object-cover border-4 border-primary-yellow rounded-3xl cursor-pointer' onClick={() => setOpenMaster(true)}/>
+                            <img src={siteplan} alt='Vamana Group Apartment Exterior' className='w-full h-full object-cover border-4 border-primary-yellow rounded-3xl cursor-pointer' onClick={() => setOpenMaster(true)}/>
                             <Lightbox
                                 open={openMaster}
                                 close={() => setOpenMaster(false)}
