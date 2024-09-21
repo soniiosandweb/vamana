@@ -218,8 +218,8 @@ const EnquireForm = ({ title, setOpen}) => {
                     <p className={`flex items-center text-md mt-5 ${termsCheck ? 'font-semibold' : 'font-extralight  text-gray-400'}`}><input type='checkbox' required className='align-middle size-4' name="termsCheck" checked={termsCheck} value={termsValue} onChange={(e) => CheckboxChange(e)} /> I agree to be contacted by 'Vamana Residences' and its agents via WhatsApp, SMS, phone, email etc.</p>
 
                     <div className="mt-2.5 flex items-center gap-5 justify-center">
-                        {/* <input type="submit" value="Download Now" className={`w-max text-white font-bold uppercase text-sm tracking-widest py-3.5 px-8 ${disableSubmit ? 'bg-gray-400 cursor-not-allowed' : 'bg-primary-yellow cursor-pointer'}`} disabled={disableSubmit} /> */}
-                        <input type="submit" value="Download Now" className={`w-max text-primary-yellow font-bold uppercase text-sm tracking-widest py-3.5 px-8 bg-white border-2 border-primary-yellow hover:text-white hover:bg-primary-yellow cursor-pointer`} />
+                        
+                        <input type="submit" value="Download Now" className={`w-max text-white font-bold uppercase text-sm tracking-widest py-3.5 px-8   ${disableSubmit ? 'bg-gray-400 cursor-not-allowed' : 'bg-primary-yellow border-2 border-primary-yellow cursor-pointer'}`}  disabled={disableSubmit} />
                         {loading && (
                             <CircularProgress
                                 sx={{

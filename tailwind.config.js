@@ -35,7 +35,7 @@ module.exports = {
         orange: '#fb641b',
         darkBlue: '#172337',
         grey: '#878787',
-        bg: '#f9f9f9',
+        bg: '#f3f3f3f0',
       },
     },
     spacing: {

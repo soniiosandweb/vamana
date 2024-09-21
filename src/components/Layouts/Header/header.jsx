@@ -81,9 +81,9 @@ const Header = () => {
     },
   ];
 
-  useEffect(()=>{ 
-    setTimeout(()=> setShowPopupNew(true),5000);
-  },[])
+  useEffect(() => {
+    setTimeout(() => setShowPopupNew(true), 5000);
+  }, [])
 
   useEffect(() => {
     const listenScrollEvent = () => {
@@ -97,7 +97,7 @@ const Header = () => {
       }
     };
 
-    
+
 
     window.addEventListener("scroll", listenScrollEvent);
     //return () => window.removeEventListener("scroll", listenScrollEvent);
@@ -108,7 +108,7 @@ const Header = () => {
       console.log(element);
       if (element) {
         element.style.scrollMarginTop = '50px';
-        element.scrollIntoView({ behavior: 'smooth'});
+        element.scrollIntoView({ behavior: 'smooth' });
         // window.scrollTo({ top: element.offsetTop, behavior: 'smooth'});
       }
     }
@@ -137,9 +137,9 @@ const Header = () => {
             </nav>
           </div>
           <div className="w-4/5 lg:w-2/6 xl:w-1/4 flex justify-end items-center gap-1.5 sm:gap-5 px-2.5 flex-wrap">
-          <div className="rera-contact-wrapper flex flex-col">
-            <NavLink to='tel:+918609000900' className="text-xxs sm:text-md flex  items-center font-medium header-nav-link font-semibold blink "><FontAwesomeIcon icon={faPhone} className="text-primary-yellow pr-1" /> +91 8609000900</NavLink>
-            <NavLink className="text-xxxs sm:text-xs m-auto w-full text-right font-medium header-nav-link font-semibold text-primary-yellow">PBRERA-SAS79-PR1018</NavLink>
+            <div className="rera-contact-wrapper flex flex-col">
+              <NavLink to='tel:+918609000900' className="text-xxs sm:text-md flex  items-center font-medium header-nav-link font-semibold blink "><FontAwesomeIcon icon={faPhone} className="text-primary-yellow pr-1" /> +91 8609000900</NavLink>
+              <NavLink className="text-xxxs sm:text-xs m-auto w-full text-right font-medium header-nav-link font-semibold text-primary-yellow">PBRERA-SAS79-PR1018</NavLink>
             </div>
             <button tabIndex='-1' className="text-xxs sm:text-sm font-semibold capitalize cursor-pointer bg-primary-yellow p-2 sm:p-2.5 text-white" onClick={handleEnquireClick} id="enquire_now">Enquire Now</button>
           </div>
@@ -164,13 +164,13 @@ const Header = () => {
       </header>
 
       <div className={`popup-modal-dialog ${showPopupNew ? 'block' : 'hidden'}`}>
-          <button className='btn-icon' onClick={handleNewClose}>
-            <FontAwesomeIcon icon={faClose} className="text-2xl cursor-pointer"  />
-          </button>
-          
-          <div className='img-popup'>
-            <img src={popupImg} alt='PoupImg' className='w-full' />
-          </div>
+        <button className='btn-icon' onClick={handleNewClose}>
+          <FontAwesomeIcon icon={faClose} className="text-2xl cursor-pointer" />
+        </button>
+
+        <div className='img-popup'>
+          <img src={popupImg} alt='PoupImg' className='w-full' />
+        </div>
       </div>
 
       <NavLink to='https://api.whatsapp.com/send/?phone=918609000900&text=I+would+like+to+know+more+about+Vamana+Residences&type=phone_number&app_absent=0' target="_blank" className=" fixed z-20 bg-white text-primary-lightGreen text-md font-medium px-5 py-2 flex gap-2.5 rounded-full border-2 border-primary-lightGreen items-center font-medium font-semibold overflow-hidden" style={{ left: "20px", bottom: "24px" }}>
