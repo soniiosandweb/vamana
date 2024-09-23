@@ -109,7 +109,7 @@ const BannerSlider = () => {
                             style={{ zIndex: "-1" }}
                         />
                         <div className='w-full absolute top-0 h-full' style={{ backgroundColor: "#00000080" }}></div>
-                        <p className='text-xs font-semibold p-1 absolute mx-auto bottom-4 right-3 text-white w-max'>*Image shown is for illustration purposes only</p>
+                        <p className='text-xs font-semibold p-1 absolute mx-auto bottom-0.5 right-3 text-white w-max'>*Image shown is for illustration purposes only</p>
                     </div>
                 ))}
             </Slider>

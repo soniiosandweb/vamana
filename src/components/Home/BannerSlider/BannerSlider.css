@@ -1,5 +1,7 @@
+@media (min-width:1024px) {
 .banner-slider {
   min-height: 650px;
+}
 }
 .slick-dots{
     bottom: 25px;
