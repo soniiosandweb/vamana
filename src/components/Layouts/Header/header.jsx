@@ -5,7 +5,7 @@ import { faClose, faPhone, faBars } from '@fortawesome/free-solid-svg-icons';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { useEffect, useState } from 'react';
-import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+// import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { Dialog } from '@mui/material';
 import EnquireForm from '../EnquireForm/EnquireForm';
 // import logowhite from '../../../assests/images/logo-white.png';
@@ -97,14 +97,26 @@ const Header = () => {
     setTimeout(() => setShowPopupNew(true), 5000);
   }, [])
 
+  // handle menu click
+  const handleMenuClick = (e) => {
+    e.preventDefault();
+    const { id } = e.target.dataset;
+    const element = document.getElementById(id);
+    if (element) {
+      console.log(element)
+      element.style.scrollMarginTop = '50px';
+      element.scrollIntoView({ behavior: 'smooth' });
+      // window.scrollTo({ top: element.offsetTop, behavior: 'smooth'});
+      
+    }
+  }
+
   useEffect(() => {
     const listenScrollEvent = () => {
       if (locationValue[1] === "" ||  menuLinks.some(item => item.id === locationValue[1])) {
         const newScrollClass = window.scrollY > 50 ? '' : 'scroll';
         setScrollClass(newScrollClass);
-        // setNavbarLogo(window.scrollY >= 50 ? logoblack : logowhite);
       } else {
-        // setNavbarLogo(logowhite);
         setScrollClass('scroll');
       }
     };
@@ -164,18 +176,19 @@ const Header = () => {
             </NavLink>
           </div>
           <div className="hidden lg:block w-3/6 xl:w-2/4 px-2.5">
-            <nav className="flex gap-1.5 xl:gap-5 items-center justify-center flex-wrap">
+            <nav className="flex gap-1.5 xl:gap-[14px] items-center justify-center flex-wrap">
               {menuLinks.map((item, i) => (
-                <Link smooth="true" to={item.redirect} key={i} className="text-xs 1xl:text-sm font-medium hover:text-primary-yellow header-nav-link" >{item.name}</Link>
+                <a smooth="true" href={item.redirect} key={i} className="text-xs 1xl:text-sm font-medium hover:text-primary-yellow header-nav-link" data-id={item.id} onClick={(e) => handleMenuClick(e)}>{item.name}</a>
               ))}
             </nav>
           </div>
-          <div className="w-4/5 lg:w-2/6 xl:w-1/4 flex justify-end items-center gap-x-1.5 gap-y-2.5 sm:gap-x-5 px-2.5 flex-wrap">
+          <div className="w-4/5 lg:w-2/6 xl:w-1/4 flex justify-end items-center gap-x-1.5 gap-y-2.5 sm:gap-x-4 px-2.5 flex-wrap">
             <div className="rera-contact-wrapper flex flex-col">
-              <NavLink to='tel:+918609000900' className="text-xxs sm:text-md flex  items-center font-medium header-nav-link font-semibold blink "><FontAwesomeIcon icon={faPhone} className="text-primary-yellow pr-1" /> +91 8609000900</NavLink>
+              <NavLink to='tel:+918609000900' className="text-xxs sm:text-sm 1xl:text-md flex  items-center font-medium header-nav-link font-semibold blink "><FontAwesomeIcon icon={faPhone} className="text-primary-yellow pr-1" /> +91 8609000900</NavLink>
               
             </div>
-            <button tabIndex='-1' className="text-xxs sm:text-sm font-semibold capitalize cursor-pointer bg-primary-yellow p-2 sm:p-2.5 text-white" onClick={handleEnquireClick} id="enquire_now">Enquire Now</button>
+            <button tabIndex='-1' className="text-xxs sm:text-xs font-bold capitalize cursor-pointer bg-primary-yellow tracking-widest py-2.5 sm:py-3.5 px-3.5 sm:px-[22px] 1xl:px-8 text-white" onClick={handleEnquireClick} id="enquire_now">Enquire Now</button>
+
             <NavLink className="text-xxxs sm:text-xs m-auto w-full text-right font-medium header-nav-link font-semibold text-primary-yellow">PBRERA-SAS79-PR1018</NavLink>
           </div>
           <button className="lg:hidden p-2 text-primary-yellow" onClick={toggleMobileMenu}>
@@ -240,11 +253,11 @@ const Header = () => {
         </div>
       </Dialog>
       {/* Side Popup for form*/}
-      <div className={` side-popup-form ${showsidePopup ? 'block' : 'hidden'} border-4 border-primary-yellow `}>
+      <div className={` side-popup-form ${showsidePopup ? 'flex' : 'hidden'} border-4 border-primary-yellow `}>
         <div className="flex justify-end btn-icon">
           <FontAwesomeIcon icon={faClose} className="text-2xl cursor-pointer" onClick={newSidePopUpClose} />
         </div>
-        <EnquireForm title="Request For Brochure" button="Submit Now"  />
+        <EnquireForm title="Vamana Residences Price List" button="Get New Price List"  />
       </div>
     </>
   );

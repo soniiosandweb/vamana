@@ -22,7 +22,7 @@ const AboutSection = () => {
                         </p>
                         <p className="text-sm">Embrace a lifestyle where luxury meets tranquility. Discover your dream home in this remarkable new residential project in Zirakpur today, and take the first step towards a life of comfort, convenience, and serenity. </p>
                         <p className="text-sm">Your sanctuary awaits!</p>
-                        <button tabIndex='-1' className="w-max  self-center text-primary-yellow border-2 border-primary-yellow  hover:bg-primary-yellow  mt-5 hover:text-white font-bold uppercase text-xs tracking-widest py-3.5 px-8" onClick={handleOpen}>Request For Brochure</button>
+                        <button tabIndex='-1' className="w-max  self-center text-primary-yellow border-2 border-primary-yellow  hover:bg-primary-yellow  mt-5 hover:text-white font-bold uppercase text-xs tracking-widest py-2.5 sm:py-3.5 px-3.5 sm:px-[22px] 1xl:px-8" onClick={handleOpen}>Request For Brochure</button>
                     </div>
                 </div>
             </section>

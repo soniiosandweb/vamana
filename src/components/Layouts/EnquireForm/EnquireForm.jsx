@@ -216,11 +216,11 @@ const EnquireForm = ({ title, setOpen, button }) => {
                         )}
                     </div>
 
-                    <p className={`flex items-center text-sm mt-5 ${termsCheck ? 'font-semibold' : 'font-extralight  text-gray-400'}`}><input type='checkbox' required className='align-middle size-4' name="termsCheck" checked={termsCheck} value={termsValue} onChange={(e) => CheckboxChange(e)} /> I agree to be contacted by 'Vamana Residences' and its agents via WhatsApp, SMS, phone, email etc.</p>
+                    <p className={`flex items-center text-[10px] mt-5 ${termsCheck ? 'font-semibold' : 'font-extralight  text-gray-400'}`}><input type='checkbox' required className='align-middle size-4' name="termsCheck" checked={termsCheck} value={termsValue} onChange={(e) => CheckboxChange(e)} /> I agree to be contacted by 'Vamana Residences' and its agents via WhatsApp, SMS, phone, email etc.</p>
 
-                    <div className="mt-2.5 flex items-center gap-5 justify-center">
+                    <div className="mt-[20px] flex items-center gap-5 justify-center">
                         
-                        <input type="submit" value={button ? 'Submit Now' : 'Download Now'} className={`w-max hover:text-white font-bold text-primary-yellow uppercase text-sm tracking-widest py-2.5 px-8 hover:bg-primary-yellow border-2 border-primary-yellow cursor-pointer'}`}  disabled={disableSubmit} />
+                        <input type="submit" value={button ? button : 'Download Now'} className={`w-max hover:text-white font-bold text-primary-yellow uppercase text-xs tracking-widest py-2.5 sm:py-3.5 px-3.5 sm:px-[22px] 1xl:px-8 hover:bg-primary-yellow border-2 border-primary-yellow cursor-pointer'}`}  disabled={disableSubmit} />
                         {loading && (
                             <CircularProgress
                                 sx={{

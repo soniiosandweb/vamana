@@ -4,8 +4,15 @@ import Layout from './components/Layouts/Layout';
 import PrivacyPolicy from './components/PrivacyPolicy/PrivacyPolicy';
 import TermsConditions from './components/TermsConditions/TermsConditions';
 import PageNotFound from './components/Layouts/PageNotFound';
-import CookieConsent from "react-cookie-consent";
+// import CookieConsent from "react-cookie-consent";
 import Thankyou from './components/Thankyou';
+import FloorPlanPage from './components/Floorplan/FloorPlanPage';
+import MasterPlanPage from './components/MasterPlanPage/MasterPlanPage';
+import ClubZairaPage from './components/ClubZairaPage/ClubZairaPage';
+import LocationPage from './components/LocationPage/LocationPage';
+import PriceListPage from './components/PriceListPage/PriceListPage';
+import GalleryPage from './components/GalleryPage/GalleryPage';
+import AmenitiesPage from './components/AmenitiesPage/AmenitiesPage';
 
 function App() {
   return (
@@ -41,8 +48,15 @@ function App() {
             <Route path='/location' element={<Home />} />
             <Route path='/clubzaira' element={<Home />} />
             <Route path='/amenities' element={<Home />} />
-            <Route path='/about' element={<PageNotFound />} />
             <Route path='/flats' element={<Home />} />
+
+            <Route path='/floor-plan' element={<FloorPlanPage />} />
+            <Route path='/master-plan' element={<MasterPlanPage />} />
+            <Route path='/club-zaira' element={<ClubZairaPage />} />
+            <Route path='/location-map' element={<LocationPage />} />
+            <Route path='/price-list' element={<PriceListPage />} />
+            <Route path='/galleries' element={<GalleryPage />} />
+            <Route path='/amenitie' element={<AmenitiesPage />} />
           </Route>
           
         </Routes>

@@ -1,7 +1,9 @@
  import FloorPlan from "../Home/FloorPlan/FloorPlan.jsx"
 
- export default function(){
+const FloorPlanPage = () =>{
     return(
         <FloorPlan/>
     )
  }
+
+ export default FloorPlanPage

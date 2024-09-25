@@ -50,7 +50,7 @@ const MasterPlan = () => {
                             <p className="text-sm">Nestled amidst 7.77 acres of lush greenery on the vibrant NH-7, Patiala Highway, Vamana Residences offers a unique blend of modern living and natural serenity with its <b>luxurious 3bhk flats in zirakpur and 4bhk flats in zirakpur</b>. With 350 thoughtfully designed units, this meticulously planned community provides an idyllic escape from the city's hustle and bustle.</p>
                             <p className="text-sm">Experience the perfect harmony of nature and luxury as you step into a world of well-defined residential clusters. Enjoy a plethora of world-class amenities, from state-of-the-art fitness centers to tranquil recreational spaces. Vamana's prime location, coupled with dedicated parking and top-tier security, ensures a convenient and secure lifestyle for its residents.</p>
                             <p className="text-sm">Indulge in the epitome of comfortable living at <b>Vamana Residences</b>.</p>
-                            <button tabIndex='-1' className="w-max text-primary-yellow border-2 border-primary-yellow  hover:bg-primary-yellow mx-auto mt-5 hover:text-white font-bold uppercase text-xs tracking-widest py-3.5 px-8" onClick={handleOpen}>Download Price List</button>
+                            <button tabIndex='-1' className="w-max text-primary-yellow border-2 border-primary-yellow  hover:bg-primary-yellow mx-auto mt-5 hover:text-white font-bold uppercase text-xs tracking-widest py-2.5 sm:py-3.5 px-3.5 sm:px-[22px] 1xl:px-8" onClick={handleOpen}>Download Price List</button>
                         </div>
                         
                     </div>
