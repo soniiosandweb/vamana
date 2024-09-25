@@ -20,12 +20,15 @@ const Header = () => {
   // const locationValue = pathname.split("/");
   const [scrollClass, setScrollClass] = useState('scroll');
   const [open, setOpen] = useState(false);
+
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen);
   // const [navbarLogo, setNavbarLogo] = useState(logowhite);
   const [showPopupNew, setShowPopupNew] = useState(false);
+  const [showsidePopup, setshowsidePopup] = useState(false);
+ 
   const handleEnquireClick = () => {
     // if (window.gtag) {
     //   window.gtag('event', 'conversion', {
@@ -38,50 +41,54 @@ const Header = () => {
     // }
     handleOpen()
   };
+  const newSidePopUpClose  = () => {
+    setshowsidePopup(false)
+  }
 
   const handleNewClose = () => {
     setShowPopupNew(false);
+    setshowsidePopup(true);
   }
 
   const menuLinks = [
     {
-      name: "About",
-      redirect: "/#about",
-      id: "about",
+      name: "About Us",
+      redirect: "/flats",
+      id: "flats",
     },
     {
       name: "Amenities",
-      redirect: "/#amenities",
+      redirect: "/amenities",
       id: "amenities",
     },
     {
       name: "Floor Plan",
-      redirect: "/#floorplan",
+      redirect: "/floorplan",
       id: "floorplan",
     },
     {
       name: "Master Plan",
-      redirect: "/#masterplan",
+      redirect: "/masterplan",
       id: "masterplan",
     },
     {
       name: "Club Zaira",
-      redirect: "/#clubzaira",
+      redirect: "/clubzaira",
       id: "clubzaira",
     },
     {
       name: "Location",
-      redirect: "/#location",
+      redirect: "/location",
       id: "location",
     },
     {
       name: "Gallery",
-      redirect: "/#gallery",
+      redirect: "/gallery",
       id: "gallery",
     },
     {
       name: "Price List",
-      redirect: "/#pricelist",
+      redirect: "/pricelist",
       id: "pricelist",
     },
   ];
@@ -92,7 +99,7 @@ const Header = () => {
 
   useEffect(() => {
     const listenScrollEvent = () => {
-      if (locationValue[1] === "") {
+      if (locationValue[1] === "" ||  menuLinks.some(item => item.id === locationValue[1])) {
         const newScrollClass = window.scrollY > 50 ? '' : 'scroll';
         setScrollClass(newScrollClass);
         // setNavbarLogo(window.scrollY >= 50 ? logoblack : logowhite);
@@ -117,13 +124,35 @@ const Header = () => {
         // window.scrollTo({ top: element.offsetTop, behavior: 'smooth'});
       }
     }
+    // console.log(location.pathname.split("/"))
 
+    if(menuLinks.some(item => item.id === location.pathname.split("/"))){
+      const path = location.pathname.split("/")[1];
+      const element = document.getElementById(path);
+    
+      if (element) {
+        element.style.scrollMarginTop = '50px';
+        element.scrollIntoView({ behavior: 'smooth' });
+        // window.scrollTo({ top: element.offsetTop, behavior: 'smooth'});
+        
+      }
+    }
+
+    if('flats' === location.pathname.split("/")[1]){
+      const path = 'about';
+      const element = document.getElementById(path);
+      if (element) {
+        element.style.scrollMarginTop = '50px';
+        element.scrollIntoView({ behavior: 'smooth' });
+        // window.scrollTo({ top: element.offsetTop, behavior: 'smooth'});
+      }
+    }
   }, [locationValue, location]);
 
   return (
     <>
       {/* Header */}
-      <header className={`bg-primary-bg top-0 z-20 w-full ${scrollClass} ${locationValue[1] === "" ? 'sticky home-header' : 'sticky'}`}>
+      <header className={`bg-primary-bg top-0 z-20 w-full ${scrollClass} ${locationValue[1] === "" ||  menuLinks.some(item => item.id === locationValue[1]) ? 'sticky home-header' : 'sticky'}`}>
         <div className="px-0 sm:px-5 py-2.5 flex items-center ">
           <div className="w-1/4 lg:w-1/6 xl:w-1/4 px-2.5">
             <NavLink to="/" className="block w-auto sm:w-max" reloadDocument={true}>
@@ -141,12 +170,13 @@ const Header = () => {
               ))}
             </nav>
           </div>
-          <div className="w-4/5 lg:w-2/6 xl:w-1/4 flex justify-end items-center gap-1.5 sm:gap-5 px-2.5 flex-wrap">
+          <div className="w-4/5 lg:w-2/6 xl:w-1/4 flex justify-end items-center gap-x-1.5 gap-y-2.5 sm:gap-x-5 px-2.5 flex-wrap">
             <div className="rera-contact-wrapper flex flex-col">
               <NavLink to='tel:+918609000900' className="text-xxs sm:text-md flex  items-center font-medium header-nav-link font-semibold blink "><FontAwesomeIcon icon={faPhone} className="text-primary-yellow pr-1" /> +91 8609000900</NavLink>
-              <NavLink className="text-xxxs sm:text-xs m-auto w-full text-right font-medium header-nav-link font-semibold text-primary-yellow">PBRERA-SAS79-PR1018</NavLink>
+              
             </div>
             <button tabIndex='-1' className="text-xxs sm:text-sm font-semibold capitalize cursor-pointer bg-primary-yellow p-2 sm:p-2.5 text-white" onClick={handleEnquireClick} id="enquire_now">Enquire Now</button>
+            <NavLink className="text-xxxs sm:text-xs m-auto w-full text-right font-medium header-nav-link font-semibold text-primary-yellow">PBRERA-SAS79-PR1018</NavLink>
           </div>
           <button className="lg:hidden p-2 text-primary-yellow" onClick={toggleMobileMenu}>
             <FontAwesomeIcon icon={faBars} />
@@ -178,10 +208,10 @@ const Header = () => {
         </div>
       </div>
 
-      <NavLink to='https://api.whatsapp.com/send/?phone=918609000900&text=I+would+like+to+know+more+about+Vamana+Residences&type=phone_number&app_absent=0' target="_blank" className=" fixed z-20 bg-white text-primary-lightGreen text-md font-medium px-5 py-2 flex gap-2.5 rounded-full border-2 border-primary-lightGreen items-center font-medium font-semibold overflow-hidden" style={{ left: "20px", bottom: "24px" }}>
+      {/* <NavLink to='https://api.whatsapp.com/send/?phone=918609000900&text=I+would+like+to+know+more+about+Vamana+Residences&type=phone_number&app_absent=0' target="_blank" className=" fixed z-20 bg-white text-primary-lightGreen text-md font-medium px-5 py-2 flex gap-2.5 rounded-full border-2 border-primary-lightGreen items-center font-medium font-semibold overflow-hidden" style={{ left: "20px", bottom: "24px" }}>
         <FontAwesomeIcon icon={faWhatsapp} className="text-2xl pulso-animation " />
         How can I help you?
-      </NavLink>
+      </NavLink> */}
 
       {/* Popup */}
       <Dialog
@@ -206,9 +236,16 @@ const Header = () => {
           <div className="flex justify-end">
             <FontAwesomeIcon icon={faClose} className="text-2xl cursor-pointer" onClick={handleClose} />
           </div>
-          <EnquireForm title="Request For Brochure" setOpen={setOpen} />
+          <EnquireForm title="Request For Brochure" button="Submit Now" setOpen={setOpen} />
         </div>
       </Dialog>
+      {/* Side Popup for form*/}
+      <div className={`popup-modal-dialog ${showsidePopup ? 'block' : 'hidden'}`}>
+        <div className="flex justify-end">
+          <FontAwesomeIcon icon={faClose} className="text-2xl cursor-pointer" onClick={newSidePopUpClose} />
+        </div>
+        <EnquireForm title="Request For Brochure" button="Submit Now"  />
+      </div>
     </>
   );
 };

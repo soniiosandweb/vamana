@@ -6,6 +6,7 @@ import TermsConditions from './components/TermsConditions/TermsConditions';
 import PageNotFound from './components/Layouts/PageNotFound';
 import CookieConsent from "react-cookie-consent";
 import Thankyou from './components/Thankyou';
+import Floorplan from './components/Floorplan/floorplan'
 
 function App() {
   return (
@@ -34,6 +35,15 @@ function App() {
             <Route path='/terms-conditions' element={<TermsConditions />} />
             <Route path='*' element={<PageNotFound />} />
             <Route path='/thankyou' element={<Thankyou />} />
+            <Route path='/masterplan' element={<Home />} />
+            <Route path='/floorplan' element={<Home />} />
+            <Route path='/pricelist' element={<Home />} />
+            <Route path='/gallery' element={<Home />} />
+            <Route path='/location' element={<Home />} />
+            <Route path='/clubzaira' element={<Home />} />
+            <Route path='/amenities' element={<Home />} />
+            <Route path='/about' element={<PageNotFound />} />
+            <Route path='/flats' element={<Home />} />
           </Route>
           
         </Routes>

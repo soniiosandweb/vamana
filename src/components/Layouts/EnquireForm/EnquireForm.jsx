@@ -5,7 +5,8 @@ import { useState } from 'react';
 import axios from 'axios';
 import { CircularProgress } from '@mui/material';
 import { useNavigate } from "react-router-dom";
-const EnquireForm = ({ title, setOpen}) => {
+
+const EnquireForm = ({ title, setOpen, button }) => {
     const [formVisible, setFormVisible] = useState(true);
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -47,7 +48,7 @@ const EnquireForm = ({ title, setOpen}) => {
                 return false;
             }
         }
-        setDisableSubmit(true);
+        // setDisableSubmit(true);
         setLoading(true);
 
         axios({
@@ -109,9 +110,9 @@ const EnquireForm = ({ title, setOpen}) => {
         setEmail(e.target.value);
 
         if (name.length >= 1 && mobileNumber !== undefined && termsValue === true) {
-            setDisableSubmit(false);
+            // setDisableSubmit(false);
         } else {
-            setDisableSubmit(true);
+           // setDisableSubmit(true);
         }
     }
 
@@ -122,9 +123,9 @@ const EnquireForm = ({ title, setOpen}) => {
         const filteredValue = value.replace(/[^a-zA-Z\s]/g, '');
         setName(filteredValue);
         if (e.target.value.length >= 1 && mobileNumber !== undefined && termsValue === true) {
-            setDisableSubmit(false);
+            // setDisableSubmit(false);
         } else {
-            setDisableSubmit(true);
+            // setDisableSubmit(true);
         }
     }
 
@@ -132,9 +133,9 @@ const EnquireForm = ({ title, setOpen}) => {
         setMobileNumber(number);
 
         if (name.length >= 1 && number !== undefined && termsValue === true) {
-            setDisableSubmit(false);
+            // setDisableSubmit(false);
         } else {
-            setDisableSubmit(true);
+            // setDisableSubmit(true);
         }
     };
 
@@ -143,9 +144,9 @@ const EnquireForm = ({ title, setOpen}) => {
         setTermsValue(!termsValue);
         setTermsCheck(!termsValue);
         if (name.length >= 1 && mobileNumber !== undefined && !termsValue === true) {
-            setDisableSubmit(false);
+            // setDisableSubmit(false);
         } else {
-            setDisableSubmit(true);
+            // setDisableSubmit(true);
         }
     }
 
@@ -211,15 +212,15 @@ const EnquireForm = ({ title, setOpen}) => {
                             required
                         />
                         {phoneError && (
-                            <p className="text-red-400 text-sm" >{phoneError}</p>
+                            <p className="text-red-400 text-xs" >{phoneError}</p>
                         )}
                     </div>
 
-                    <p className={`flex items-center text-md mt-5 ${termsCheck ? 'font-semibold' : 'font-extralight  text-gray-400'}`}><input type='checkbox' required className='align-middle size-4' name="termsCheck" checked={termsCheck} value={termsValue} onChange={(e) => CheckboxChange(e)} /> I agree to be contacted by 'Vamana Residences' and its agents via WhatsApp, SMS, phone, email etc.</p>
+                    <p className={`flex items-center text-sm mt-5 ${termsCheck ? 'font-semibold' : 'font-extralight  text-gray-400'}`}><input type='checkbox' required className='align-middle size-4' name="termsCheck" checked={termsCheck} value={termsValue} onChange={(e) => CheckboxChange(e)} /> I agree to be contacted by 'Vamana Residences' and its agents via WhatsApp, SMS, phone, email etc.</p>
 
                     <div className="mt-2.5 flex items-center gap-5 justify-center">
                         
-                        <input type="submit" value="Download Now" className={`w-max text-white font-bold uppercase text-sm tracking-widest py-3.5 px-8   ${disableSubmit ? 'bg-gray-400 cursor-not-allowed' : 'bg-primary-yellow border-2 border-primary-yellow cursor-pointer'}`}  disabled={disableSubmit} />
+                        <input type="submit" value={button ? 'Submit Now' : 'Download Now'} className={`w-max hover:text-white font-bold text-primary-yellow uppercase text-sm tracking-widest py-2.5 px-8 hover:bg-primary-yellow border-2 border-primary-yellow cursor-pointer'}`}  disabled={disableSubmit} />
                         {loading && (
                             <CircularProgress
                                 sx={{

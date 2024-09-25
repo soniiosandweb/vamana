@@ -10,7 +10,7 @@ const AboutSection = () => {
     const handleClose = () => setOpen(false);
     return(
         <>  
-            <section className="home-about-section py-16 px-2.5" id="about">
+            <section className="home-about-section py-16 px-2.5" id="flats">
                 <div className='max-w-6xl m-auto'>
                     <div className="flex flex-col text-centre gap-5">
                         <h2 className="text-2xl sm:text-4xl font-semibold text-center">About Us</h2>

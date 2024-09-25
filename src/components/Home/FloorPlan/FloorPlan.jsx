@@ -1,6 +1,6 @@
-import floorPlan1 from '../../../assests/images/floorplan/3bhk.png';
-import floorPlan2 from '../../../assests/images/floorplan/3bhk-s.png';
-import floorPlan3 from '../../../assests/images/floorplan/4bhk-s.png';
+import floorPlan1 from '../../../assests/images/flrpln/3bhk.webp';
+import floorPlan2 from '../../../assests/images/flrpln/3+1bhk.webp';
+import floorPlan3 from '../../../assests/images/flrpln/4+1BHK.webp';
 import { useState } from "react";
 import { Dialog } from '@mui/material';
 import EnquireForm from '../../Layouts/EnquireForm/EnquireForm';
