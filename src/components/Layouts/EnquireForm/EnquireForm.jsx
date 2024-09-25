@@ -169,7 +169,7 @@ const EnquireForm = ({ title, setOpen, button }) => {
                     <p className="text-green-700 py-2.5 text-md text-center">{formSuccess}</p>
                 )}
                 {formVisible && (<div id='enquiry-form'>
-                    <p className="text-2xl font-extrabold capitalize mb-2.5">{title}</p>
+                    <p className="text-2xl title font-extrabold capitalize mb-2.5">{title}</p>
                     <div className="py-2">
                         <input
                             type="text"

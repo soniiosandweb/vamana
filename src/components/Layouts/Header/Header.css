@@ -56,7 +56,20 @@
     padding: 20px;
     box-shadow: 0 0 5px 2px #00000029;
 }
-.popup-modal-dialog .btn-icon {
+.side-popup-form {
+    position: fixed;
+    height: fit-content;
+    right: 30px;
+    bottom: 10px;
+    /* bottom:50px; */
+    z-index: 100;
+    max-width: 25%;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 5px 2px #00000029;
+}
+
+.popup-modal-dialog .btn-icon,.side-popup-form .btn-icon{
     position: absolute;
     right: -10px;
     top: -10px;
@@ -70,17 +83,26 @@
     justify-content: center;
 }
 @media( max-width: 1200px){
-    .popup-modal-dialog{
+    .popup-modal-dialog,.side-popup-form{
         max-width: 35%;
     }
 }
 @media( max-width: 767px){
-    .popup-modal-dialog{
+    .popup-modal-dialog,.side-popup-form{
         max-width: 40%;
     }
 }
 @media( max-width: 767px){
-    .popup-modal-dialog{
+    .popup-modal-dialog,.side-popup-form{
         max-width: 60%;
     }
+}
+@media( max-width: 480px){
+   .side-popup-form{
+        max-width: 80%;
+    }
+}
+
+.side-popup-form form.enquire-form.py-6 {
+    padding-top: 5px;
 }

@@ -6,7 +6,6 @@ import TermsConditions from './components/TermsConditions/TermsConditions';
 import PageNotFound from './components/Layouts/PageNotFound';
 import CookieConsent from "react-cookie-consent";
 import Thankyou from './components/Thankyou';
-import Floorplan from './components/Floorplan/floorplan'
 
 function App() {
   return (

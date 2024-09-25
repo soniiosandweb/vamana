@@ -124,9 +124,9 @@ const Header = () => {
         // window.scrollTo({ top: element.offsetTop, behavior: 'smooth'});
       }
     }
-    // console.log(location.pathname.split("/"))
+    console.log(location.pathname.split("/"))
 
-    if(menuLinks.some(item => item.id === location.pathname.split("/"))){
+    if(menuLinks.some(item => item.id === location.pathname.split("/")[1])){
       const path = location.pathname.split("/")[1];
       const element = document.getElementById(path);
     
@@ -233,15 +233,15 @@ const Header = () => {
         aria-modal="true"
       >
         <div className="flex flex-col px-2.5 popup-form">
-          <div className="flex justify-end">
+          <div className="flex justify-end ">
             <FontAwesomeIcon icon={faClose} className="text-2xl cursor-pointer" onClick={handleClose} />
           </div>
           <EnquireForm title="Request For Brochure" button="Submit Now" setOpen={setOpen} />
         </div>
       </Dialog>
       {/* Side Popup for form*/}
-      <div className={`popup-modal-dialog ${showsidePopup ? 'block' : 'hidden'}`}>
-        <div className="flex justify-end">
+      <div className={` side-popup-form ${showsidePopup ? 'block' : 'hidden'} border-4 border-primary-yellow `}>
+        <div className="flex justify-end btn-icon">
           <FontAwesomeIcon icon={faClose} className="text-2xl cursor-pointer" onClick={newSidePopUpClose} />
         </div>
         <EnquireForm title="Request For Brochure" button="Submit Now"  />
