@@ -175,16 +175,16 @@ const Header = () => {
              
             </nav>
           </div>
-          <div className="w-4/5 lg:w-2/6 xl:w-1/4 flex justify-end items-center gap-x-1.5 gap-y-2.5 sm:gap-x-4 px-2.5 flex-wrap">
-            <div className="rera-contact-wrapper flex flex-col">
+          <div className="w-5/6 lg:w-2/6 xl:w-1/4 flex justify-end items-center gap-x-1 gap-y-2.5 sm:gap-x-4 px-0 xsm:px-1.5 sm:px-2.5 flex-wrap">
+            <div className="rera-contact-wrapper flex gap-1  sm-gap-2 flex-row">
               <NavLink to='tel:+918609000900' className="text-xxs sm:text-sm 1xl:text-md flex  items-center font-medium header-nav-link font-semibold blink "><FontAwesomeIcon icon={faPhone} className="text-primary-yellow pr-1" /> +91 8609000900</NavLink>
-              
+              <button tabIndex='-1' className="text-xxs sm:text-xs font-bold capitalize cursor-pointer bg-primary-yellow tracking-widest py-2.5 sm:py-3.5 px-3.5 sm:px-[22px] 1xl:px-8 text-white" onClick={handleEnquireClick} id="enquire_now">Enquire Now</button>
             </div>
-            <button tabIndex='-1' className="text-xxs sm:text-xs font-bold capitalize cursor-pointer bg-primary-yellow tracking-widest py-2.5 sm:py-3.5 px-3.5 sm:px-[22px] 1xl:px-8 text-white" onClick={handleEnquireClick} id="enquire_now">Enquire Now</button>
+            
 
             <NavLink className="text-xxxs sm:text-xs m-auto w-full text-right font-medium header-nav-link font-semibold text-primary-yellow">PBRERA-SAS79-PR1018</NavLink>
           </div>
-          <button className="lg:hidden p-2 text-primary-yellow" onClick={toggleMobileMenu}>
+          <button className="lg:hidden  py-2 px-1   text-primary-yellow" onClick={toggleMobileMenu}>
             <FontAwesomeIcon icon={faBars} />
           </button>
           {mobileMenuOpen && (
