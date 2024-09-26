@@ -63,8 +63,8 @@ const Footer = () => {
         <section className="bg-primary-bg py-4 text-sm pt-16">
             <div className='max-w-6xl m-auto px-2.5'>
 
-                <div className="flex flex-col md:flex-row gap-[20px] pb-16">
-                    <div className="w-full md:w-1/3 flex flex-col gap-[15px]">
+                <div className="flex flex-col md:flex-row gap-[20px] justify-between pb-16">
+                    <div className="w-full md:w-1/2 flex flex-col gap-[15px] md:border-r border-primary-yellow">
                         <NavLink to="/" className="block w-auto sm:w-max" reloadDocument={true}>
                         <LazyLoadImage
                             src={logo}
@@ -75,24 +75,31 @@ const Footer = () => {
                         <p className="text-sm">Discover your dream home in this remarkable new residential project in Zirakpur today, and take the first step towards a life of comfort, convenience, and serenity.</p>
                         <p className='text-sm text-primary-yellow font-semibold '>RERA Number : PBRERA-SAS79-PR1018</p>
                     </div>
-                    <div className="w-full md:w-1/3 flex flex-col gap-[15px] overflow-hidden items-start md:items-center">
-                        <h6 className="text-lg font-bold text-center">Useful Links</h6>
-                        <ul className="grid grid-cols-[auto,auto] justify-center gap-x-[20px]">
-                            <li><NavLink smooth="true" to='/flats' className="text-sm font-medium hover:text-primary-yellow" ><FontAwesomeIcon icon={faAngleRight} className="text-primary-yellow pr-1.5"/> About Us</NavLink></li>
-                            {menuLinks.map((item, i) => (
-                                <li key={i}><NavLink smooth="true" to={item.redirect} className="text-sm font-medium hover:text-primary-yellow" target="_blank"><FontAwesomeIcon icon={faAngleRight} className="text-primary-yellow pr-1.5"/> {item.name}</NavLink></li>
-                            ))}
-                        </ul>
+
+                    <div className="w-full md:w-1/2 flex flex-col md:flex-row gap-[20px] justify-between">
+
+                        <div className="w-full md:w-auto flex flex-col gap-[15px] overflow-hidden items-start md:items-center md:ml-auto">
+                            <h6 className="text-lg font-bold text-center">Useful Links</h6>
+                            <ul className="grid grid-cols-[auto,auto] justify-center gap-x-[20px]">
+                                <li><NavLink smooth="true" to='/flats' className="text-sm font-medium hover:text-primary-yellow" ><FontAwesomeIcon icon={faAngleRight} className="text-primary-yellow pr-1.5"/> About Us</NavLink></li>
+                                {menuLinks.map((item, i) => (
+                                    <li key={i}><NavLink smooth="true" to={item.redirect} className="text-sm font-medium hover:text-primary-yellow" target="_blank"><FontAwesomeIcon icon={faAngleRight} className="text-primary-yellow pr-1.5"/> {item.name}</NavLink></li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        <div className="w-full md:w-auto flex flex-col gap-[15px] md:ml-auto">
+                            <h6 className="text-lg font-bold">Follow Us On</h6>
+                            <ul className="flex flex-row gap-[20px]">
+                                {social.map((item, i) =>(
+                                    <li key={i} className="bg-primary-yellow rounded-full size-[30px] flex items-center justify-center"><FontAwesomeIcon icon={item.icon} className="text-base text-white"/></li>
+                                ))}
+                                
+                            </ul>
+                        </div>
                     </div>
-                    <div className="w-full md:w-1/3 flex flex-col gap-[15px]">
-                        <h6 className="text-lg font-bold text-center">Follow Us On</h6>
-                        <ul className="flex flex-row gap-[20px] justify-center">
-                            {social.map((item, i) =>(
-                                <li key={i} className="bg-primary-yellow rounded-full size-[30px] flex items-center justify-center"><FontAwesomeIcon icon={item.icon} className="text-base text-white"/></li>
-                            ))}
-                            
-                        </ul>
-                    </div>
+
+                    
                 </div>
                 
                 <div className="flex flex-col items-center text-center gap-1.5 px-2.5 pt-6 pb-2.5">
