@@ -28,24 +28,19 @@ const Header = () => {
   // const [navbarLogo, setNavbarLogo] = useState(logowhite);
   const [showPopupNew, setShowPopupNew] = useState(false);
   const [showsidePopup, setshowsidePopup] = useState(false);
+  const [locationPath, setLocationPath] = useState(false);
  
   const handleEnquireClick = () => {
-    // if (window.gtag) {
-    //   window.gtag('event', 'conversion', {
-    //     'send_to': 'AW-16677697257/DBiSCPzj9MsZEOntxZA-',
-    //     'value': 1.0,
-    //     'currency': 'INR'
-    //   });
-    // } else {
-    //   console.error('gtag is not defined');
-    // }
+
     handleOpen()
   };
-  const newSidePopUpClose  = () => {
+  const newSidePopUpClose  = (e) => {
+    e.preventDefault();
     setshowsidePopup(false)
   }
 
-  const handleNewClose = () => {
+  const handleNewClose = (e) => {
+    e.preventDefault();
     setShowPopupNew(false);
     setshowsidePopup(true);
   }
@@ -101,14 +96,14 @@ const Header = () => {
   const handleMenuClick = (e) => {
     e.preventDefault();
     const { id } = e.target.dataset;
-    const element = document.getElementById(id);
-    if (element) {
-      console.log(element)
-      element.style.scrollMarginTop = '50px';
-      element.scrollIntoView({ behavior: 'smooth' });
-      // window.scrollTo({ top: element.offsetTop, behavior: 'smooth'});
-      
-    }
+
+      const element = document.getElementById(id);
+      if (element) {
+        element.style.scrollMarginTop = '50px';
+        element.scrollIntoView({ behavior: 'smooth' });
+        
+      }
+
   }
 
   useEffect(() => {
@@ -122,44 +117,32 @@ const Header = () => {
     };
 
 
-
     window.addEventListener("scroll", listenScrollEvent);
-    //return () => window.removeEventListener("scroll", listenScrollEvent);
 
-    if (location.hash) {
+    if (location.hash && location.hash.slice(1) !== locationPath) {
       const element = document.getElementById(location.hash.slice(1));
-      // console.log(location.hash.slice(1))
-      // console.log(element);
       if (element) {
+        setLocationPath(location.hash.slice(1))
         element.style.scrollMarginTop = '50px';
         element.scrollIntoView({ behavior: 'smooth' });
-        // window.scrollTo({ top: element.offsetTop, behavior: 'smooth'});
       }
     }
-    console.log(location.pathname.split("/"))
+    // console.log(location.pathname.split("/"))
 
-    if(menuLinks.some(item => item.id === location.pathname.split("/")[1])){
+    if(menuLinks.some(item => item.id === location.pathname.split("/")[1]) && location.pathname.split("/")[1] !== locationPath){
       const path = location.pathname.split("/")[1];
       const element = document.getElementById(path);
-    
+
       if (element) {
+        setLocationPath(path)
         element.style.scrollMarginTop = '50px';
         element.scrollIntoView({ behavior: 'smooth' });
-        // window.scrollTo({ top: element.offsetTop, behavior: 'smooth'});
         
       }
     }
 
-    if('flats' === location.pathname.split("/")[1]){
-      const path = 'about';
-      const element = document.getElementById(path);
-      if (element) {
-        element.style.scrollMarginTop = '50px';
-        element.scrollIntoView({ behavior: 'smooth' });
-        // window.scrollTo({ top: element.offsetTop, behavior: 'smooth'});
-      }
-    }
-  }, [locationValue, location]);
+
+  }, [location, locationValue, locationPath]);
 
   return (
     <>
@@ -177,9 +160,19 @@ const Header = () => {
           </div>
           <div className="hidden lg:block w-3/6 xl:w-2/4 px-2.5">
             <nav className="flex gap-1.5 xl:gap-[14px] items-center justify-center flex-wrap">
-              {menuLinks.map((item, i) => (
-                <a smooth="true" href={item.redirect} key={i} className="text-xs 1xl:text-sm font-medium hover:text-primary-yellow header-nav-link" data-id={item.id} onClick={(e) => handleMenuClick(e)}>{item.name}</a>
-              ))}
+
+              {locationValue[1] === "" ?
+
+                menuLinks.map((item, i) => (
+                  <Link smooth="true" to={item.redirect} key={i} className="text-xs 1xl:text-sm font-medium hover:text-primary-yellow header-nav-link" data-id={item.id} onClick={(e) => handleMenuClick(e)}>{item.name}</Link>
+                ))
+              :
+                menuLinks.map((item, i) => (
+                  <Link smooth="true" to={item.redirect} key={i} className="text-xs 1xl:text-sm font-medium hover:text-primary-yellow header-nav-link" >{item.name}</Link>
+                ))
+                
+              } 
+             
             </nav>
           </div>
           <div className="w-4/5 lg:w-2/6 xl:w-1/4 flex justify-end items-center gap-x-1.5 gap-y-2.5 sm:gap-x-4 px-2.5 flex-wrap">
@@ -212,7 +205,7 @@ const Header = () => {
       </header>
 
       <div className={`popup-modal-dialog ${showPopupNew ? 'block' : 'hidden'}`}>
-        <button className='btn-icon' onClick={handleNewClose}>
+        <button className='btn-icon' onClick={(e) => handleNewClose(e)}>
           <FontAwesomeIcon icon={faClose} className="text-2xl cursor-pointer" />
         </button>
 

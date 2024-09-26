@@ -7,32 +7,18 @@ import { CircularProgress } from '@mui/material';
 import { useNavigate } from "react-router-dom";
 
 const EnquireForm = ({ title, setOpen, button }) => {
-    const [formVisible, setFormVisible] = useState(true);
+    // const [formVisible, setFormVisible] = useState(true);
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [termsValue, setTermsValue] = useState(false);
     const [termsCheck, setTermsCheck] = useState(false);
     const [mobileNumber, setMobileNumber] = useState();
     const [phoneError, setPhoneError] = useState("");
-    const [formSuccess, setFormSuccess] = useState("");
+    // const [formSuccess, setFormSuccess] = useState("");
     const [formError, setFormError] = useState("");
     const [loading, setLoading] = useState(false);
-    const [disableSubmit, setDisableSubmit] = useState(true);
-    const [number, setNumber] = useState();
+    // const [disableSubmit, setDisableSubmit] = useState(true);
 
-
-
-
-    const checkInput = (e) =>{
-        if(!(e.keyCode >= 48 && e.keyCode <= 57 || e.keyCode === 8)){
-            e.preventDefault()
-        }
-        else{
-            setNumber(e.target.value)
-        }
-       
-    }
-    
     const navigate=useNavigate();
     const handleSubmit = (event) => {
         if (event) event.preventDefault();
@@ -67,7 +53,7 @@ const EnquireForm = ({ title, setOpen, button }) => {
                 if (response.data.status === 0) {
                     setLoading(false);
                     navigate('/thankyou');
-                    console.log("dtdtdtd");
+                    
                     // setFormSuccess("THANK YOU !! Our Team Will Contact You Shortly!");
                     
                 //   if( setOpen){
@@ -165,10 +151,10 @@ const EnquireForm = ({ title, setOpen, button }) => {
                     <p className="text-red-400 py-2.5 text-md text-center">{formError}</p>
                 )}
 
-                {formSuccess && (
+                {/* {formSuccess && (
                     <p className="text-green-700 py-2.5 text-md text-center">{formSuccess}</p>
-                )}
-                {formVisible && (<div id='enquiry-form'>
+                )} */}
+                <div id='enquiry-form'>
                     <p className="text-2xl title font-extrabold capitalize mb-2.5">{title}</p>
                     <div className="py-2">
                         <input
@@ -207,7 +193,6 @@ const EnquireForm = ({ title, setOpen, button }) => {
                             onChange={handleUpdate}
                             limitMaxLength={true}
                             national="true"
-                            onKeyDown={(e)=> checkInput(e)}
                             international={false}
                             required
                         />
@@ -220,7 +205,7 @@ const EnquireForm = ({ title, setOpen, button }) => {
 
                     <div className="mt-[20px] flex items-center gap-5 justify-center">
                         
-                        <input type="submit" value={button ? button : 'Download Now'} className={`w-max hover:text-white font-bold text-primary-yellow uppercase text-xs tracking-widest py-2.5 sm:py-3.5 px-3.5 sm:px-[22px] 1xl:px-8 hover:bg-primary-yellow border-2 border-primary-yellow cursor-pointer'}`}  disabled={disableSubmit} />
+                        <input type="submit" value={button ? button : 'Download Now'} className={`w-max hover:text-white font-bold text-primary-yellow uppercase text-xs tracking-widest py-2.5 sm:py-3.5 px-3.5 sm:px-[22px] 1xl:px-8 hover:bg-primary-yellow border-2 border-primary-yellow cursor-pointer`}  />
                         {loading && (
                             <CircularProgress
                                 sx={{
@@ -233,7 +218,7 @@ const EnquireForm = ({ title, setOpen, button }) => {
                             />
                         )}
                     </div>
-                </div>)}
+                </div>
             </div>
         </form>
     )
