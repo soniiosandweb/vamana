@@ -85,8 +85,8 @@ const Footer = () => {
                         </ul>
                     </div>
                     <div className="w-full md:w-1/3 flex flex-col gap-[15px]">
-                        <h6 className="text-lg font-bold">Follow Us On</h6>
-                        <ul className="flex flex-row gap-[20px]">
+                        <h6 className="text-lg font-bold text-center">Follow Us On</h6>
+                        <ul className="flex flex-row gap-[20px] justify-center">
                             {social.map((item, i) =>(
                                 <li key={i} className="bg-primary-yellow rounded-full size-[30px] flex items-center justify-center"><FontAwesomeIcon icon={item.icon} className="text-base text-white"/></li>
                             ))}

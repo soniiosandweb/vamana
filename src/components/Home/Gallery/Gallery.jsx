@@ -11,6 +11,9 @@ import image8 from '../../../assests/images/gallery/gallery-8.webp';
 import image9 from '../../../assests/images/gallery/gallery-9.webp';
 import { Counter, Fullscreen, Zoom } from "yet-another-react-lightbox/plugins";
 import { useState } from "react";
+import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
+import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
+import "yet-another-react-lightbox/plugins/thumbnails.css";
 
 const Gallery = () => {
 
@@ -60,13 +63,13 @@ const Gallery = () => {
             <div className='max-w-6xl m-auto'>
                 <div className="flex flex-col gap-5">
                     <h2 className="text-2xl sm:text-4xl font-semibold text-center mb-3">Gallery</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-flow-row gap-5 p-2.5">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 tab grid-flow-row gap-5 p-2.5">
                         {images.map((item, i) => (
-                            <div className='relative overflow-hidden rounded-md gallery-image h-full' key={i}>
+                            <div className='relative effect-one effect overflow-hidden rounded-md gallery-image w-full h-full' key={i}>
                                 <img
                                     src={item.src}
                                     alt={item.title}
-                                    className='rounded-md hover:scale-110 w-full h-full object-cover transition ease-in-out duration-300 cursor-pointer'
+                                    className='rounded-md  object-cover cursor-pointer'
                                     onClick={() => setIndex(i)}
                                 />
                                 {/* <p className='text-xs font-semibold p-1 absolute bottom-2.5 right-2.5 left-auto text-white w-auto'>*Image shown is for illustration purposes only</p> */}
@@ -79,7 +82,8 @@ const Gallery = () => {
                             styles={{slide: { marginTop: "20px" },  toolbar: {background: '#00000054', width: '100%'}, icon:{color: '#fff'} }}
                             controller={{ closeOnBackdropClick: true }}
                             close={() => setIndex(-1)}
-                            plugins={[Fullscreen, Zoom, Counter]}
+                            // slides={advancedSlides}
+                            plugins={[Fullscreen, Zoom, Slideshow,Counter,Thumbnails]}
                             counter={{ container: { style: { top: 0, bottom: "unset" } } }}
                         />
                     </div>

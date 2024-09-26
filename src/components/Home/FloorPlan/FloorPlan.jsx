@@ -56,7 +56,7 @@ const FloorPlan = () => {
                             <button className="w-full bg-primary-yellow text-white font-bold uppercase text-xs tracking-widest py-3.5 px-8" onClick={() => setOpenPlan1(true)}>3 BHK (2325 sq. feet)</button>
 
                             </div>
-                            <button tabIndex='-1' className="w-max mt-3 m-auto flex text-primary-yellow border-2 border-primary-yellow  hover:bg-primary-yellow   hover:text-white self-center  font-bold uppercase text-xs tracking-widest py-2.5 sm:py-3.5 px-3.5 sm:px-[22px] 1xl:px-8" onClick={handleOpen}>Download Price List</button> </div>
+                            <button tabIndex='-1' className="w-max mt-5 m-auto flex text-primary-yellow border-2 border-primary-yellow  hover:bg-primary-yellow   hover:text-white self-center  font-bold uppercase text-xs tracking-widest py-2.5 sm:py-3.5 px-3.5 sm:px-[22px] 1xl:px-8" onClick={handleOpen}>Download Price List</button> </div>
                        
 
                         {/* Plan 2 */}
@@ -87,7 +87,7 @@ const FloorPlan = () => {
                                 className="single-lightbox"
                             />
                             <button className="w-full bg-primary-yellow text-white font-bold uppercase text-xs tracking-widest py-3.5 px-8" onClick={() => setOpenPlan2(true)}>3+1 BHK (2690 sq. feet)</button></div> 
-                            <button tabIndex='-1' className="w-max mt-3 m-auto flex text-primary-yellow border-2 border-primary-yellow  hover:bg-primary-yellow   hover:text-white self-center  font-bold uppercase text-xs tracking-widest py-2.5 sm:py-3.5 px-3.5 sm:px-[22px] 1xl:px-8" onClick={handleOpen}>Download Price List</button>
+                            <button tabIndex='-1' className="w-max mt-5 m-auto flex text-primary-yellow border-2 border-primary-yellow  hover:bg-primary-yellow   hover:text-white self-center  font-bold uppercase text-xs tracking-widest py-2.5 sm:py-3.5 px-3.5 sm:px-[22px] 1xl:px-8" onClick={handleOpen}>Download Price List</button>
                         </div>
 
                         {/* Plan 3 */}
@@ -118,7 +118,7 @@ const FloorPlan = () => {
                                 className="single-lightbox"
                             />
                             <button className="w-full bg-primary-yellow text-white font-bold uppercase text-xs tracking-widest py-3.5 px-8" onClick={() => setOpenPlan3(true)}>4+1 BHK (3685 sq. feet)</button></div> 
-                            <button tabIndex='-1' className="w-max mt-3 m-auto  flex self-center text-primary-yellow border-2 border-primary-yellow  hover:bg-primary-yellow   hover:text-white font-bold uppercase text-xs tracking-widest py-2.5 sm:py-3.5 px-3.5 sm:px-[22px] 1xl:px-8" onClick={handleOpen}>Download Price List</button>
+                            <button tabIndex='-1' className="w-max mt-5 m-auto  flex self-center text-primary-yellow border-2 border-primary-yellow  hover:bg-primary-yellow   hover:text-white font-bold uppercase text-xs tracking-widest py-2.5 sm:py-3.5 px-3.5 sm:px-[22px] 1xl:px-8" onClick={handleOpen}>Download Price List</button>
                         </div>
                         
                     </div>
