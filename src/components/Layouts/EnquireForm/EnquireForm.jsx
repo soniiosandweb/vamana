@@ -148,11 +148,11 @@ const EnquireForm = ({ title, setOpen, button }) => {
         <form className="enquire-form py-6" onSubmit={handleSubmit}>
             <div className="form-section text-left">
                 {formError && (
-                    <p className="text-red-400 py-2.5 text-md text-center">{formError}</p>
+                    <p className="text-red-400 py-2 text-[12px] text-center">{formError}</p>
                 )}
 
                 {/* {formSuccess && (
-                    <p className="text-green-700 py-2.5 text-md text-center">{formSuccess}</p>
+                    <p className="text-green-700 py-2 text-[12px] text-center">{formSuccess}</p>
                 )} */}
                 <div id='enquiry-form'>
                     <p className="text-2xl title font-extrabold capitalize mb-2.5">{title}</p>

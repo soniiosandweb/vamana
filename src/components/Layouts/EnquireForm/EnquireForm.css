@@ -10,3 +10,6 @@ input.align-middle.size-4{
     margin-right: 12px;
 }
 
+input#name,input#email,.PhoneInput {
+    border-radius: 0px!important;
+}
