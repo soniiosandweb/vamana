@@ -52,6 +52,7 @@ const EnquireForm = ({ title, setOpen, button }) => {
             
                 if (response.data.status === 0) {
                     setLoading(false);
+                    setOpen(false);
                     navigate('/thankyou');
                     
                     // setFormSuccess("THANK YOU !! Our Team Will Contact You Shortly!");
@@ -72,7 +73,9 @@ const EnquireForm = ({ title, setOpen, button }) => {
                 } else {
                     setLoading(false);
                     setFormError("Some error occured");
+                    
                     resetForm();
+                    setOpen(false);
                     setTimeout(() => {
                         setFormError('');
                     }, 10000);
