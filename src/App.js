@@ -49,6 +49,7 @@ function App() {
             <Route path='/clubzaira' element={<Home />} />
             <Route path='/amenities' element={<Home />} />
             <Route path='/flats' element={<Home />} />
+            <Route path='/luxuryflats/3+1bhk' element={<Home />} />
 
             <Route path='/floor-plan' element={<FloorPlanPage />} />
             <Route path='/master-plan' element={<MasterPlanPage />} />
