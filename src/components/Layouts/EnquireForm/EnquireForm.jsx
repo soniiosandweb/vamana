@@ -6,7 +6,7 @@ import axios from 'axios';
 import { CircularProgress } from '@mui/material';
 import { useNavigate } from "react-router-dom";
 
-const EnquireForm = ({ title, setOpen, button }) => {
+const EnquireForm = ({ subtitle, title, setOpen, button, setshowsidePopup }) => {
     // const [formVisible, setFormVisible] = useState(true);
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -49,26 +49,33 @@ const EnquireForm = ({ title, setOpen, button }) => {
         })
             .then(function (response) {
                 //handle success
+
+                console.log(response.data.status)
             
                 if (response.data.status === 0) {
                     setLoading(false);
-                    setOpen(false);
+                    if(setOpen){
+                       setOpen(false); 
+                    }
+                    if(setshowsidePopup){
+                        setshowsidePopup(false);
+                    }
                     navigate('/thankyou');
                     
                     // setFormSuccess("THANK YOU !! Our Team Will Contact You Shortly!");
                     
-                //   if( setOpen){
-                   
-                //     setFormVisible(false);
-                //   }
-                //     resetForm();
-                //     setTimeout(() => {
-                //         setFormSuccess('');
-                //         if (setOpen) {
-                //             setOpen(false);
-                //             setFormVisible(true);
-                //         }
-                //     }, 10000);
+                    //   if( setOpen){
+                    
+                    //     setFormVisible(false);
+                    //   }
+                    //     resetForm();
+                    //     setTimeout(() => {
+                    //         setFormSuccess('');
+                    //         if (setOpen) {
+                    //             setOpen(false);
+                    //             setFormVisible(true);
+                    //         }
+                    //     }, 10000);
 
                 } else {
                     setLoading(false);
@@ -158,7 +165,10 @@ const EnquireForm = ({ title, setOpen, button }) => {
                     <p className="text-green-700 py-2 text-[12px] text-center">{formSuccess}</p>
                 )} */}
                 <div id='enquiry-form'>
-                    <p className="text-2xl title font-extrabold capitalize mb-2.5">{title}</p>
+                    <p className="text-2xl title font-extrabold capitalize mb-2.5">
+                        {subtitle && <span className='block'>{subtitle}</span>}
+                        {title}
+                    </p>
                     <div className="py-2">
                         <input
                             type="text"
