@@ -250,7 +250,7 @@ const Header = () => {
         <div className="flex justify-end btn-icon">
           <FontAwesomeIcon icon={faClose} className="text-2xl cursor-pointer" onClick={newSidePopUpClose} />
         </div>
-        <EnquireForm subtitle="Download" title="Vamana Arvindam Price List" button="Get New Price List" setshowsidePopup={setshowsidePopup} />
+        <EnquireForm title="Download Price List" button="Get New Price List" setshowsidePopup={setshowsidePopup} />
       </div>
     </>
   );
