@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet"
 
-const MetaData = ({ title, description, keywords }) => {
+const MetaData = ({ title, description, keywords, canonicalUrl }) => {
     return(
         <Helmet>
             <title>{title}</title>
@@ -11,6 +11,12 @@ const MetaData = ({ title, description, keywords }) => {
             {keywords && (
                 <meta name="keywords" content={keywords} />
             )}
+
+            {canonicalUrl &&
+                <link rel="canonical" href={canonicalUrl ? canonicalUrl : "https://vamanaresidences.com/" } />
+            }
+
+            
             
         </Helmet>
     )
