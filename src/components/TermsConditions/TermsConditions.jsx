@@ -1,12 +1,17 @@
+import { useLocation } from "react-router-dom";
 import MetaData from "../Layouts/MetaData"
 
 const TermsConsitions = () => {
+
+    const location = useLocation();
+
     return(
         <>
             <MetaData 
                 title={"Vamana Residences | Terms & Conditions"} 
                 description={"Review our Terms & Conditions before engaging with Vamana Residences. This page outlines the legal framework for using our website and services."}
                 keywords={"Vamana terms and conditions, user agreement, website usage, legal disclaimers, Zirakpur"}
+                canonicalUrl={`${process.env.REACT_APP_API_URL}${location.pathname}`}
             />
 
             <section className=" py-5 md:py-16 px-2.5">

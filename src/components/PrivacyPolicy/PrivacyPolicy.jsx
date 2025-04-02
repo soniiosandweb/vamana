@@ -1,12 +1,17 @@
+import { useLocation } from "react-router-dom";
 import MetaData from "../Layouts/MetaData"
 
 const PrivacyPolicy = () => {
+
+    const location = useLocation();
+
     return(
         <>
             <MetaData 
                 title={"Vamana Residences | Privacy Policy"} 
                 description={"This page outlines the privacy practices of Vamana Group Flats. Learn how we collect, use, and protect your personal information."}
                 keywords={"Vamana Group, privacy policy, data protection, personal information, data privacy, data security, Zirakpur"}
+                canonicalUrl={`${process.env.REACT_APP_API_URL}${location.pathname}`}
             />
 
             <section className=" py-5 md:py-16 px-2.5">

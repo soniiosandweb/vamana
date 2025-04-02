@@ -17,7 +17,7 @@ const Home = () => {
                 title={"Vamana Arvindam Group Zirakpur | Luxury 3 & 4 BHK Apartments"} 
                 description={"Discover luxury apartments in Zirakpur by Vamana Arvindam Group Zirakpur. Explore 3 BHK flats for sale in Zirakpur & 4 BHK apartments in a prime location."} 
                 keywords={"Vamana Group, Vamana Arvindam, 3 BHK flats Zirakpur, 3+1 BHK flats Zirakpur, 4+1 BHK flats Zirakpur, Flats near Patiala Road Zirakpur, Luxury apartments Zirakpur, Luxury Flats in Zirakpur, Premium Property in Zirakpur, New Residential Project in Zirakpur"}
-                canonicalUrl={"https://vamanaresidences.com/"}
+                canonicalUrl={process.env.REACT_APP_API_URL}
             />
 
             <BannerSlider />

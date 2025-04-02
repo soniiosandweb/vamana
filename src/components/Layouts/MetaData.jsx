@@ -13,7 +13,7 @@ const MetaData = ({ title, description, keywords, canonicalUrl }) => {
             )}
 
             {canonicalUrl &&
-                <link rel="canonical" href={canonicalUrl ? canonicalUrl : "https://vamanaresidences.com/" } />
+                <link rel="canonical" href={canonicalUrl ? canonicalUrl : process.env.REACT_APP_API_URL } />
             }
 
             
