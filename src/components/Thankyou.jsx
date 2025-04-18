@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import './thankyou.css'
 export default function Thankyou() {
 
 
@@ -19,10 +21,16 @@ export default function Thankyou() {
     }, []); 
 
     return (
-        <div className="container">
+        <div className="container thanku-txt-wrapper">
             <div className="row">
-                <div className="thankyou-text items-center text-4xl font-semibold my-5 text-primary-yellow py-10 text-center">
-                    Thank You !!
+            <div className="thankyou-enclose py-10 px-10">
+                <div className="text-white  check"> <FontAwesomeIcon icon={faCheck} /></div>
+                <div className="thankyou-text items-center text-4xl font-semibold my-5 text-primary-yellow  text-center">
+                    Thank You 
+                    
+                </div>
+                <div className='items-center  text-center thankyou-subtxt'>For Trusting Us with Your Home Search !!</div>
+                <div className='items-center  text-center thankyou-subtxt'> We’ll Reach Out Soon With All the Details.</div>
                 </div>
             </div>
         </div>
