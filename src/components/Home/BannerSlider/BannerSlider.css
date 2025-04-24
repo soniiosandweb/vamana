@@ -14,3 +14,7 @@
     opacity: 1;
     color: #fff !important;
 }
+.h-screen {
+    height: 100vh;
+    min-height: 675px;
+}
