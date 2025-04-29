@@ -27,7 +27,8 @@ const BannerSlider = () => {
             title: "Elevate Your Lifestyle: Discover Vamana’s Exclusive Refuge",
             subtitle: (
                 <>
-                    Discover Vamana, where your home is a serene escape from urban life. Imagine a gated, green enclave with pathways crafted for peace and relaxation. Our <strong>luxurious 3BHK flats in Zirakpur and 4BHK apartments in Zirakpur</strong> offer a distinctive synthesis of quietude and modern luxury.
+                    {/* Discover Vamana, where your home is a serene escape from urban life. Imagine a gated, green enclave with pathways crafted for peace and relaxation. Our <strong>luxurious 3BHK flats in Zirakpur and 4BHK apartments in Zirakpur</strong> offer a distinctive synthesis of quietude and modern luxury. */}
+                    Premium Lifestyle, 3BHK Apartments       
                 </>
             ),
 
@@ -39,7 +40,8 @@ const BannerSlider = () => {
             title: "Live Grand, Live Vamana Unwind in a Gated Oasis",
             subtitle: (
                 <>
-                    Vamana isn't just an address; it's a serene sanctuary away from the bustle of city life. Imagine stepping into a secure, gated community where lush greenery and thoughtfully designed walkways create a tranquil atmosphere. Vamana promises a lifestyle where peace and comfort seamlessly blend with modern luxury with our <strong>3 BHK flats in Zirakpur and 4 BHK flats in Zirakpur</strong>.
+                    {/* Vamana isn't just an address; it's a serene sanctuary away from the bustle of city life. Imagine stepping into a secure, gated community where lush greenery and thoughtfully designed walkways create a tranquil atmosphere. Vamana promises a lifestyle where peace and comfort seamlessly blend with modern luxury with our <strong>3 BHK flats in Zirakpur and 4 BHK flats in Zirakpur</strong>. */}
+                    Premium Lifestyle, 3BHK Apartments       
                 </>
             ),
             image: banner2,
@@ -49,7 +51,8 @@ const BannerSlider = () => {
             title: "Luxurious Hideaway: Unwind in Vamana’s Secured Haven",
             subtitle: (
                 <>
-                    Vamana offers an exceptional lifestyle, transforming your residence into a peaceful retreat from city noise. Picture a secure, green community with artfully designed walkways enhancing your relaxation. Our <strong>luxury flats Zirakpur</strong> uniquely combine tranquility with upscale living
+                    {/* Vamana offers an exceptional lifestyle, transforming your residence into a peaceful retreat from city noise. Picture a secure, green community with artfully designed walkways enhancing your relaxation. Our <strong>luxury flats Zirakpur</strong> uniquely combine tranquility with upscale living */}
+                    Premium Lifestyle, 3BHK Apartments       
                 </>
             ),
             image: banner3,
@@ -59,7 +62,8 @@ const BannerSlider = () => {
             title: "Our spacious 3, 3+1 and 4+1 BHK flats in Zirakpur are meticulously crafted to provide you with the ultimate living experience.",
             subtitle: (
                 <>
-                    Discover Vamana, where your home is a serene escape from urban life. Imagine a gated, green enclave with pathways crafted for peace and relaxation. Our <strong>luxurious 3BHK flats in Zirakpur and 4BHK apartments in Zirakpur</strong> offer a distinctive synthesis of quietude and modern luxury.
+                    {/* Discover Vamana, where your home is a serene escape from urban life. Imagine a gated, green enclave with pathways crafted for peace and relaxation. Our <strong>luxurious 3BHK flats in Zirakpur and 4BHK apartments in Zirakpur</strong> offer a distinctive synthesis of quietude and modern luxury. */}
+                    Premium Lifestyle, 3BHK Apartments       
                 </>
             ),
 
@@ -71,7 +75,8 @@ const BannerSlider = () => {
             title: "Vamana - Where Every Detail Exudes Excellence, Luxurious 3/3+1/4 BHK Apartments",
             subtitle: (
                 <>
-                    Discover Vamana, where your home is a serene escape from urban life. Imagine a gated, green enclave with pathways crafted for peace and relaxation. Our <strong>luxurious 3BHK flats in Zirakpur and 4BHK apartments in Zirakpur</strong> offer a distinctive synthesis of quietude and modern luxury.
+                    {/* Discover Vamana, where your home is a serene escape from urban life. Imagine a gated, green enclave with pathways crafted for peace and relaxation. Our <strong>luxurious 3BHK flats in Zirakpur and 4BHK apartments in Zirakpur</strong> offer a distinctive synthesis of quietude and modern luxury. */}
+                    Premium Lifestyle, 3BHK Apartments       
                 </>
             ),
 
@@ -91,8 +96,9 @@ const BannerSlider = () => {
                                 <div md={12} xl={10} className='w-full md:w-4/5 m-auto'>
                                     <div className='flex   h-full flex-col gap-4 text-left'>
                                         <h1 className='text-3xl sm:text-4xl lg:text-5xl font-semibold'>{el.title}</h1>
-                                        {/* <p className='text-md sm:text-xl'>{el.subtitle}</p> */}
-                                        <div className='w-72 h-px bg-white mt-16'></div>
+                                        <p className='text-md sm:text-[26px] font-medium tracking-wider'>Premium Lifestyle, 3BHK Apartments</p>
+                                        <p className='text-md sm:text-[26px] font-semibold text-primary-lightYellow'>&#8377; 1.7 Cr Onwards</p>
+                                        <div className='w-72 h-px bg-white mt-8'></div>
                                         <ul className='flex flex-col md:flex-row gap-4'>
                                             <li className='flex gap-2 items-center text-sm font-semibold'><FontAwesomeIcon icon={faHome} /> 3 BHK Apartments</li>
                                             <li className='flex gap-2 items-center text-sm font-semibold'><FontAwesomeIcon icon={faHome} /> 3+1 BHK Apartments</li>

@@ -39,6 +39,7 @@ module.exports = {
         darkBlue: '#172337',
         grey: '#878787',
         bg: '#f3f3f3f0',
+        lightYellow: '#D09D44'
       },
     },
     spacing: {
@@ -542,6 +543,7 @@ module.exports = {
       sm: '24rem',
       md: '28rem',
       lg: '32rem',
+    
       xl: '36rem',
       '2xl': '42rem',
       '3xl': '48rem',
