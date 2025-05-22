@@ -97,7 +97,7 @@ const BannerSlider = () => {
                                     <div className='flex   h-full flex-col gap-4 text-left'>
                                         <h1 className='text-3xl sm:text-4xl lg:text-5xl font-semibold'>{el.title}</h1>
                                         <p className='text-md sm:text-[26px] font-medium tracking-wider'>Premium Lifestyle, 3BHK Apartments</p>
-                                        <p className='text-md sm:text-[26px] font-semibold text-primary-lightYellow'>&#8377; 1.7 Cr Onwards</p>
+                                         <p className='text-[13px] sm:text-[16px] md:text-[26px] font-semibold bg-[#FF0500]  w-fit luxary'>Exclusive flats starting from ₹1.5 Cr. Onwards</p>
                                         <div className='w-72 h-px bg-white mt-8'></div>
                                         <ul className='flex flex-col md:flex-row gap-4'>
                                             <li className='flex gap-2 items-center text-sm font-semibold'><FontAwesomeIcon icon={faHome} /> 3 BHK Apartments</li>
