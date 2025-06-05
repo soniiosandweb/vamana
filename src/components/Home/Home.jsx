@@ -14,8 +14,8 @@ const Home = () => {
     return (
         <>
             <MetaData 
-                title={"Vamana Arvindam Group Zirakpur | Luxury 3 & 4 BHK Apartments"} 
-                description={"Discover luxury apartments in Zirakpur by Vamana Arvindam Group Zirakpur. Explore 3 BHK flats for sale in Zirakpur & 4 BHK apartments in a prime location."} 
+                title={"Luxury 3 & 4bhk flats in Zirakpur - Vamana Arvindam Zirakpur"} 
+                description={"Discover luxury 3 & 4 BHK flats in Zirakpur. Explore new residential projects offering modern amenities, prime locations, and elegant living spaces for your dream home."} 
                 keywords={"Vamana Group, Vamana Arvindam, 3 BHK flats Zirakpur, 3+1 BHK flats Zirakpur, 4+1 BHK flats Zirakpur, Flats near Patiala Road Zirakpur, Luxury apartments Zirakpur, Luxury Flats in Zirakpur, Premium Property in Zirakpur, New Residential Project in Zirakpur"}
                 canonicalUrl={process.env.REACT_APP_API_URL}
             />
