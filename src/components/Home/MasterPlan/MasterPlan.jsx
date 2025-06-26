@@ -17,7 +17,7 @@ const MasterPlan = () => {
             <section className="home-masterplan-section py-16 px-2.5" id="masterplan">
                 <div className='max-w-6xl m-auto'>
                     <div className="flex flex-col text-left gap-5">
-                        <h2 className="text-2xl sm:text-4xl font-semibold text-center mb-3">Master Plan</h2>
+                        <h3 className="text-2xl sm:text-4xl font-semibold text-center mb-3">Master Plan</h3>
 
                         <div className="flex flex-col md:flex-row items-center gap-8 ">
 

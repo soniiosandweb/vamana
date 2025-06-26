@@ -1,4 +1,6 @@
 import './BannerSlider.css';
+import { useState } from 'react';
+
 import banner1 from '../../../assests/images/banner/banner-1.webp';
 import banner2 from '../../../assests/images/banner/banner-2.webp';
 import banner3 from '../../../assests/images/banner/banner-3.jpg';
@@ -10,6 +12,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 
 const BannerSlider = () => {
+    const [activeSlide, setActiveSlide] = useState(0);
+
+    // const settings = {
+    //     autoplay: true,
+    //     autoplaySpeed: 4000,
+    //     dots: true,
+    //     infinite: true,
+    //     arrows: false,
+    //     speed: 800,
+    //     slidesToShow: 1,
+    //     slidesToScroll: 1,
+    // };
 
     const settings = {
         autoplay: true,
@@ -20,7 +34,9 @@ const BannerSlider = () => {
         speed: 800,
         slidesToShow: 1,
         slidesToScroll: 1,
+        beforeChange: (oldIndex, newIndex) => setActiveSlide(newIndex),
     };
+
 
     const slides = [
         {
@@ -42,7 +58,7 @@ const BannerSlider = () => {
             subtitle: (
                 <>
                     {/* Vamana isn't just an address; it's a serene sanctuary away from the bustle of city life. Imagine stepping into a secure, gated community where lush greenery and thoughtfully designed walkways create a tranquil atmosphere. Vamana promises a lifestyle where peace and comfort seamlessly blend with modern luxury with our <strong>3 BHK flats in Zirakpur and 4 BHK flats in Zirakpur</strong>. */}
-                   Explore 3 BHK luxury flats in Zirakpur crafted for those who value peace, space, and sophistication.
+                    Explore 3 BHK luxury flats in Zirakpur crafted for those who value peace, space, and sophistication.
                 </>
             ),
             image: banner2,
@@ -53,7 +69,7 @@ const BannerSlider = () => {
             subtitle: (
                 <>
                     {/* Vamana offers an exceptional lifestyle, transforming your residence into a peaceful retreat from city noise. Picture a secure, green community with artfully designed walkways enhancing your relaxation. Our <strong>luxury flats Zirakpur</strong> uniquely combine tranquility with upscale living */}
-                   Discover the perfect blend of comfort and convenience in our 3 BHK luxury flats in Zirakpur.
+                    Discover the perfect blend of comfort and convenience in our 3 BHK luxury flats in Zirakpur.
                 </>
             ),
             image: banner3,
@@ -78,7 +94,7 @@ const BannerSlider = () => {
             subtitle: (
                 <>
                     {/* Discover Vamana, where your home is a serene escape from urban life. Imagine a gated, green enclave with pathways crafted for peace and relaxation. Our <strong>luxurious 3BHK flats in Zirakpur and 4BHK apartments in Zirakpur</strong> offer a distinctive synthesis of quietude and modern luxury. */}
-                   Embrace spacious 3 BHK luxury flats at Vamana Residences with modern comforts and green surroundings.
+                    Embrace spacious 3 BHK luxury flats at Vamana Residences with modern comforts and green surroundings.
                 </>
             ),
 
@@ -97,7 +113,12 @@ const BannerSlider = () => {
                             <div className="flex flex-col items-center">
                                 <div md={12} xl={10} className='w-full md:w-4/5 m-auto'>
                                     <div className='flex   h-full flex-col gap-4 text-left'>
-                                        <h1 className='text-3xl sm:text-4xl lg:text-5xl font-semibold leading-[1.1]'>{el.title}</h1>
+                                        {activeSlide === i ? (
+                                            <h1 className='text-3xl sm:text-4xl lg:text-5xl font-semibold leading-[1.1]'>{el.title}</h1>
+                                        ) : (
+                                            <h2 className='text-3xl sm:text-4xl lg:text-5xl font-semibold leading-[1.1]'>{el.title}</h2>
+                                        )}
+
                                         <h2 className='text-md sm:text-[26px] font-medium tracking-wider'>{el.subtitle}</h2>
                                         <p className='text-[13px] sm:text-[16px] md:text-[20px] font-medium bg-[#FF0500]  w-fit luxary'>Exclusive flats starting from ₹ 1.5 Cr. Onwards</p>
                                         <div className='w-72 h-px bg-white mt-8'></div>

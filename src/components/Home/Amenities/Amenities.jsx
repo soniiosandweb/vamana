@@ -144,17 +144,19 @@ const Amenities = () => {
         },
     ]
 
-    return(
+    return (
         <section className="home-amenities-section py-5 md:py-16 px-2.5" id="amenities">
             <div className='max-w-6xl m-auto'>
-                <h2 className="text-2xl sm:text-4xl font-semibold text-center mb-3">Amenities</h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-10 pt-5">
-                    {amenities.map((item, i) => (
-                        <div className="w-full p-6 flex flex-col gap-4 justify-start items-center rounded-md border-primary-yellow border-2 aminities-group cursor-pointer" key={i}>
-                            <img src={item.icon} alt={item.title} className="w-16 animate-wobble" />
-                            <h3 className="text-sm font-semibold text-center capitalize">{item.title}</h3>
-                        </div>
-                    ))}
+                <div className="flex flex-col text-left gap-5">
+                    <h3 className="text-2xl sm:text-4xl font-semibold text-center mb-3">Amenities</h3>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-10 pt-5">
+                        {amenities.map((item, i) => (
+                            <div className="w-full p-6 flex flex-col gap-4 justify-start items-center rounded-md border-primary-yellow border-2 aminities-group cursor-pointer" key={i}>
+                                <img src={item.icon} alt={item.title} className="w-16 animate-wobble" />
+                                <p className="text-sm font-semibold text-center capitalize mb-0">{item.title}</p>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>

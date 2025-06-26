@@ -13,7 +13,7 @@ const AboutSection = () => {
             <section className="home-about-section py-16 px-2.5" id="flats">
                 <div className='max-w-6xl m-auto'>
                     <div className="flex flex-col text-centre gap-5">
-                        <h2 className="text-2xl sm:text-4xl font-semibold text-center">About Us</h2>
+                        <h3 className="text-2xl sm:text-4xl font-semibold text-center">About Us</h3>
                         <p className="text-sm">Experience unparalleled luxury and tranquility at Vamana Residences, a <b>new
                             residential project in Zirakpur</b>—a gated oasis nestled amidst lush greenery and
                             designed for those who seek the perfect balance between modern living and

@@ -23,7 +23,7 @@ const FloorPlan = () => {
         <section className="home-floorplan-section py-16 px-2.5" id="floorplan">
             <div className='max-w-6xl m-auto'>
                 <div className="flex flex-col text-left gap-5">
-                    <h2 className="text-2xl sm:text-4xl font-semibold text-center mb-3">Floor Plan</h2>
+                    <h3 className="text-2xl sm:text-4xl font-semibold text-center mb-3">Floor Plan</h3>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-flow-row gap-5 p-2.5">
                         {/* Plan 1 */}

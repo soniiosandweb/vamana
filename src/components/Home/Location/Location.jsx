@@ -75,11 +75,11 @@ const Location = () => {
                 <div className="flex flex-col md:flex-row gap-7 lg:gap-14">
                     <div className="w-full md:1/2 lg:w-3/5 flex flex-col gap-5">
                         <p className='text-gray-300 font-semibold text-lg'>Zirakpur Patiala Highway</p>
-                        <h2 className="text-2xl sm:text-4xl font-semibold text-left">Excellent Location & Connectivity!</h2>
+                        <h3 className="text-2xl sm:text-4xl font-semibold text-left">Excellent Location & Connectivity!</h3>
                         <div className='flex flex-row flex-wrap mt-10 gap-y-10'>
                             {locations.map((index, i) => (
                                 <div className='flex flex-col pr-10 w-full lg:w-1/2 gap-2' key={i}>
-                                    <h3 className='text-lg font-semibold mb-3'>{index.title}</h3>
+                                    <h4 className='text-lg font-semibold mb-3'>{index.title}</h4>
                                     {index.values.map((subitem,i) => (
                                         <p className='text-sm text-gray-300' key={i}>{subitem}</p>
                                     ))}

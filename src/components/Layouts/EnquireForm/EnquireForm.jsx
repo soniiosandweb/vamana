@@ -165,10 +165,10 @@ const EnquireForm = ({ subtitle, title, setOpen, button, setshowsidePopup }) => 
                     <p className="text-green-700 py-2 text-[12px] text-center">{formSuccess}</p>
                 )} */}
                 <div id='enquiry-form'>
-                    <p className="text-2xl title font-extrabold capitalize mb-2.5">
+                    <h5 className="text-2xl title font-extrabold capitalize mb-2.5">
                         {subtitle && <span className='block'>{subtitle}</span>}
                         {title}
-                    </p>
+                    </h5>
                     <div className="py-2">
                         <input
                             type="text"
