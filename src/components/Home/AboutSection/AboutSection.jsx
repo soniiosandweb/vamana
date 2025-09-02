@@ -14,7 +14,7 @@ const AboutSection = () => {
                 <div className='max-w-6xl m-auto'>
                     <div className="flex flex-col text-centre gap-5">
                         <h3 className="text-2xl sm:text-4xl font-semibold text-center">About Us</h3>
-                        <p className="text-sm">Experience unparalleled luxury and tranquility at Vamana Residences, a <b>new
+                        <p className="text-sm">Experience unparalleled luxury and tranquility at <a href="/" className="text-primary-yellow font-semibold">Vamana Residences</a>, a <b>new
                             residential project in Zirakpur</b>—a gated oasis nestled amidst lush greenery and
                             designed for those who seek the perfect balance between modern living and
                             serene surroundings. Our thoughtfully crafted apartments not only provide a
