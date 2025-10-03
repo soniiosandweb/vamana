@@ -74,6 +74,7 @@ const Footer = () => {
                         </NavLink>
                         <p className="text-sm">Discover your dream home in this remarkable new residential project in Zirakpur today, and take the first step towards a life of comfort, convenience, and serenity.</p>
                         <p className='text-sm text-primary-yellow font-semibold '>RERA Number : PBRERA-SAS79-PR1018</p>
+                        <p className="text-sm">+91 9609600074</p>
                     </div>
 
                     <div className="w-full md:w-1/2 flex flex-col md:flex-row gap-[20px] justify-between">
